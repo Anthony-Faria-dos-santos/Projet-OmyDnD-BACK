@@ -1,0 +1,198 @@
+[
+{
+  "index": "padded armor",
+  "name": "Armure matelassée",
+  "armor_category": "légère",
+  "armor_class": {
+    "base": 11,
+    "dex_bonus": "oui"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": true,
+  "weight": 4,
+  "cost": "5 po",
+  "properties": "Une armure matelassée est faite de couches de tissu rembourrées."
+},
+{
+  "index": "leather armor",
+  "name": "Armure de cuir",
+  "armor_category": "légère",
+  "armor_class": {
+    "base": 11,
+    "dex_bonus": "oui"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 5,
+  "cost": "10 po",
+  "properties": "La cuirasse et les spalières de cette armure sont en cuir bouilli dans l'huile pour le durcir. Le reste de l'armure est composé de matériaux plus souples et plus flexibles."
+},
+{
+  "index": "studded leather armor",
+  "name": "Armure de cuir clouté",
+  "armor_category": "légère",
+  "armor_class": {
+    "base": 12,
+    "dex_bonus": "oui"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 6.5,
+  "cost": "45 po",
+  "properties": "Cette armure est faite d'un cuir résistant mais souple, piqueté de rivets à intervalles réguliers."
+},
+{
+  "index": "hide armor",
+  "name": "Armure de peau",
+  "armor_category": "intermédiaire",
+  "armor_class": {
+    "base": 12,
+    "dex_bonus": "oui (max 2)"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 6,
+  "cost": "10 po",
+  "properties": "Cette armure fruste est composée d'épaisses fourrures et de peaux de bêtes. Elle est généralement portée par les tribus barbares, les humanoïdes maléfques et autres personnes qui n'ont pas accès aux outils et matériaux nécessaires pour fabriquer de meilleures armures."
+},
+{
+  "index": "chain shirt",
+  "name": "Chemise de mailles",
+  "armor_category": "intermédiaire",
+  "armor_class": {
+    "base": 13,
+    "dex_bonus": "oui (max 2)"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 10,
+  "cost": "50 po",
+  "properties": "Une chemise de mailles est faite d'anneaux métalliques reliés entre eux. Elle est portée entre plusieurs couches de tissu ou de cuir. Cette armure offre une modeste protection au tronc de son porteur et le crissement des anneaux est étouffé par les couches qui les recouvrent."
+},
+{
+  "index": "scale mail",
+  "name": "Armure d'écailles",
+  "armor_category": "intermédiaire",
+  "armor_class": {
+    "base": 14,
+    "dex_bonus": "oui (max 2)"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 22.5,
+  "cost": "50 po",
+  "properties": "Cette armure se compose d'un manteau et d'un pantalon (et parfois d'une jupe séparée) de cuir recouverts de plaques de métal qui se superposent, un peu comme les écailles d'un poisson. Des gantelets viennent compléter l'ensemble."
+},
+{
+  "index": "breastplate",
+  "name": "Cuirasse",
+  "armor_category": "intermédiaire",
+  "armor_class": {
+    "base": 14,
+    "dex_bonus": "oui (max 2)"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 10,
+  "cost": "400 po",
+  "properties": "Cette armure consiste en une pièce de métal qui couvre le buste, complétée de cuir souple. Bien que les bras et les jambes de son porteur soient peu protégés, cette armure permet de protéger efficacement les organes vitaux sans réduire la liberté de mouvement de son porteur."
+},
+{
+  "index": "half plate armor",
+  "name": "Armure de demi-plate",
+  "armor_category": "intermédiaire",
+  "armor_class": {
+    "base": 15,
+    "dex_bonus": "oui (max 2)"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": true,
+  "weight": 20,
+  "cost": "750 po",
+  "properties": "Cette armure se compose de plaques de métal qui couvrent la majorité du haut du corps de son porteur. Par contre, ses jambes sont seulement protégées par des grèves attachées par des lanières de cuir."
+},
+{
+  "index": "ring mail",
+  "name": "Armure annelée (Broigne)",
+  "armor_category": "lourde",
+  "armor_class": {
+    "base": 14,
+    "dex_bonus": "non"
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": true,
+  "weight": 20,
+  "cost": "30 po",
+  "properties": "Il s'agit d'une armure de cuir sur laquelle sont cousus de lourds anneaux. Ces anneaux permettent de renforcer l'armure et d'offrir une protection contre les coups d'épée et de hache. Une broigne est de qualité inférieure à une cotte de mailles et est généralement portée par ceux qui n'ont pas les moyens de s'offrir une meilleure armure."
+},
+{
+  "index": "chain mail",
+  "name": "Cotte de mailles",
+  "armor_category": "lourde",
+  "armor_class": {
+    "base": 16,
+    "dex_bonus": "non"
+  },
+  "str_minimum": 13,
+  "stealth_disadvantage": true,
+  "weight": 27.5,
+  "cost": "75 po",
+  "properties": "Une cotte de mailles est faite d'anneaux de métal entrecroisés. Elle se porte sur une couche de tissu renforcé afn d'éviter les frottements et d'amortir les coups. L'armure comporte des gantelets."
+},
+{
+  "index": "splint armor",
+  "name": "Clibanion",
+  "armor_category": "lourde",
+  "armor_class": {
+    "base": 17,
+    "dex_bonus": "non"
+  },
+  "str_minimum": 15,
+  "stealth_disadvantage": true,
+  "weight": 30,
+  "cost": "200 po",
+  "properties": "Cette armure est faite d'étroites plaques de métal rivetées à un support de cuir porté sur un vêtement rembourré. Les articulations sont protégées par des pièces de cotte de mailles plus souples."
+},
+{
+  "index": "splint armor",
+  "name": "Clibanion",
+  "armor_category": "lourde",
+  "armor_class": {
+    "base": 17,
+    "dex_bonus": "non"
+  },
+  "str_minimum": 15,
+  "stealth_disadvantage": true,
+  "weight": 30,
+  "cost": "200 po",
+  "properties": "Cette armure est faite d'étroites plaques de métal rivetées à un support de cuir porté sur un vêtement rembourré. Les articulations sont protégées par des pièces de cotte de mailles plus souples."
+},
+{
+  "index": "plate armor",
+  "name": "Harnois",
+  "armor_category": "lourde",
+  "armor_class": {
+    "base": 18,
+    "dex_bonus": "non"
+  },
+  "str_minimum": 15,
+  "stealth_disadvantage": true,
+  "weight": 32.5,
+  "cost": "1500 po",
+  "properties": "Le harnois, ou armure de plates, est constitué de plaques de métal superposées qui couvrent l'ensemble du corps. L'armure inclut des gantelets lourds, de lourdes bottes de cuir, un casque avec une visière et plusieurs épaisseurs de rembourrage sous l'armure. Des sangles permettent de répartir le poids sur tout le corps."
+},
+{
+  "index": "shield",
+  "name": "Bouclier",
+  "armor_category": "",
+  "armor_class": {
+    "base": 2,
+    "dex_bonus": ""
+  },
+  "str_minimum": 0,
+  "stealth_disadvantage": false,
+  "weight": 3,
+  "cost": "10 po",
+  "properties": "Un bouclier est en bois ou en métal, et il est porté à la main. Porter un bouclier augmente votre classe d'armure de 2. Vous ne pouvez pas bénéfcier de plus d'un bouclier à la fois."
+}
+]

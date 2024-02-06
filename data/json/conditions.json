@@ -1,0 +1,77 @@
+[
+  {
+    "index": "blinded",
+    "name": "Aveuglé",
+    "description": "Une créature aveuglée ne voit plus rien et rate automatiquement tout test de caractéristique qui requiert la vue. Les jets d'attaque contre la créature bénéficient d'un avantage. Les attaques de la créature subissent un désavantage."
+  },
+  {
+    "index": "charmed",
+    "name": "Charmé",
+    "description": "Une créature charmée se trouve dans l'incapacité d'attaquer l'individu qui l'a charmée ou de le cibler avec une capacité ou un effet magique néfaste. L'individu qui a charmé la créature bénéficie d'un avantage pour toutes les interactions sociales avec celle-ci."
+  },
+  {
+    "index": "deafened",
+    "name": "Assourdi",
+    "description": "Une créature assourdie n'entend plus rien et rate automatiquement tous les tests de caractéristique faisant intervenir des capacités auditives."
+  },
+  {
+    "index": "frightened",
+    "name": "Terrorisé",
+    "description": "Une créature terrorisée subit un désavantage lors de ses tests de caractéristique et de ses jets d'attaque tant que la source de sa frayeur se trouve dans son champ de vision. La créature est incapable de se rapprocher de la source de sa frayeur de son plein gré." 
+  },
+  {
+    "index": "grappled",
+    "name": "Empoigné",
+    "description": "La vitesse d'une créature empoignée devient 0 et elle ne peut plus bénéficier de ses éventuels bonus de vitesse.Cet état se termine si l'empoigneur est neutralisé (voir cet état). L'état se termine également si un effet emporte la créature empoignée au-delà de l'allonge de l'empoigneur ou de l'effet d'empoignade, comme cela arrive si une créature est projetée au loin par le sort vague tonnante."
+  },
+  {
+    "index": "incapacitated",
+    "name": "Neutralisé",
+    "description": "Une créature neutralisée est incapable d'effectuer une action ou une réaction."
+  },
+  {
+    "index": "invisible",
+    "name": "Invisible",
+    "description": "Il est impossible de voir une créature invisible à moins de recourir à la magie ou à un sens spécial. Quand il s'agit de se cacher, la créature est considérée comme en situation de visibilité nulle. Il est possible de détecter l'endroit où se trouve la créature si elle émet des sons ou laisse des traces. Les attaques visant une créature invisible souffrent d'un désavantage tandis que les attaques de la créature bénéficient d'un avantage."
+  },
+  {
+    "index": "paralysed",
+    "name": "Paralysé",
+    "description": "Une créature paralysée est neutralisée (voir l'état) et ne peut ni parler ni se déplacer. La créature rate automatiquement tous ses jets de sauvegarde de Force et de Dextérité. Les attaques visant la créature bénéficient d'un avantage. Toute attaque qui touche la créature est obligatoirement un coup critique si l'assaillant se trouve dans un rayon de 1,50 mètre autour d'elle."
+  },
+  {
+    "index": "petrified",
+    "name": "Pétrifié",
+    "description": "Une créature pétrifiée est transformée en substance solide inanimée (généralement en pierre), de même que tous les objets non-magiques qu'elle transporte. Le poids de la créature est multiplié par dix et elle ne vieillit plus. La créature est neutralisée (voir l'état), ne peut plus ni parler ni se déplacer et n'a pas conscience de ce qui se passe autour d'elle. Les attaques qui visent la créature bénéficient d'un avantage. La créature rate automatiquement tous ses jets de sauvegarde de Force et de Dextérité. La créature est résistante à tous les types de dégâts. La créature est immunisée contre le poison et les maladies, mais les poisons et maladies qui l'affectent déjà ne sont pas neutralisés, leurs effets sont juste suspendus."
+  },
+  {
+    "index": "poisoned",
+    "name": "Empoisonné",
+    "description": "Une créature empoisonnée souffre d'un désavantage lors de ses jets d'attaque et de ses tests de caractéristique."
+  },
+  {
+    "index": "prone",
+    "name": "A terre",
+    "description": "Une créature à terre n'a plus l'option que de ramper pour se déplacer, à moins de se relever et de mettre ainsi un terme à son état. La créature subit un désavantage lors de ses attaques. Si un assaillant est à 1,50 mètre ou moins de la créature, il bénéficie d'un avantage lors de ses attaques contre la créature. Sinon, il subit un désavantage."
+  },
+  {
+    "index": "restrained",
+    "name": "Entravé",
+    "description": "La vitesse de la créature entravée tombe à 0 et elle ne peut plus bénéficier de ses éventuels bonus de vitesse. Les attaques qui visent la créature bénéficient d'un avantage, tandis que les attaques de la créature subissent un désavantage. La créature souffre d'un désavantage lors de ses jets de sauvegarde de Dextérité."
+  },
+  {
+    "index": "stunned",
+    "name": "Etourdi",
+    "description": "Une créature étourdie est neutralisée (voir l'état), incapable de se déplacer et parle en balbutiant. La créature rate automatiquement tous ses jets de sauvegarde de Force et de Dextérité. Les jets d'attaque qui visent la créature se font avec un avantage."
+  },
+  {
+    "index": "unconscious",
+    "name": "Inconscient",
+    "description": "Une créature inconsciente est neutralisée (voir l'état), incapable de se déplacer et de parler et n'a pas conscience de ce qui l'entoure. La créature lâche tout ce qu'elle tenait et tombe au sol. Si la créature reprend conscience, elle est à terre. La créature rate automatiquement tous ses jets de sauvegarde de Force et de Dextérité. Les attaques qui visent la créature bénéficient d'un avantage. Toute attaque qui touche la créature est obligatoirement un coup critique si l'assaillant se trouve dans un rayon de 1,50 mètre autour d'elle."
+  },
+  {
+    "index": "exhaustion",
+    "name": "Fatigue et épuisement",
+    "description": "Certaines aptitudes et certains dangers environnementaux, comme la faim et les effets à long terme des températures glaciales et étouffantes, provoquent un état particulier appelé l'épuisement. Celui-ci se divise en six niveaux. Un effet peut donner un ou plusieurs niveaux d'épuisement, comme indiqué dans la description de chaque effet. Niveau 1 : Désavantage lors des tests de caractéristique. Niveau 2 : Vitesse réduite de moitié. Niveau 3 : Désavantage lors des attaques et des sauvegardes. Niveau 4 : Maximum de points de vie réduit de moitié. Niveau 5 : Vitesse réduite à 0. Niveau 6 : Décès. Si une créature déjà épuisée souffre d'un nouvel effet générant de l'épuisement, son niveau d'épuisement actuel augmente du montant indiqué dans la description de l'effet. Une créature souffre des effets de son niveau d'épuisement actuel et de tous les effets des niveaux inférieurs. Par exemple, une créature affligée d'un épuisement de niveau 2 voit sa vitesse réduite de moitié et subit un désavantage lors de ses tests de caractéristique. Un effet qui réduit l'épuisement diminue son niveau du montant indiqué dans sa description. Tous les effets d'épuisement se terminent si le niveau d'épuisement de la créature est réduit à moins de 1. Une fois terminé, un repos long réduit le niveau d'épuisement d'une créature de 1, à condition qu'elle ait eu à boire et à manger."
+  }
+]

@@ -1,0 +1,587 @@
+[
+  {
+    "index": "barbarian",
+    "name": "Barbare",
+    "description": "Drapé de fourrure et portant une hache, un humain tribal de haute taille marche à grandes enjambées à travers le blizzard. Riant aux éclats, il charge le géant du givre qui a osé s'en prendre au troupeau de son clan. Une demi-orc grogne férocement contre le dernier adversaire qui a voulu remettre en cause son autorité sur la tribu, prête à lui briser le cou comme elle l'a fait avec les six précédents. L'écume aux lèvres, un nain balance son casque dans le visage d'un premier ennemi drow puis, se retournant, envoie sa cubitière dans le ventre d'un second. Ces barbares, bien que différents, ont en commun leur rage : un déchaînement de fureur, inextinguible et irraisonné. Bien plus qu'une émotion passagère, leur colère est celle d'un féroce prédateur acculé, l'assaut implacable de la tempête, le tumulte d'une mer démontée. Pour certains, leur rage est le fruit d'une communion avec de fiers esprits animaux. D'autres la puisent d'une réserve trouble de colère contre ce monde de souffrance. Mais pour tous, la rage est une force qui n'alimente pas que leur frénésie guerrière. Elle leur donne aussi des réflexes, une résistance et des prouesses physiques incroyables.",
+    "trait": "Instinct primitif",
+    "trait_description": "Villageois et citadins sont fiers de leur manières civilisées qui les distinguent des animaux, comme si renier sa propre nature était un signe de supériorité. Mais pour un barbare, la civilisation n'est pas une vertu, c'est un signe de faiblesse. Les forts assument leurs instincts naturels, leur physique primitif et leur rage féroce. Les barbares ne sont pas à l'aise derrière des murs ou entourés par la foule. Ils prospèrent sur les étendues sauvages de leurs terres natales : la toundra, la jungle ou les prairies où leur tribu vit et chasse. Les barbares renaissent dans le chaos d'un combat. Ils peuvent entrer en rage et devenir fous furieux, ce qui leur donne une force et une résistance au-delà des limites humaines. Un barbare ne peut puiser dans cette réserve de furie que quelquefois avant de devoir se reposer, mais ces quelques rages sont généralement suffisantes pour annihiler toute menace.",
+    "class_principles": "Une vie pleine de danger",
+    "class_principles_description": "Un membre d'une tribu réputée « barbare » par la société civilisée ne possède pas forcément des niveaux dans la classe de barbare. Un vrai barbare parmi son peuple est aussi rare qu'un guerrier compétent en ville, et il ou elle joue un rôle similaire destiné à protéger son peuple et à être un meneur en cas de guerre. La vie dans les endroits sauvages du monde est remplie de dangers : des tribus rivales, un climat hostile et des monstres terrifiants. Les barbares s'y jettent la tête la première afin que leur peuple n'ait pas besoin de le faire. Le courage dont ils font preuve face au danger en font de parfaits aventuriers. L'errance étant souvent le mode de vie de leur tribu natale, la vie souvent sans attache d'un aventurier n'est donc pas contraignante pour un barbare. La structure familiale d'une tribu et ses membres très unis peut manquer au barbare mais, finalement, elle sera compensée par les liens tissés avec leurs compagnons d'aventure.",
+    "create": "Créer un barbare",
+    "create_description": "Lorsque vous créez un barbare, réfléchissez d'où il vient et quelle est sa place dans le monde. Discutez avec votre MD afin de lui trouver une origine appropriée. Venez-vous d'une contrée éloignée faisant de vous un étranger dans la campagne ? Ou bien cette même campagne se déroule t-elle dans une rude région frontalière où les barbares sont communs ? Qu'est-ce qui vous a poussé à devenir aventurier ? Avez vous été séduit par la certitude de devenir riche dans les pays régis par les lois ? Avez-vous joint vos forces avec les soldats de ces mêmes pays afin de repousser une menace commune ? Est-ce que des monstres ou une horde étrangère vous ont contraint à l'exil ? Vous étiez peut-être un prisonnier de guerre, conduit enchaîné dans les pays « civilisés » et qui tente de regagner sa liberté à tout prix. Ou peut-être avez vous été banni de votre peuple suite à un crime que vous avez commis, un tabou que vous avez brisé ou une révolte qui vous a déchu de votre autorité.",
+    "create_fast": "Vous pouvez concevoir rapidement un barbare en suivant ces quelques suggestions. En premier lieu, la Force devrait être votre plus haute valeur de caractéristique, suivie par la Constitution. Ensuite, choisissez l'historique sauvageon.",
+    "class_abilities": {
+      "health": {
+        "health_die": "1d12 par niveau de barbare",
+        "lvl1_health": "12 + votre modificateur de Constitution",
+        "health_by_lvl": "1d12 (ou 7) + votre modificateur de Constitution"
+      },
+      "masteries": {
+        "armors": "armures légères, armures intermédiaires, boucliers",
+        "weapons": "armes courantes, armes de guerre",
+        "tools": "aucun",
+        "saving_throws": "Force, Constitution",
+        "skills": "choisissez deux compétences parmi Athlétisme, Dressage, Intimidation, Nature, Perception et Survie"
+      },
+      "equipement": {
+        "description": "Vous commencez avec l'équipement suivant, en plus de l'équipement accordé par votre historique :",
+        "choices": {
+          "stuff_1": "(a) une hache à deux mains ou (b) n'importe quelle arme de guerre de corps à corps",
+          "stuff_2": "(a) deux hachettes ou (b) n'importe quelle arme courante",
+          "stuff_3": "un sac d'explorateur et quatre javelines"
+        }
+      },
+      "leveling_table": "chemin vers l'image ou données en dur ?",
+      "ability_1": {
+        "name": "Rage",
+        "description": "En combat, vous vous battez avec une férocité bestiale. Durant votre tour, vous pouvez entrer en rage en utilisant une action bonus. En rage, vous gagnez les bénéfices suivants si vous ne portez pas d'armure lourde : 1) Vous avez un avantage aux jets de Force et aux jets de sauvegarde de Force. 2) Quand vous effectuez une attaque au corps à corps avec une arme utilisant la Force, vous gagnez un bonus aux jets de dégâts qui dépend de votre niveau de barbare, comme indiqué dans la colonne Dégâts de la table ci-dessus. 3) Vous avez la résistance aux dégâts contondants, perforants et tranchants. Si vous êtes capable de lancer des sorts, vous ne pouvez les lancer ou vous concentrer sur eux pour toute la durée de la rage. Votre rage dure 1 minute. Elle finit prématurément si vous devenez inconscient, ou si votre tour se termine et que vous n'avez ni attaqué une créature hostile, ni subi des dégâts, depuis votre précédent tour. Vous pouvez également mettre fin à votre rage durant votre tour par une action bonus. Vous récupérez les utilisations de rage dépensées après avoir terminé un repos long."
+      },
+      "ability_2": {
+        "name": "Défense sans armure",
+        "description": "Tant que vous ne portez pas d'armure, votre classe d'armure est égale à 10 + votre modificateur de Dextérité + votre modificateur de Constitution. Vous pouvez utiliser un bouclier et continuer de profiter de cette capacité."
+      },
+      "ability_3": {
+        "name": "Attaque téméraire",
+        "description": "À partir du niveau 2, vous pouvez mettre de côté votre défense pour attaquer avec toute la violence du désespoir. Lorsque vous effectuez la première attaque de votre tour, vous pouvez décider d'effectuer une Attaque téméraire. Vous obtenez ainsi un avantage aux jets d'attaque au corps à corps avec une arme utilisant la Force durant ce tour, mais les attaques effectuées contre vous ont également un avantage jusqu'à votre prochain tour."
+      },
+      "ability_4": {
+        "name": "Sens du danger",
+        "description": "Au niveau 2, vous ressentez une sensation étrange lorsque les choses qui vous entourent ne sont pas comme elles devraient être, vous donnant un avantage lorsque vous tentez de vous extirper du danger. Vous avez un avantage aux jets de sauvegarde de Dextérité contre les effets que vous pouvez voir, comme les pièges ou les sorts. Pour bénéficier de cet effet vous ne devez pas être aveuglé, assourdi ou incapable d'agir."
+      },
+      "ability_5": {
+        "name": "Voie primitive",
+        "description": "Au niveau 3, vous choisissez la voie par laquelle s'exprime votre rage. Choisissez la voie du berserker ou la voie du guerrier totem, chacune étant détaillée ci-dessous. Votre choix vous accorde des capacités aux niveaux 3, 6, 10 et 14."
+      },
+      "ability_6": {
+        "name": "Amélioration de caractéristiques",
+        "description": "Au niveau 4, puis par la suite aux niveaux 8, 12, 16 et 19, vous pouvez augmenter une valeur de caractéristique de votre choix de +2, ou bien augmenter deux valeurs de caractéristique de votre choix de +1. Vous ne pouvez cependant pas augmenter une caractéristique au-delà de 20 par ce biais. (possibilité de ne pas choisir l'amélioration de caractéristiques et de prendre un don à la place)"
+      },
+      "ability_7": {
+        "name": "Attaque supplémentaire",
+        "description": "À partir du niveau 5, vous pouvez attaquer deux fois, au lieu d'une seule, chaque fois que vous réalisez l'action Attaquer durant votre tour."
+      },
+      "ability_8": {
+        "name": "Déplacement rapide",
+        "description": "Au niveau 5, votre vitesse augmente de 3 mètres tant que vous ne portez pas d'armure lourde."
+      },
+      "ability_9": {
+        "name": "Instinct sauvage",
+        "description": "Au niveau 7, vos instincts sont si aiguisés que vous obtenez un avantage aux jets d'initiative. De plus, si vous êtes surpris au début du combat et que vous n'êtes pas incapable d'agir, vous pouvez jouer normalement durant votre premier tour, mais seulement si vous entrez en rage avant de faire quoique ce soit d'autre à ce tour."
+      },
+      "ability_10": {
+        "name": "Critique brutal",
+        "description": "À partir du niveau 9, vous pouvez lancer un dé de dégâts de votre arme en plus lorsque vous déterminez les dégâts supplémentaires que vous infligez sur un coup critique réussi avec une attaque au corps à corps. Ce bonus aux dégâts passe à deux dés au niveau 13 et à trois dés au niveau 17."
+      },
+      "ability_11": {
+        "name": "Rage implacable",
+        "description": "À partir du niveau 11, votre rage vous permet de continuer à combattre en dépit des graves blessures qui vous affectent. Si vous tombez à 0 point de vie pendant votre rage et que vous ne mourrez pas sur le coup, vous pouvez faire un jet de sauvegarde de Constitution DD 10. Si vous le réussissez, vous retournez immédiatement à 1 point de vie. Chaque fois que vous utilisez cette capacité après la première, le DD augmente de 5. Quand vous terminez un repos court ou long le DD retombe à 10."
+      },
+      "ability_12": {
+        "name": "Rage persistante",
+        "description": "En atteignant le niveau 15, votre rage est si intense qu'elle ne s'arrête prématurément qu'à la condition que vous tombiez inconscient ou que vous choisissiez de l'arrêter."
+      },
+      "ability_13": {
+        "name": "Puissance indomptable",
+        "description": "Au niveau 18, si le résultat d'un de vos jets de Force est inférieur à votre valeur de Force, vous pouvez utiliser votre valeur de Force à la place de votre résultat."
+      },
+      "ability_14": {
+        "name": "Champion primitif",
+        "description": "Au niveau 20, vous êtes l'incarnation de la puissance du monde sauvage. Vos valeurs de Force et de Constitution augmentent de 4. Votre maximum dans ces valeurs de caractéristique est maintenant de 24."
+      },
+      "specialization": {
+        "name": "Voies primitives",
+        "description": "La rage brûle dans le cœur de tous les barbares, tel un four qui les pousse vers la grandeur. Toutefois, les barbares n'attribuent pas tous cette rage à la même source. Pour certains, c'est un réservoir interne où la douleur, le chagrin et la colère se forgent en une fureur aussi dure que l'acier, alors que d'autres y voient une bénédiction spirituelle, le cadeau d'un animal totem.",
+        "choice_1": {
+          "name": "Voie du berserker",
+          "description": "Pour bon nombre de barbares, la rage est le moyen d'atteindre un but, ce but étant la violence. La voie du berserker est une voie de fureur débridée, poisseuse de sang. En entrant en rage de berserker, vous êtes électrisé par le chaos de la bataille, faisant fi de votre sécurité et de votre bien-être.",
+          "abilities": {
+            "ability_1": {
+              "name": "Frénésie",
+              "description": "Dès que vous choisissez cette voie au niveau 3, vous pouvez choisir de sombrer dans un état de frénésie au cours de votre rage. Si vous le faites, pour la durée de votre rage, vous pouvez effectuer une unique attaque au corps à corps avec une arme en utilisant une action bonus à chacun de vos tours après celui-ci. Lorsque votre rage se termine, vous subissez un niveau d'épuisement."
+            },
+            "ability_2": {
+              "name": "Rage aveugle",
+              "description": "À partir du niveau 6, vous ne pouvez pas être charmé ou effrayé tant que vous êtes en rage. Si vous êtes déjà charmé ou effrayé lorsque vous entrez en rage, l'effet est suspendu le temps de votre rage."
+            },
+            "ability_3": {
+              "name": "Présence intimidante",
+              "description": "À partir du niveau 10, vous pouvez utiliser votre action pour effrayer quelqu'un avec votre présence effrayante. Pour ce faire, choisissez une créature que vous pouvez voir à 9 mètres maximum de vous. Si la créature peut vous voir ou vous entendre, elle doit réussir un jet de sauvegarde de Sagesse (DD égal à 8 + votre bonus de maîtrise + votre modificateur de Charisme) ou vous l'effrayez jusqu'à la fin de votre prochain tour. Aux tours suivants, vous pouvez utiliser votre action pour augmenter d'un tour supplémentaire la durée de cet effet sur la créature effrayée. Cet effet se termine si la créature finit son tour hors de votre ligne de vue ou qu'elle se trouve à plus de 18 mètres de vous. Si la créature réussit son jet de sauvegarde, vous ne pouvez plus utiliser cette capacité contre elle durant 24 heures."
+            },
+            "ability_4": {
+              "name": "Représailles",
+              "description": "À partir du niveau 14, lorsque vous subissez des dégâts d'une créature située à 1,50 mètre de vous, vous pouvez utiliser votre réaction pour effectuer une attaque au corps à corps avec une arme contre cette créature."
+            }
+          }
+        },
+        "choice_2": {
+          "name": "Voie du guerrier totem",
+          "description": "La voie du guerrier totem est un parcours spirituel, étant donné que le barbare accepte un esprit animal comme guide, protecteur et source d'inspiration. En plein bataille, votre esprit totem vous imprègne de pouvoirs surnaturels, distillant de l'essence magique dans votre rage. La plupart des tribus barbares utilise un animal totem comme signe d'appartenance à un clan particulier. Dans ce cas-là, il est rare pour un individu d'avoir plus d'un esprit-animal totem, bien qu'il existe des exceptions.",
+          "abilities": {
+            "ability_1": {
+              "name": "Quêteur spirituel",
+              "description": "Une voie qui cherche à vous initier au monde naturel, vous affiliant aux bêtes, est faite pour vous. Au niveau 3, lorsque vous adoptez cette voie, vous obtenez la capacité de lancer les sorts communication avec les animaux et sens animal, mais seulement en tant que rituels."
+            },
+            "ability_2": {
+              "name": "Esprit totem",
+              "description": "Au niveau 3, lorsque vous adoptez cette voie, vous choisissez un esprit totem et obtenez les avantages associés. Vous devez fabriquer ou obtenir un objet totem - une amulette ou un ornement similaire - constitué d'os, de poils, de griffes, de plumes ou de dents de votre animal totem. Si vous le souhaitez, vous pouvez également obtenir un attribut physique mineur qui rappelle votre esprit totem. Par exemple, si vous avez choisi l'ours comme esprit totem, vous pourriez être incroyablement poilu et avoir la peau épaisse, ou si votre totem est l'aigle, vos yeux pourraient virer au jaune. Votre animal totem devrait être un animal correspondant à l'un de ceux listés ci-dessous ou s'en approchant mais dont l'espèce est plus appropriée à votre pays d'origine (un vautour ou un faucon à la place d'un aigle par exemple). 1) Aigle. Lorsque vous êtes en rage et ne portez pas d'armure lourde, les autres créatures ont un désavantage lors des attaques d'opportunité qu'elles effectuent contre vous, et vous pouvez utiliser l'action Foncer en tant qu'action bonus lors de votre tour. L'esprit de l'aigle fait de vous un prédateur capable de circuler dans la mêlée avec aisance. 2) Loup. Lorsque vous êtes en rage, vos alliés ont un avantage aux jets d'attaque au corps à corps effectués contre toute créature située à 1,50 mètre de vous et qui vous sont hostiles. L'esprit du loup fait de vous le chef des chasseurs. 3) Ours. Lorsque vous êtes en rage, vous avez la résistance à tous les types de dégâts sauf aux dégâts psychiques. L'esprit de l'ours vous rend suffisamment coriace pour résister à n'importe quel châtiment."
+            },
+            "ability_3": {
+              "name": "Aspect de la bête",
+              "description": "Au niveau 6, vous obtenez un bénéfice magique dépendant de l'animal totem de votre choix. Vous pouvez choisir le même animal que celui sélectionné au niveau 3 ou en prendre un différent. 1) Aigle. Vous gagnez la vision de l'aigle. Vous pouvez voir jusqu'à 1,5 kilomètre sans difficulté, capable de discerner même les plus fins détails comme si vous regardiez quelque chose à 30 m de vous. De plus, une faible luminosité n'impose pas un désavantage à vos jets de Sagesse (Perception). 2) Loup. Vous gagnez les sens de chasseur d'un loup. Vous pouvez pister les autres créatures lorsque vous voyagez à un rythme rapide et vous pouvez vous déplacer discrètement lorsque vous voyagez à un rythme normal (voir Partir à l'aventure). 3) Ours. Vous gagnez la puissance de l'ours. Votre capacité de charge (dont votre chargement maximal et votre capacité à soulever des objets) est doublée et vous obtenez un avantage aux jets de Force effectués pour pousser, soulever, tirer ou briser des objets."
+            },
+            "ability_4": {
+              "name": "Marcheur spirituel",
+              "description": "Au niveau 10, vous pouvez lancer le sort communion avec la nature, mais seulement en tant que rituel. Lorsque vous le lancez, une version spirituelle de l'un des animaux que vous avez choisis avec Esprit totem ou Aspect de la bête apparaît et vous donne l'information que vous recherchez."
+            },
+            "ability_5": {
+              "name": "Lien totémique",
+              "description": "Au niveau 14, vous obtenez un bénéfice magique correspondant à l'animal totem de votre choix. Vous pouvez choisir un animal que vous avez précédemment sélectionné ou en prendre un nouveau. 1) Aigle. Lorsque vous êtes en rage, vous obtenez une vitesse de vol égale à votre vitesse actuelle de déplacement à pied. Cette capacité fonctionne uniquement sur de cours déplacements ; vous tombez si vous terminez votre tour dans les airs et que rien d'autre ne vous maintient en hauteur. 2) Loup. Lorsque vous êtes en rage vous pouvez utiliser une action bonus lors de votre tour pour mettre à terre une créature de taille G ou inférieure que vous avez touchée lors d'une attaque au corps à corps avec une arme. 3) Ours. Lorsque vous êtes en rage, toute créature située à 1,50 mètre de vous, et qui vous est hostile, a un désavantage aux jets d'attaque effectué contre une cible autre que vous, ou tout personnage avec cette capacité. Un ennemi est immunisé à cet effet s'il ne peut pas vous voir ou vous entendre ou qu'il ne peut pas être effrayé."
+            }
+          }
+        },
+        "choice_3": {
+          "name": "Voie de la magie sauvage",
+          "description": "De nombreux endroits dans le multivers regorgent de beauté, d'émotions intenses et de magie effrénée. La Féerie, les plans supérieurs et d'autres royaumes de puissances surnaturelles irradient de telles forces et peuvent profondément influencer les gens. En tant que personnes dotées de profonds sentiments, les barbares sont particulièrement sensibles à ces influences sauvages, et certains sont même transformés par la magie. Ces barbares imprégnés de magie empruntent la voie de la magie sauvage. Les barbares elfes, tieffelins, aasimars et génasis, désireux de manifester la magie d'Outremonde de leurs ancêtres, suivent souvent cette voie.",
+          "abilities": {
+            "ability_1": {
+              "name": "Sens de la magie",
+              "description": "Capacité de la voie de la magie sauvage de niveau 3. Par une action, vous pouvez ouvrir votre conscience à la présence de magie concentrée. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout sort ou objet magique dans un rayon de 18 m autour de vous et qui n'est pas caché par un abri total. Lorsque vous sentez un sort, vous reconnaissez à quelle école de magie il appartient. Vous pouvez utiliser cette capacité un nombre de fois égal à votre bonus de maîtrise, et vous récupérez toutes les utilisations dépensées lorsque vous terminez un repos long."
+            },
+            "ability_2": {
+              "name": "Sursaut sauvage",
+              "description": "Au niveau 3, l'énergie magique qui coule en vous jaillit parfois. Lorsque vous entrez en rage, lancez 1d8 sur la table de Magie sauvage pour déterminer l'effet magique produit. Si l'effet requiert un jet de sauvegarde, le DD est égal à 8 + votre bonus de maîtrise + votre modificateur de Constitution."
+            },
+            "ability_3": {
+              "name": "Réserve de magie",
+              "description": "Au niveau 6, vous pouvez exploiter votre magie sauvage pour vous renforcer ou renforcer un compagnon. Par une action, vous pouvez toucher une créature (y compris vous-même) et lui conférer l'un des avantages suivants de votre choix : 1) Durant 10 minutes, la créature peut lancer un d3 à chaque fois qu'elle effectue un jet d'attaque ou un jet de caractéristique, et ajouter le nombre obtenu au d20. 2) Lancez un d3. La créature regagne un emplacement de sort dépensé d'un niveau égal ou inférieur au nombre obtenu (au choix de la créature). Une fois qu'une créature a reçu cet avantage, elle ne peut plus en bénéficier avant d'avoir terminé un repos long. Vous pouvez effectuer cette action un nombre de fois égal à votre bonus de maîtrise, et vous récupérez toutes les utilisations dépensées lorsque vous terminez un repos long."
+            },
+            "ability_4": {
+              "name": "Réaction instable",
+              "description": "Au niveau 10, lorsque vous êtes en danger pendant votre rage, votre magie intérieure peut se déchaîner. Immédiatement après avoir subi des dégâts ou échoué à un jet de sauvegarde pendant que vous êtes en rage, vous pouvez utiliser votre réaction pour lancer un dé sur la table de Magie sauvage et l'effet obtenu se produit immédiatement. Cet effet remplace votre effet de Magie sauvage en cours."
+            },
+            "ability_5": {
+              "name": "Sursaut contrôlé",
+              "description": "Au niveau 14, chaque fois que vous lancez un dé sur la table de Magie sauvage, vous pouvez lancer le dé deux fois et choisir lequel des deux effets se déclenche. Si vous lancez le même nombre sur les deux dés, vous pouvez ignorer le dé et choisir n'importe quel effet sur la table."
+            }
+          }
+        }  
+      }
+    },
+    "tables": {
+      "table_1": {
+        "name": "Table de magie sauvage",
+        "choices": {
+          "choice_1": {
+            "value": 1,
+            "effect": "Toute créature de votre choix que vous pouvez voir à 9 mètres ou moins de vous doit réussir un jet de sauvegarde de Constitution ou subir 1d12 dégâts nécrotiques. Vous gagnez également des points de vie temporaires égaux à 1d12 plus votre niveau de barbare."
+          },
+          "choice_2": {
+            "value": 2,
+            "effect": "Vous vous téléportez dans un espace inoccupé que vous pouvez voir dans un rayon de 9 mètres. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet à chacun de vos tours."
+          },
+          "choice_3": {
+            "value": 3,
+            "effect": "Un esprit intangible, ressemblant à un flumph ou à une pixie (selon votre choix), apparaît à 1,50 m d'une créature de votre choix que vous pouvez voir dans un rayon de 9 mètres autour de vous. À la fin de ce tour, l'esprit explose et toute créature à 1,50 mètre ou moins de lui doit réussir un jet de sauvegarde de Dextérité ou subir 1d6 dégâts de force. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet en invoquant un autre esprit à chacun de vos tours."
+          },
+          "choice_4": {
+            "value": 4,
+            "effect": "Un éclair de lumière jaillit de votre poitrine. Une autre créature de votre choix que vous pouvez voir 9 mètres ou moins de vous doit réussir un jet de sauvegarde de Constitution ou subir 1d6 dégâts radiants et être aveuglée jusqu'au début de votre prochain tour. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet à chacun de vos tours."
+          },
+          "choice_5": {
+            "value": 5,
+            "effect": "Chaque fois qu'une créature vous touche avec un jet d'attaque avant la fin de votre rage, cette créature subit 1d6 dégâts de force, la magie se déchaînant en représailles."
+          },
+          "choice_6": {
+            "value": 6,
+            "effect": "Vous êtes entouré de lumières protectrices multicolores. Vous gagnez un bonus de +1 à la CA, et vos alliés à 3 mètres ou moins de vous gagnent le même bonus."
+          },
+          "choice_7": {
+            "value": 7,
+            "effect": "Des fleurs et des plantes poussent temporairement autour de vous. Jusqu'à ce que votre rage se termine, le sol dans un rayon de 4,50 mètres autour de vous est un terrain difficile pour vos ennemis."
+          },
+          "choice_8": {
+            "value": 8,
+            "effect": "La magie imprègne une arme de votre choix que vous tenez. Jusqu'à ce que votre rage se termine, le type de dégâts de l'arme est de force, et elle acquiert les propriétés légère et lancer, avec une portée nominale de 6 mètres et une longue portée de 18 mètres. Si l'arme quitte votre main, elle réapparaît dans votre main à la fin du tour en cours."
+          }
+        }
+      }
+    }
+  },
+  {
+    "index": "bard",
+    "name": "Barde",
+    "description": "Fredonnant alors qu’elle passe ses doigts sur un ancien monument au cœur de ruines depuis longtemps oubliées, une demi-elfe vêtue de cuir robuste sent le savoir, invoqué par la magie de son chant, bondir dans son esprit. Le savoir de ceux qui ont érigé ce monument. Le savoir relatant la saga mythique qui y est illustrée. Un solide guerrier humain frappe son épée avec rythme sur son armure d’écailles, instaurant un tempo pour accompagner son chant de guerre et exhortant ses compagnons à la bravoure et à l’héroïsme. La magie de son chant les fortifie et les enhardit. Accordant son cistre tout en rigolant, une gnome tisse sa subtile magie sur l’assemblée des nobles, s'assurant ainsi que les paroles de ses compagnons seront bien reçues. Qu'il soit érudit, scalde ou scélérat, un barde façonne la magie à travers ses mots et sa musique pour inspirer ses alliés, démoraliser ses ennemis, manipuler les esprits, créer des illusions, et même pour soigner les blessures.",
+    "trait": "Musique et magie",
+    "trait_description": "Dans les univers de D&D, les mots et la musique ne sont pas que des vibrations de l’air, ce sont plutôt des vocalisations dotées d’une puissance qui leur est propre. Le barde est le maître du chant, du discours et de la magie qu’ils contiennent. Les bardes affirment que le multivers est né d’une parole, que les mots des dieux l’ont façonné et que les échos de ces primordiaux Mots de création résonnent toujours à travers le cosmos. La musique des bardes tente de capturer et d’exploiter ces échos, en les entrelaçant subtilement dans leurs sorts et leurs pouvoirs. La plus grande force du barde est son incontestable polyvalence. De nombreux bardes préfèrent demeurer en retrait lors d’un combat, utilisant plutôt la magie pour inspirer leurs alliés et gêner leurs ennemis. Mais les bardes sont aussi capables de bien se défendre au corps à corps si cela est nécessaire, employant leur magie pour renforcer armes et armure. Leurs sorts tendent vers le charme et les illusions plutôt que la destruction brutale. Ils possèdent un large éventail de connaissance sur de nombreux sujets et une aptitude naturelle qui leur permet de réussir tout ce qu’ils entreprennent. Les bardes deviennent maîtres des talents qu’ils décident de perfectionner, que cela consiste à jouer d'un instrument ou à posséder des connaissances ésotériques.",
+    "class_principles": "Apprendre par l’expérience",
+    "class_principles_description": "Les véritables bardes ne sont pas communs dans le monde. Les ménestrels chantant dans les tavernes ou les bouffons folâtrant à la cour royale ne sont pas tous des bardes. Découvrir la magie dissimulée dans la musique demande une étude ardue et un peu de talent naturel que la plupart des troubadours et des jongleurs ne possèdent pas. Il peut toutefois s’avérer difficile de discerner la différence entre ces artistes et un véritable barde. La vie d’un barde est consacrée à errer d’un endroit à l’autre, à la recherche de connaissances traditionnelles, à raconter des récits et à vivre de la générosité de son auditoire, tout comme le ferait un artiste quelconque. Par contre, l'ampleur de leurs connaissances, leur degré de maîtrise musicale et une touche de magie distinguent les bardes de leurs compères. En de rares occasions, les bardes s’enracinent à un endroit. Leur attirance naturelle pour le voyage, pour dénicher de nouveaux récits à raconter, de nouvelles aptitudes à apprendre et de nouvelles découvertes par-delà les horizons, prédispose les bardes à la vie d’aventures. Chaque aventure offre l’opportunité d’apprendre, de mettre en pratique un éventail de compétences, de pénétrer dans des tombeaux passés dans l’oubli, de découvrir des œuvres magiques que l’on avait perdues, de décrypter de vieux livres, de voyager vers d’étranges contrées ou de rencontrer des créatures exotiques. Les bardes aiment accompagner les héros afin d’être les témoins privilégiés de leurs exploits. Un barde qui parvient à raconter une histoire impressionnante parce qu’il a vécu personnellement les événements embellit sa réputation auprès des autres bardes. En effet, après avoir raconté autant de récits rapportant les exploits réalisés par des héros, plusieurs bardes prennent ces thèmes à cœur jusqu'à devenir eux-mêmes des héros.",
+    "create": "Créer un barbare",
+    "create_description": "Les bardes se nourrissent d’histoires, qu’elles soient véridiques ou pas. Le background et les motivations de votre personnage ne sont pas aussi importants que les histoires qu'il ou elle raconte à leurs propos. Peut-être avez-vous eu une enfance sécuritaire et mondaine. Il n'y a rien là pour composer une bonne histoire alors vous pourriez vous présenter comme un orphelin élevé par une vieille femme dans un marais lugubre ou de telle façon que votre enfance mérite sa propre histoire. Certains bardes acquièrent leur magie musicale par l’intermédiaire de moyens extraordinaires, comme par l’inspiration d’une fée ou d’une autre créature surnaturelle. Étiez-vous l’apprenti d’un maître, d'un barde expérimenté que vous avez suivi jusqu'à ce que vous tentiez seul votre chance ? Avez-vous fréquenté un collège où vous avez étudié les connaissances bardiques et exercé votre magie musicale ? Ou bien étiez-vous un jeune fugueur ou un orphelin qu’un barde, devenu votre mentor, a pris sous son aile. Ou vous pourriez être un enfant chéri de la noblesse qui a reçu une instruction prodigué par un tuteur. Peut-être avez-vous été piégé par les griffes d’une vieille sorcière avec qui vous avez pu négocier votre vie, votre liberté et un don musical, mais à quel prix ?",
+    "create_fast": "Vous pouvez concevoir rapidement un barde en suivant ces quelques suggestions. En premier lieu, le Charisme devrait être votre plus haute valeur de caractéristique, suivie par la Dextérité. Ensuite, choisissez l'historique artiste. Enfin, choisissez les sorts mineurs lumières dansantes et moquerie cruelle, en plus des sorts de niveau 1 charme-personne, détection de la magie, mot de guérison et vague tonnante.",
+    "class_abilities": {
+      "health": {
+        "health_die": "1d8 par niveau de barde",
+        "lvl1_health": "8 + votre modificateur de Constitution",
+        "health_by_lvl": "1d8 (ou 5) + votre modificateur de Constitution"
+      },
+      "masteries": {
+        "armors": "armures légères",
+        "weapons": "armes courantes, arbalète de poing, épée longue, épée courte, rapière",
+        "tools": "trois instruments de musique de votre choix",
+        "saving_throws": "Dextérité, Charisme",
+        "skills": "choisissez trois compétences de votre choix"
+      },
+      "equipement": {
+        "description": "Vous commencez avec l'équipement suivant, en plus de l'équipement accordé par votre historique :",
+        "choices": {
+          "stuff_1": "(a) une rapière, (b) une épée longue ou (c) n'importe quelle arme courante",
+          "stuff_2": "(a) un sac de diplomate ou (b) un sac d'artiste",
+          "stuff_3": "(a) un luth ou (b) n'importe quel autre instrument de musique",
+          "stuff_4": "une armure de cuir et une dague"
+        }
+      },
+      "leveling_table": "chemin vers l'image ou données en dur ?",
+      "ability_1": {
+        "name": "Incantation",
+        "description": "Vous avez appris à démêler et remodeler le tissu de la réalité en harmonie avec vos souhaits et vos rêves. Vos sorts font partie intégrante de votre vaste répertoire, une magie que vous pouvez accorder à différentes situations."
+      },
+      "ability_2": {
+        "name": "Sorts mineurs",
+        "description": "Vous connaissez deux sorts mineurs de barde de votre choix. Vous apprendrez des sorts mineurs supplémentaires de votre choix aux niveaux supérieurs, comme indiqué dans la colonne Sorts mineurs connus de la table ci-dessus."
+      },
+      "ability_3": {
+        "name": "Emplacements de sorts",
+        "description": "La table du barde montre combien d'emplacements de sorts vous avez pour lancer vos sorts de barde de niveau 1 et supérieur. Pour lancer un de ces sorts, vous devez dépenser un emplacement du niveau du sort ou supérieur. Vous regagnez tous les emplacements de sorts dépensés lorsque vous terminez un repos long. Par exemple, si vous connaissez le sort de niveau 1 soins et qu'il vous reste un emplacement de niveau 1 et un emplacement de niveau 2, vous pouvez lancer deux fois ce sort."
+      },
+      "ability_4": {
+        "name": "Sorts connus de niveau 1 et supérieur",
+        "description": "Vous connaissez quatre sorts de niveau 1, à choisir dans la liste des sorts de barde. La colonne Sorts connus de la table ci-dessus indique les niveaux auxquels vous apprenez de nouveaux sorts de barde de votre choix. Chacun de ces sorts doit être d'un niveau pour lequel vous possédez un emplacement de sort, comme indiqué dans la table. Par exemple, lorsque vous atteignez le niveau 3 de cette classe, vous pouvez apprendre un nouveau sort de niveau 1 ou 2. En outre, lorsque vous gagnez un niveau dans cette classe, vous pouvez choisir un sort de barde que vous connaissez et le remplacer par un autre sort choisi dans la liste de sorts de barde, celui-ci devant également être d'un niveau pour lequel vous possédez un emplacement de sort."
+      },
+      "ability_5": {
+        "name": "Caractéristique d'incantation",
+        "description": "Le Charisme est votre caractéristique d'incantation pour vos sorts de barde, car le pouvoir de votre magie vient du cœur et de l'âme que vous mettez lorsque jouez d'un instrument ou lors de vos oraisons. Vous utilisez votre Charisme chaque fois qu'un sort se réfère à votre capacité de lancer des sorts. En outre, vous utilisez votre modificateur de Charisme pour définir le DD du jet de sauvegarde d'un sort de barde que vous lancez, ainsi que pour le jet d'attaque de celui-ci. *) DD de sauvegarde des sorts = 8 + votre bonus de maîtrise + votre modificateur de Charisme. *) Modificateur aux attaques avec un sort = votre bonus de maîtrise + votre modificateur de Charisme"
+      },
+      "ability_6": {
+        "name": "Rituel",
+        "description": "Vous pouvez lancer n'importe quel sort de barde que vous connaissez comme un rituel si celui-ci possède l'étiquette rituel."
+      },
+      "ability_7": {
+        "name": "Focaliseur d'incantation",
+        "description": "Vous pouvez utiliser un instrument de musique comme focaliseur d'incantation pour vos sorts de barde."
+      },
+      "ability_8": {
+        "name": "Inspiration bardique",
+        "description": "Vous pouvez inspirer les autres en maniant les mots ou la musique. Pour ce faire, utilisez une action bonus à votre tour pour choisir une créature autre que vous-même dans un rayon de 18 mètres autour de vous et qui peut vous entendre. Cette créature gagne un dé d'Inspiration bardique (d6). Une fois dans les 10 minutes suivantes, la créature peut lancer le dé et ajouter le nombre obtenu à un jet de caractéristique, d'attaque ou de sauvegarde qu'elle vient de faire. La créature peut attendre de voir le résultat de jet de caractéristique, d'attaque ou de sauvegarde avant de décider d'appliquer le dé d'Inspiration bardique, mais elle doit se décider avant que le MD ne dise si le jet est un succès ou un échec. Une fois le dé d'Inspiration bardique lancé, il est consommé. Une créature ne peut avoir qu'un seul dé d'Inspiration bardique à la fois. Vous pouvez utiliser cette capacité un nombre de fois égal à votre modificateur de Charisme (minimum 1). Vous regagnez vos dés d'Inspiration bardique après avoir terminé un repos long. Votre dé d'Inspiration bardique change lorsque vous atteignez certains niveaux dans cette classe. Le dé passe à un d8 au niveau 5, un d10 au niveau 10, et un d12 au niveau 15."
+      },
+      "ability_9": {
+        "name": "Touche-à-tout",
+        "description": "À partir du niveau 2, vous pouvez ajouter la moitié de votre bonus de maîtrise (arrondi au chiffre inférieur) à tout jet de caractéristique qui n'applique pas déjà votre bonus de maîtrise."
+      },
+      "ability_10": {
+        "name": "Chant reposant",
+        "description": "À partir du niveau 2, vous pouvez utiliser de la musique ou une oraison apaisante lors d'un repos court pour aider à revitaliser vos alliés blessés. Si vous ou toutes créatures amies qui peuvent entendre votre représentation récupérez des points de vie à la fin du repos court en dépensant un ou plusieurs dés de vie, chacune de ces créatures récupère 1d6 points de vie supplémentaires. Les points de vie supplémentaires augmentent lorsque vous atteignez certains niveaux dans cette classe : 1d8 au niveau 9, 1d10 au niveau 13 et 1d12 au niveau 17."
+      },
+      "ability_11": {
+        "name": "Collège bardique",
+        "description": "Au niveau 3, vous plongez dans les techniques avancées d'un collège bardique de votre choix : le collège du savoir ou le collège de la vaillance, qui sont tous deux détaillés à la fin de la description de la classe. Votre choix vous accorde des capacités au niveau 3, puis aux niveaux 6 et 14."
+      },
+      "ability_12": {
+        "name": "Expertise",
+        "description": "Au niveau 3, choisissez deux compétences que vous maîtrisez. Votre bonus de maîtrise est doublé pour tout jet de caractéristique que vous faites et qui implique une de ces deux compétences. Au niveau 10, vous pouvez choisir deux autres compétences maîtrisées et obtenir le même avantage."
+      },
+      "ability_13": {
+        "name": "Amélioration de caractéristiques",
+        "description": "Au niveau 4, puis par la suite aux niveaux 8, 12, 16 et 19, vous pouvez augmenter une valeur de caractéristique de votre choix de +2, ou bien augmenter deux valeurs de caractéristique de votre choix de +1. Vous ne pouvez cependant pas augmenter une caractéristique au-delà de 20 par ce biais."
+      },
+      "ability_14": {
+        "name": "Source d'inspiration",
+        "description": "À partir du niveau 5, vous regagnez vos Inspirations bardiques utilisées lorsque vous terminez un repos court ou long."
+      },
+      "ability_15": {
+        "name": "Contre-charme",
+        "description": "Au niveau 6, vous gagnez la possibilité d'utiliser des notes de musique ou des mots de pouvoir pour perturber les effets qui affectent la pensée. Par une action, vous pouvez commencer une représentation qui durera jusqu'à la fin de votre prochain tour. Pendant ce temps, vous et toute créature amie dans un rayon de 9 mètres autour de vous avez un avantage aux jets de sauvegarde pour ne pas être effrayé ou charmé. Une créature doit être en mesure de vous entendre pour obtenir cet avantage. La représentation se termine plus tôt si vous êtes incapable d'agir ou réduit au silence, ou si vous y mettez volontairement un terme (aucune action n'est requise pour cela)."
+      },
+      "ability_16": {
+        "name": "Secrets magiques",
+        "description": "Au niveau 10, vous avez récupéré des connaissances magiques à partir d'un large éventail de disciplines. Choisissez deux sorts de n'importe quelles classes, y compris de barde. Les sorts choisis doivent être d'un niveau que vous pouvez lancer, comme le montre la table du barde, ou être des sorts mineurs. Les sorts choisis comptent comme des sorts de barde pour vous, et comptent dans la colonne des Sorts connus de la table du barde. Vous apprenez deux sorts supplémentaires de n'importe quelles classes au niveau 14 puis à nouveau au niveau 18."
+      },
+      "ability_17": {
+        "name": "Inspiration supérieure",
+        "description": "Au niveau 20, lorsque vous lancez l'initiative et n'avez plus d'Inspiration bardique, vous regagnez une utilisation."
+      },
+      "specialization": {
+        "name": "Collèges bardiques",
+        "description": "La voie de barde est intrinsèquement grégaire [qui pousse à former des groupes et à avoir les mêmes comportements]. Les bardes se cherchent les uns les autres pour échanger chansons et histoires, se vanter de leurs réalisations et partager leurs connaissances. Ils forment des associations libres qu'ils appellent des collèges, afin de faciliter leurs rencontres et préserver leurs traditions particulières.",
+        "choice_1": {
+          "name": "Collège du savoir",
+          "description": "Les bardes du collège du savoir savent quelque chose sur tout, collectant des morceaux de connaissances à partir de sources aussi diverses que d'anciens livres ou des contes de paysans. Qu'ils chantent des ballades populaires dans les tavernes ou qu'ils composent dans les cours royales, ces bardes utilisent leurs dons pour tenir le public en haleine. Lorsque les applaudissements s'apaisent, les membres du public pourraient se questionner sur la véracité de ce qu'ils tenaient pour vrai, de leur foi pour la religion du temple local jusqu'à leur fidélité au roi. La loyauté de ces bardes réside dans la poursuite de la beauté et de la vérité, et non pas dans la fidélité à un monarque ou aux principes d'une divinité. Un noble qui conserve un tel barde comme héraut ou conseiller sait que le barde préférera être honnête que politicien. Les membres du collège se réunissent dans des bibliothèques et parfois dans de vrais collèges, avec des salles de classe et des dortoirs, afin de partager leur savoir avec les autres. Ils se rencontrent également lors de festivals ou d'affaires d'état, où ils peuvent mettre à jour des corruptions, démêler des mensonges ou bien encore se moquer de certaines figures de l'autorité.",
+          "abilities": {
+            "ability_1": {
+              "name": "Maîtrises supplémentaires",
+              "description": "Lorsque vous rejoignez le collège du savoir au niveau 3, vous gagnez la maîtrise de trois compétences de votre choix."
+            },
+            "ability_2": {
+              "name": "Mots cinglants",
+              "description": "Également au niveau 3, vous apprenez à utiliser votre esprit pour détourner l'attention ou semer la confusion, ainsi qu'à saper la confiance et la compétence des autres. Quand une créature que vous pouvez voir dans un rayon de 18 mètres autour de vous fait un jet d'attaque, de caractéristique ou de dégâts, vous pouvez utiliser votre réaction pour dépenser une utilisation d'Inspiration bardique et soustraire votre jet du résultat de la cible. Vous pouvez choisir d'utiliser cette capacité après que la créature ait fait son jet, mais vous devez le faire avant que le MD ne dise si son jet est un succès ou un échec, ou avant que la créature inflige ses dégâts. La créature est immunisée si elle ne peut pas vous entendre ou si les charmes ne l'affectent pas."
+            },
+            "ability_3": {
+              "name": "Secrets magiques supplémentaires",
+              "description": "Au niveau 6, vous apprenez deux sorts de votre choix de n'importe quelle classe. Les sorts choisis doivent être d'un niveau que vous pouvez lancer, comme le montre la table du barde, ou être des sorts mineurs. Les sorts choisis comptent comme des sorts de barde pour vous, mais ne comptent pas pour le nombre de sorts de barde connus."
+            },
+            "ability_4": {
+              "name": "Compétence hors-pair",
+              "description": "À partir du niveau 14, quand vous faites un jet de caractéristique, vous pouvez utiliser une Inspiration bardique. Lancez le dé d'Inspiration bardique et ajoutez le résultat à votre jet de caractéristique. Vous pouvez choisir de le faire après avoir fait votre jet de votre caractéristique, mais vous devez le faire avant que le MD ne vous indique si vous réussissez ou échouez."
+            }
+          }
+        },
+        "choice_2": {
+          "name": "Collège de la vaillance",
+          "description": "Les bardes du collège de la vaillance sont d'hardis poètes dont les contes perpétuent la mémoire des grands héros du passé et inspirent la nouvelle génération. Ces bardes se réunissent dans des prés ou autour de grands feux de joie pour chanter les actes des puissants, passés et présents. Ils parcourent le monde pour être témoin de grands événements et s'assurer que la mémoire de ces événements ne s’efface pas de ce monde. Avec leurs chansons, ils inspirent les autres pour qu'ils atteignent les mêmes sommets que les héros d’autres fois.",
+          "abilities": {
+            "ability_1": {
+              "name": "Maîtrises supplémentaires",
+              "description": "Lorsque vous rejoignez le collège de la vaillance au niveau 3, vous gagnez la maîtrise des armures intermédiaires, des boucliers et des armes de guerre."
+            },
+            "ability_2": {
+              "name": "Inspiration martiale",
+              "description": "Également au niveau 3, vous apprenez à inspirer les autres dans la bataille. Une créature qui a un dé d'Inspiration bardique de votre part peut jeter ce dé et ajouter le résultat au jet de dégâts d'une arme qu'elle vient de faire. Ou bien, quand un jet d'attaque est fait contre cette créature, elle peut utiliser sa réaction pour jeter le dé d'Inspiration bardique et ajouter le résultat à sa CA contre cette attaque, après avoir vu le jet mais avant de savoir si elle touche ou non."
+            },
+            "ability_3": {
+              "name": "Attaque supplémentaire",
+              "description": "À partir de niveau 6, vous pouvez attaquer deux fois, au lieu d'une seule, chaque fois que vous réalisez l’action Attaquer durant votre tour."
+            },
+            "ability_4": {
+              "name": "Magie de combat,",
+              "description": "Au niveau 14, vous maîtrisez l'art de tisser les sorts et d'utiliser une arme en un seul acte harmonieux. Lorsque vous utilisez votre action pour lancer un sort de barde, vous pouvez faire une attaque avec une arme en tant qu'action bonus."
+            }
+          }
+        }
+      }
+    },
+    "tables": {
+    }
+  },
+  {
+    "index": "cleric",
+    "name": "Clerc",
+    "description": "Les bras et les yeux levés en direction du soleil, une prière sur les lèvres, un elfe commence à briller d'une lumière intérieure qui s'en va guérir ses compagnons usés par le combat. Chantant une chanson de gloire, un nain fait osciller sa hache en de larges mouvements circulaires afin de couper les rangs orcs face à lui, criant des louanges aux dieux à chaque ennemi qui tombe. Jetant une malédiction sur les morts-vivants qui s'avancent, un humain brandit son symbole sacré alors qu'une lumière se libère de celui-ci pour repousser les zombis qui se pressaient sur ses compagnons. Les clercs sont des intermédiaires entre le monde des mortels et les plans éloignés des dieux. Aussi variés que les dieux qu'ils servent, les clercs s'efforcent d'incarner l'œuvre de leurs divinités. Un clerc est imprégné de magie divine, ce n'est pas un religieux ordinaire.",
+    "trait": "Guérisseurs et combattants",
+    "trait_description": "La magie divine, comme son nom le suggère, est le pouvoir des dieux, coulant d'eux dans le monde. Les clercs sont des conduits pour ce pouvoir qui se manifeste tels des effets miraculeux. Les dieux n'accordent pas ce pouvoir à tous ceux qui le cherchent, mais seulement à ceux choisis pour accomplir cette haute mission. L'utilisation de la magie divine ne repose pas sur l'étude ou la formation. Un clerc pourrait apprendre des prières conventionnelles et des rites antiques, mais la capacité de lancer des sorts des clercs repose sur la dévotion et un sens intuitif de la volonté divine. Les clercs combinent la magie utile de guérison et d'inspiration de leurs alliés avec des sorts néfastes ou gênants pour les adversaires. Ils peuvent provoquer la crainte et l'effroi, invoquer les malédictions de peste ou de poison et même faire s'abattre des flammes célestes pour consumer leurs ennemis. Pour les scélérats qui seront plus sensibles à un coup de masse en pleine tête, les clercs utiliseront leur entrainement au combat pour avancer dans la mêlée avec le pouvoir des dieux à leurs côtés.",
+    "class_principles": "Agents divins",
+    "class_principles_description": "Tous les acolytes ou officiants des temples ou des lieux saints ne sont pas clercs. Quelques-uns sont appelés à une vie simple au service de leur temple, suivant la volonté de leurs dieux par la prière et le sacrifice, et non par la magie et la force des armes. Dans quelques villes, le sacerdoce conduit aux fonctions politiques, comme un tremplin pour atteindre les plus hautes fonctions d'autorité et n'impliquent aucune communion avec aucun dieu. Les vrais clercs sont rares dans la plupart des hiérarchies. Quand un clerc choisit une vie d'aventurier, c'est habituellement parce que son dieu l'exige. La poursuite des buts des dieux implique souvent de braver des dangers au-delà des limites de la civilisation, de frapper le mal ou de rechercher des reliques saintes dans des tombeaux antiques. On attend aussi de beaucoup de clercs qu'ils protègent les adorateurs de leurs dieux, ce qui peut impliquer de combattre des orcs déchaînés, négocier la paix entre des nations en guerre, ou sceller un portail qui permettrait à un prince démon d'entrer dans le monde. La plupart des clercs aventuriers maintiennent quelques rapports avec les temples établis et les ordres de leurs fois. Un temple pourrait demander l'aide d'un clerc, ou un grand prêtre pourrait être en position de l'exiger.",
+    "create": "Créer un clerc",
+    "create_description": "Lorsque vous créez un clerc, la question la plus importante à considérer est quelle divinité servir et quels sont les principes que vous voulez que votre personnage incarne. Vérifiez auprès de votre MD quels sont les dieux permis dans votre campagne. Une fois que vous avez choisi une divinité, pensez à la relation entre votre clerc et ce dieu. Êtes-vous entré à son service volontairement ? Ou bien est-ce le dieu qui vous a choisi, vous poussant à son service sans prendre en compte vos souhaits ? Comment les prêtres du temple de votre foi vous considèrent-ils : comme un champion ou comme un fauteur de troubles ? Quels sont vos objectifs ? Est-ce que votre divinité a en tête une tâche spéciale pour vous ? Ou vous efforcez-vous de prouver que vous êtes digne d'une grande quête ?",
+    "create_fast": "Vous pouvez concevoir rapidement un clerc en suivant ces quelques suggestions. En premier lieu, la Sagesse devrait être votre plus haute valeur de caractéristique, suivie par la Force ou la Constitution. Ensuite, choisissez l'historique acolyte.",
+    "class_abilities": {
+      "health": {
+        "health_die": "1d8 par niveau de clerc",
+        "lvl1_health": "8 + votre modificateur de Constitution",
+        "health_by_lvl": "1d8 (ou 5) + votre modificateur de Constitution"
+      },
+      "masteries": {
+        "armors": "armures légères et intermédiaires, boucliers",
+        "weapons": "armes courantes",
+        "tools": "aucun",
+        "saving_throws": "Sagesse, Charisme",
+        "skills": "choisissez deux compétences parmi Histoire, Intuition, Médecine, Persuasion et Religion"
+      },
+      "equipement": {
+        "description": "Vous commencez avec l'équipement suivant, en plus de l'équipement accordé par votre historique :",
+        "choices": {
+          "stuff_1": "(a) une masse d'armes ou (b) un marteau de guerre (si vous le maîtrisez)",
+          "stuff_2": "(a) une armure d'écailles ou (b) une armure de cuir ou (c) une cotte de mailles (si vous la maîtrisez)",
+          "stuff_3": "(a) une arbalète légère et 20 carreaux ou (b) une arme courante",
+          "stuff_4": "(a) un sac d'ecclésiastique ou (b) un sac d'explorateur",
+          "stuff_5": "un bouclier et un symbole sacré"
+        }
+      },
+      "leveling_table": "chemin vers l'image ou données en dur ?",
+      "ability_1": {
+        "name": "Sorts mineurs",
+        "description": "Au niveau 1, vous connaissez trois sorts mineurs de clerc de votre choix. Vous apprendrez des sorts mineurs supplémentaires de votre choix aux niveaux supérieurs, comme indiqué dans la colonne Sorts mineurs connus de la table ci-dessus."
+      },
+      "ability_2": {
+        "name": "Préparer et lancer des sorts",
+        "description": "La table du clerc montre combien d'emplacements de sorts vous avez pour lancer vos sorts de clerc de niveau 1 et supérieur. Pour lancer un de ces sorts, vous devez dépenser un emplacement du niveau du sort ou supérieur. Vous regagnez tous les emplacements de sorts dépensés lorsque vous terminez un repos long. Vous devez préparer la liste des sorts de clerc qui vous sont disponibles pour les lancer. Pour ce faire, choisissez un nombre de sorts de clerc égal à votre modificateur de Sagesse + votre niveau de clerc (minimum un sort). Les sorts doivent être d'un niveau pour lequel vous avez des emplacements de sorts. Par exemple, si vous êtes un clerc de niveau 3, vous avez suivant la table quatre emplacements de sorts de niveaux 1 et deux emplacements de sorts de niveau 2. Avec une Sagesse de 16, votre liste de sorts préparés peut inclure six sorts de niveau 1 et 2, selon n'importe quelle combinaison. Si vous préparez le sort de niveau 1 soins, vous pouvez le lancer en utilisant un emplacement de niveau 1 ou de niveau 2. Lancer le sort ne le supprime pas de votre liste de sorts préparés. Vous pouvez modifier votre liste de sorts préparés lorsque vous terminez un repos long. Préparer une nouvelle liste de sorts de clerc nécessite du temps pour prier et méditer : au moins 1 minute par niveau de sort pour chaque sort sur votre liste."
+      },
+      "ability_3": {
+        "name": "Caractéristique d'incantation",
+        "description": "La Sagesse est votre caractéristique d'incantation pour vos sorts de clerc. La puissance de vos sorts vient de votre dévotion à votre dieu. Vous utilisez votre Sagesse chaque fois qu'un sort se réfère à votre capacité de lancer des sorts. En outre, vous utilisez votre modificateur de Sagesse pour définir le DD du jet de sauvegarde d'un sort de clerc que vous lancez ainsi que pour le jet d'attaque de celui-ci. *) DD de sauvegarde des sorts = 8 + votre bonus de maîtrise + votre modificateur de Sagesse. *) Modificateur aux attaques avec un sort = votre bonus de maîtrise + votre modificateur de Sagesse."
+      },
+      "ability_4": {
+        "name": "Rituel",
+        "description": "Vous pouvez lancer un sort de clerc en tant que rituel si ce sort possède l'étiquette rituel et si vous avez préparé le sort."
+      },
+      "ability_5": {
+        "name": "Focaliseur d'incantation",
+        "description": "Vous pouvez utiliser un symbole sacré comme focaliseur d'incantation pour vos sorts de clerc."
+      },
+      "ability_6": {
+        "name": "Domaine divin",
+        "description": "Choisissez un domaine lié à votre divinité : duperie, guerre, lumière, nature, savoir, tempête ou vie. Votre choix vous accorde des sorts de domaine et des capacités spéciales dès le niveau 1, puis de nouvelles aux niveaux 6, 8 et 17. Il vous octroie également des manières supplémentaires pour utiliser le Conduit divin du niveau 2."
+      },
+      "ability_7": {
+        "name": "Sorts de domaine",
+        "description": "Chaque domaine possède une liste de sorts, les sorts de domaine, que vous gagnez au niveau de clerc indiqué dans la description du domaine. Une fois que vous gagnez un sort de domaine, il est toujours préparé, et ne compte pas dans le nombre de sorts que vous pouvez préparer chaque jour. Si vous gagnez un sort de domaine qui ne figure pas sur la liste de sorts de clerc, le sort est néanmoins un sort de clerc pour vous."
+      },
+      "ability_8": {
+        "name": "Conduit divin",
+        "description": "Au niveau 2, vous gagnez la possibilité de canaliser l'énergie divine directement depuis votre divinité et d'utiliser cette énergie pour alimenter des effets magiques. Vous commencez avec deux effets : Renvoi des morts-vivants et un effet déterminé par votre domaine. Certains domaines vous accordent des effets supplémentaires lorsque vous montez de niveau, comme indiqué dans la description du domaine. Lorsque vous utilisez votre Conduit divin, vous choisissez quel effet créer. Vous devez ensuite terminer un repos court ou long pour pouvoir utiliser votre Conduit divin de nouveau. Certains effets du Conduit divin demandent un jet de sauvegarde. Lorsque vous utilisez un tel effet de cette classe, le DD est égal au DD de vos sorts de clerc. À partir du niveau 6, vous pouvez utiliser votre Conduit divin deux fois entre deux repos, et à partir du niveau 18, vous pouvez l'utiliser trois fois entre deux repos. Lorsque vous terminez un repos court ou long, vous regagnez vos utilisations dépensées."
+      },
+      "ability_9": {
+        "name": "Conduit divin : renvoi des morts-vivants",
+        "description": "Au prix d'une action, vous présentez votre symbole sacré en psalmodiant une prière contre les morts-vivants. Chaque mort-vivant qui peut vous voir ou vous entendre et qui se trouve à 9 mètres ou moins de vous doit effectuer un jet de sauvegarde de Sagesse. Si la créature rate son jet de sauvegarde, elle est renvoyée pendant 1 minute ou jusqu'à ce qu'elle prenne des dégâts. Une créature renvoyée doit passer ses actions à essayer de s'éloigner le plus loin possible de vous et ne peut volontairement se rapprocher à 9 mètres ou moins de vous. Elle ne peut pas utiliser de réactions et peut utiliser ses actions seulement pour Foncer ou essayer de s'échapper d'un effet immobilisant. S'il n'y a nulle part où aller, la créature peut utiliser l'action Esquiver."
+      },
+      "ability_10": {
+        "name": "Amélioration de caractéristiques",
+        "description": "Au niveau 4, puis par la suite aux niveaux 8, 12, 16 et 19, vous pouvez augmenter une valeur de caractéristique de votre choix de +2, ou bien augmenter deux valeurs de caractéristique de votre choix de +1. Vous ne pouvez cependant pas augmenter une caractéristique au-delà de 20 par ce biais."
+      },
+      "ability_11": {
+        "name": "Destruction des morts-vivants",
+        "description": "À partir du niveau 5, quand un mort-vivant rate son jet de sauvegarde contre votre capacité de Renvoi des morts-vivants, la créature est immédiatement détruite si son FP est égal ou inférieur à un certain seuil, comme indiqué dans le tableau ci-dessous."
+      },
+      "ability_12": {
+        "name": "Intervention divine",
+        "description": "À partir du niveau 10, vous pouvez faire appel à votre divinité pour qu'elle intervienne en cas de besoin réel. Implorer l'aide de votre divinité vous oblige à utiliser votre action. Décrivez l'aide que vous recherchez, et lancez 1d100. Si vous obtenez un nombre égal ou inférieur à votre niveau de clerc, votre divinité intervient. Le MD choisit la nature de l'intervention ; l'effet d'un sort de clerc ou d'un sort de domaine est approprié. Si votre divinité intervient, vous ne pouvez plus utiliser cette capacité durant les 7 prochains jours. Dans le cas contraire, vous pouvez l'utiliser à nouveau après avoir terminé un repos long. Au niveau 20, l'appel à votre divinité réussit automatiquement ; aucun jet n'est nécessaire."
+      },
+      "specialization": {
+        "name": "Domaines divins",
+        "description": "Dans un panthéon, chaque divinité exerce une influence sur différents aspects de la vie et la civilisation des mortels ; c'est le domaine d'une divinité. Tous les domaines sur lesquels une divinité exerce une influence sont appelés le portefeuille de la divinité. Par exemple, le portefeuille du dieu grec Apollon comprend les domaines du Savoir, de la Vie et de la Lumière. En tant que clerc, vous choisissez un aspect du portefeuille de votre divinité à représenter, et vous êtes doté de pouvoirs liés à ce domaine. Votre choix peut correspondre à une secte particulière dédiée à votre divinité, ou tout simplement répondre à une question de préférence personnelle, l'aspect de la divinité qui vous plaît le plus.",
+        "choice_1": {
+          "name": "Domaine de la duperie",
+          "description": "Les dieux de la duperie (comme Tymora, Beshaba, Olidammara, le Voyageur, Garl Brilledor et Loki) sont des fauteurs de troubles et des instigateurs qui représentent un défi constant à l'ordre accepté parmi les dieux et les mortels. Ils sont les patrons des voleurs, des canailles, des joueurs, des rebelles et des libérateurs. Leurs clercs sont une force perturbatrice, se moquant de tyrans, volant les riches, libérant les captifs, et bafouant les traditions. Ils préfèrent le subterfuge, les farces, la tromperie et le vol plutôt qu'une confrontation directe.",
+          "abilities": {
+            "ability_1": {
+              "name": "Sorts de domaine",
+              "description": "(lvl 1) charme-personne, déguisement / (lvl 3) image miroir, passage sans trace / (lvl 5) clignotement, dissipation de la magie / (lvl 7) métamorphose, porte dimensionnelle / (lvl 9) domination de personne, modification de mémoire"
+            },
+            "ability_2": {
+              "name": "Conduit divin : invocation de réplique",
+              "description": "À partir du niveau 2, vous pouvez utiliser votre Conduit divin pour créer une copie illusoire de vous-même. Par une action, vous créez une illusion parfaite de vous-même qui dure pendant 1 minute, ou jusqu'à ce que vous perdiez votre concentration (comme si vous étiez concentré sur un sort). L'illusion apparaît dans un espace inoccupé que vous pouvez voir dans un rayon de 9 mètres autour de vous. Par une action bonus à votre tour, vous pouvez déplacer l'illusion jusqu'à 9 mètres, dans un espace que vous pouvez voir, et sans l'éloigner de plus de 36 mètres de vous. Durant ce temps, vous pouvez lancer des sorts comme si vous étiez dans l'espace de l'illusion, mais vous devez utiliser vos propres sens. En outre, lorsque vous et votre illusion êtes à 1,50 mètre ou moins d'une créature qui peut voir l'illusion, vous avez un avantage aux jets d'attaque contre cette créature, l'illusion distrayant la cible."
+            },
+            "ability_3": {
+              "name": "Conduit divin : linceul d'ombre",
+              "description": "À partir du niveau 6, vous pouvez utiliser votre Conduit divin pour disparaître. Par une action, vous devenez invisible jusqu'à la fin de votre prochain tour. Vous redevenez visible si vous attaquez ou lancez un sort."
+            },
+            "ability_4": {
+              "name": "Frappe divine",
+              "description": "Au niveau 8, vous gagnez la possibilité d’imprégner votre arme de poison, un cadeau de votre divinité. Une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque d'arme, vous pouvez infliger 1d8 dégâts de poison supplémentaires. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+            },
+            "ability_5": {
+              "name": "Réplique améliorée",
+              "description": "Au niveau 17, vous pouvez créer jusqu'à quatre doublons de vous-même, au lieu d'un, lorsque vous utilisez Invocation de duplicata. Par une action bonus à votre tour, vous pouvez déplacer un certain nombre d'entre eux jusqu'à 9 mètres, et sans les éloigner de plus de 36 mètres de vous."
+            }
+          }
+        },
+        "choice_2": {
+          "name": "Domaine de la guerre",
+          "description": "La guerre se manifeste de plusieurs façons. Elle peut transformer des personnes ordinaires en héros. Elle peut être horrible et désespérée, avec des actes de cruautés et de couardises éclipsant les instants d’excellence et de courage. Dans tous les cas, les dieux de la guerre observent les guerriers et les récompensent pour leurs actes glorieux. Les clercs de ces dieux excellent au combat et sont source d’inspiration pour participer à de bons combats ou pour offrir des actes de violence en tant que prières. Les dieux de la guerre sont des champions de l’honneur et de la chevalerie (comme par exemple Torm, Heironeous et Kiri-Jolith), les dieux de la destruction ou du pillage (comme Erythnul, la Furie, Gruumsh et Ares) et les dieux de la conquête ou de la domination (comme Baine, Hector et Maglubiyet). D’autres dieux de la guerre (comme Tempus, Nike et Nuada) observent une plus grande neutralité, promouvant la guerre dans toutes ces manifestations et supportant les guerriers dans toutes les circonstances.",
+          "abilities": {
+            "ability_1": {
+              "name": "Sorts de domaine",
+              "description": "(lvl 1) bouclier de la foi, faveur divine / (lvl 3) arme magique, arme spirituelle / (lvl 5) aura du croisé, esprits gardiens / (lvl 7) liberté de mouvement, peau de pierre / (lvl 9) colonne de flamme, immobilisation de monstre"
+            },
+            "ability_2": {
+              "name": "Maîtrises supplémentaires",
+              "description": "Au niveau 1, vous gagnez la maîtrise des armes de guerres et des armures lourdes."
+            },
+            "ability_3": {
+              "name": "Prêtre de guerre",
+              "description": "À partir du niveau 1, votre dieu vous inspire lors des combats. Lorsque vous utilisez l’action Attaquer, vous pouvez faire une attaque avec une arme en tant qu’action bonus. Vous pouvez utiliser cette capacité un nombre de fois égal à votre modificateur de Sagesse (minimum 1). Vous regagnez les attaques utilisées à la fin d’un repos long."
+            },
+            "ability_4": {
+              "name": "Conduit divin : frappe guidée",
+              "description": "À partir du niveau 2, vous pouvez utiliser votre Conduit divin pour frapper avec une grande précision. Lorsque vous faites un jet d’attaque, vous pouvez utilisez votre Conduit divin pour gagner un bonus de +10 au jet. Vous pouvez décider d’utiliser cette capacité après avoir vu le résultat du jet, mais avant que le MD ne vous en donne le résultat."
+            },
+            "ability_5": {
+              "name": "Conduit divin : bénédiction du dieu de la guerre",
+              "description": "Au niveau 6, lorsqu'une créature dans un rayon de 9 mètres autour de vous fait un jet d’attaque, vous pouvez utiliser votre réaction pour faire bénéficier cette créature d’un bonus de +10 à son jet, en utilisant votre Conduit divin. Vous pouvez choisir d’utiliser cette compétence après avoir vu le résultat du jet, mais vous devez le faire avant que le MD ne dise si l’attaque a réussi ou échoué."
+            },
+            "ability_6": {
+              "name": "Frappe divine",
+              "description": "Au niveau 8, vous gagnez la possibilité d’imprégner votre arme d’énergie divine. Une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque d'arme, vous pouvez infliger 1d8 dégâts supplémentaires du même type que celui de votre arme. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+            },
+            "ability_7": {
+              "name": "Avatar de bataille",
+              "description": "Au niveau 17, vous obtenez la résistance aux dégâts contondants, perforants et tranchants d'attaques non magiques."
+            }
+          }
+        },
+        "choice_3": {
+          "name": "Domaine de la lumière",
+          "description": "Les dieux de la lumière (y compris Helm, Lathandre, Pholtus, Branchala, la Flamme d'argent, Bélénus, Apollo et Ré-Horakhty) promeuvent les idéaux de renaissance et de renouveau, de vérité, de vigilance et de beauté, souvent en utilisant le symbole du soleil. Certains de ces dieux sont dépeints comme le soleil lui-même ou comme le conducteur du char qui guide le soleil à travers le ciel. D'autres sont d'inlassables sentinelles dont les yeux percent chaque ombre et voient à travers toutes les tromperies. Certains sont des divinités de la beauté et des artistes, qui enseignent que l'art est un véhicule ou l'amélioration de l'âme. Les clercs d'un dieu de la lumière sont des âmes éclairées infusés par l'éclat et la puissance de la vision perspicace de leurs dieux, et chargés de chasser les mensonges et de brûler les ténèbres.",
+          "abilities": {
+            "ability_1": {
+              "name": "Sorts de domaine",
+              "description": "(lvl 1) lueurs féeriques, mains brûlantes / (lvl 3) rayon ardent, sphère de feu / (lvl 5) boule de feu, lumière du jour / (lvl 7) gardien de la foi, mur de feu / (lvl 9) colonne de flamme, scrutation"
+            },
+            "ability_2": {
+              "name": "Sort mineur supplémentaire",
+              "description": "Lorsque vous choisissez ce domaine au niveau 1, vous gagnez le sort mineur lumière si vous ne le connaissez pas déjà. Ce sort mineur ne compte pas dans le nombre de sorts mineurs de clerc que vous connaissez."
+            },
+            "ability_3": {
+              "name": "Illumination protectrice",
+              "description": "Au niveau 1, vous pouvez interposer une lumière divine entre vous et un ennemi qui attaque. Lorsque vous êtes attaqué par une créature située à 9 mètres ou moins de vous et que vous pouvez voir, vous pouvez utiliser votre réaction pour imposer un désavantage à son jet d'attaque, en faisant éclater une lumière avant qu'il touche ou rate. Un attaquant qui ne peut pas être aveuglé est immunisé face à cette capacité. Vous pouvez utiliser cette capacité un nombre de fois égal à votre modificateur de Sagesse (minimum une fois). Vous en retrouver toutes les utilisations dépensées lorsque vous terminez un repos long."
+            },
+            "ability_4": {
+              "name": "Conduit divin : radiance de l'aube",
+              "description": "À partir du niveau 2, vous pouvez utiliser votre Conduit divin pour exploiter la lumière du soleil, bannissant les ténèbres et infligeant des dégâts radiants à vos ennemis. Par une action, vous présentez votre symbole sacré et toutes les ténèbres magiques dans un rayon de 9 mètres autour de vous sont dissipées. En outre, chaque créature hostile dans un rayon de 9 mètres autour de vous doit réaliser un jet de sauvegarde de Constitution. Une créature prend 2d10 + votre niveau de clerc dégâts radiants en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Une créature qui dispose d'une couverture totale vis à vis de vous n'est pas affectée."
+            },
+            "ability_5": {
+              "name": "Illumination améliorée",
+              "description": "À partir du niveau 6, vous pouvez également utiliser votre capacité de Illumination protectrice quand une créature que vous pouvez voir et située à 9 mètres ou moins de vous attaque une créature autre que vous-même."
+            },
+            "ability_6": {
+              "name": "Incantation puissante",
+              "description": "À partir du niveau 8, vous ajoutez votre modificateur de Sagesse aux dégâts que vous infligez avec n'importe quel sort mineur de clerc."
+            },
+            "ability_7": {
+              "name": "Halo de lumière",
+              "description": "À partir du niveau 6, vous pouvez également utiliser votre capacité de Illumination protectrice quand une créature que vous pouvez voir et située à 9 mètres ou moins de vous attaque une créature autre que vous-même."
+            }  
+      },
+      "tables": {
+        "table_1": {
+          "name": "Table de magie sauvage",
+          "choices": {
+            "choice_1": {
+              "value": 1,
+              "effect": "Toute créature de votre choix que vous pouvez voir à 9 mètres ou moins de vous doit réussir un jet de sauvegarde de Constitution ou subir 1d12 dégâts nécrotiques. Vous gagnez également des points de vie temporaires égaux à 1d12 plus votre niveau de barbare."
+            },
+            "choice_2": {
+              "value": 2,
+              "effect": "Vous vous téléportez dans un espace inoccupé que vous pouvez voir dans un rayon de 9 mètres. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet à chacun de vos tours."
+            },
+            "choice_3": {
+              "value": 3,
+              "effect": "Un esprit intangible, ressemblant à un flumph ou à une pixie (selon votre choix), apparaît à 1,50 m d'une créature de votre choix que vous pouvez voir dans un rayon de 9 mètres autour de vous. À la fin de ce tour, l'esprit explose et toute créature à 1,50 mètre ou moins de lui doit réussir un jet de sauvegarde de Dextérité ou subir 1d6 dégâts de force. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet en invoquant un autre esprit à chacun de vos tours."
+            },
+            "choice_4": {
+              "value": 4,
+              "effect": "Un éclair de lumière jaillit de votre poitrine. Une autre créature de votre choix que vous pouvez voir 9 mètres ou moins de vous doit réussir un jet de sauvegarde de Constitution ou subir 1d6 dégâts radiants et être aveuglée jusqu'au début de votre prochain tour. Jusqu'à la fin de votre rage, vous pouvez, par une action bonus, activer à nouveau cet effet à chacun de vos tours."
+            },
+            "choice_5": {
+              "value": 5,
+              "effect": "Chaque fois qu'une créature vous touche avec un jet d'attaque avant la fin de votre rage, cette créature subit 1d6 dégâts de force, la magie se déchaînant en représailles."
+            },
+            "choice_6": {
+              "value": 6,
+              "effect": "Vous êtes entouré de lumières protectrices multicolores. Vous gagnez un bonus de +1 à la CA, et vos alliés à 3 mètres ou moins de vous gagnent le même bonus."
+            },
+            "choice_7": {
+              "value": 7,
+              "effect": "Des fleurs et des plantes poussent temporairement autour de vous. Jusqu'à ce que votre rage se termine, le sol dans un rayon de 4,50 mètres autour de vous est un terrain difficile pour vos ennemis."
+            },
+            "choice_8": {
+              "value": 8,
+              "effect": "La magie imprègne une arme de votre choix que vous tenez. Jusqu'à ce que votre rage se termine, le type de dégâts de l'arme est de force, et elle acquiert les propriétés légère et lancer, avec une portée nominale de 6 mètres et une longue portée de 18 mètres. Si l'arme quitte votre main, elle réapparaît dans votre main à la fin du tour en cours."
+            }
+          }
+        }
+      }
+        }
+      }
+    }
+  }
+
+]
