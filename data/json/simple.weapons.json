@@ -1,0 +1,170 @@
+[
+  {
+    "index": "quarterstaff",
+    "name": "Bâton",
+    "weapon_range": "Corps-à-corps",
+    "cost": "2 pa",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Contondant"
+    },
+    "weight": 2,
+    "properties": "Polyvalente (1d8)"
+  },
+  {
+    "index": "dagger",
+    "name": "Dague",
+    "weapon_range": "Corps-à-corps",
+    "cost": "2 po",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Perforant"
+    },
+    "weight": 0.5,
+    "properties": "Finesse, légère, lancer (portée 6 m/18 m)"
+  },
+  {
+    "index": "club",
+    "name": "Gourdin",
+    "weapon_range": "Corps-à-corps",
+    "cost": "1 pa",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Contondant"
+    },
+    "weight": 1,
+    "properties": "Légère"
+  },
+  {
+    "index": "handaxe",
+    "name": "Hachette",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Tranchant"
+    },
+    "weight": 1,
+    "properties": "Légère, lancer (portée 6 m/18 m)"
+  },
+  {
+    "index": "javelin",
+    "name": "Javeline",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 pa",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": "Lancer (portée 9 m/36 m)"
+  },
+  {
+    "index": "spear",
+    "name": "Lance",
+    "weapon_range": "Corps-à-corps",
+    "cost": "1 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 1.5,
+    "properties": "Lancer (portée 6 m/18 m), polyvalente (1d8)"
+  },
+  {
+    "index": "light hammer",
+    "name": "Marteau léger",
+    "weapon_range": "Corps-à-corps",
+    "cost": "2 po",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Contondant"
+    },
+    "weight": 1,
+    "properties": "Légère, lancer (portée 6 m/18 m)"
+  },
+  {
+    "index": "mace",
+    "name": "Masse d'armes",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Contondant"
+    },
+    "weight": 2,
+    "properties": ""
+  },
+  {
+    "index": "greatclub",
+    "name": "Massue",
+    "weapon_range": "Corps-à-corps",
+    "cost": "2 pa",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Contondant"
+    },
+    "weight": 5,
+    "properties": "À deux mains"
+  },
+  {
+    "index": "sickle",
+    "name": "Serpe",
+    "weapon_range": "Corps-à-corps",
+    "cost": "1 po",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Tranchant"
+    },
+    "weight": 1,
+    "properties": "Légère"
+  },
+  {
+    "index": "crossbow,light",
+    "name": "Arbalète légère",
+    "weapon_range": "À distance",
+    "cost": "25 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Perforant"
+    },
+    "weight": 2.5,
+    "properties": "Munitions (portée 24 m/96 m), chargement, à deux mains"
+  },
+  {
+    "index": "shortbow",
+    "name": "Arc court",
+    "weapon_range": "À distance",
+    "cost": "25 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": "Munitions (portée 24 m/96 m), à deux mains"
+  },
+  {
+    "index": "dart",
+    "name": "Fléchette",
+    "weapon_range": "À distance",
+    "cost": "5 pc",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Perforant"
+    },
+    "weight": 0.1,
+    "properties": "Finesse, lancer (portée 6 m/18 m)"
+  },
+  {
+    "index": "sling",
+    "name": "Fronde",
+    "weapon_range": "À distance",
+    "cost": "1 pa",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Contondant"
+    },
+    "weight": 0,
+    "properties": "Munitions (portée 9 m/36 m)"
+  }
+]

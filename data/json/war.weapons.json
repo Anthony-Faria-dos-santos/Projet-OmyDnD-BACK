@@ -1,0 +1,290 @@
+[
+  {
+    "index": "scimitar",
+    "name": "Cimeterre",
+    "weapon_range": "Corps-à-corps",
+    "cost": "25 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Tranchant"
+    },
+    "weight": 1.5,
+    "properties": "Finesse, légère"
+  },
+  {
+    "index": "glaive",
+    "name": "Coutille",
+    "weapon_range": "Corps-à-corps",
+    "cost": "20 po",
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": "Tranchant"
+    },
+    "weight": 3,
+    "properties": "Lourde, allonge, à deux mains"
+  },
+  {
+    "index": "glaive",
+    "name": "Coutille",
+    "weapon_range": "Corps-à-corps",
+    "cost": "20 po",
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": "Tranchant"
+    },
+    "weight": 3,
+    "properties": "Lourde, allonge, à deux mains"
+  },
+  {
+    "index": "greatsword",
+    "name": "Épée à deux mains",
+    "weapon_range": "Corps-à-corps",
+    "cost": "50 po",
+    "damage": {
+      "damage_dice": "2d6",
+      "damage_type": "Tranchant"
+    },
+    "weight": 3,
+    "properties": "Lourde, à deux mains"
+  },
+  {
+    "index": "shortsword",
+    "name": "Épée courte",
+    "weapon_range": "Corps-à-corps",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": "Finesse, légère"
+  },
+  {
+    "index": "longsword",
+    "name": "Épée longue",
+    "weapon_range": "Corps-à-corps",
+    "cost": "15 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Tranchant"
+    },
+    "weight": 1.5,
+    "properties": "Polyvalente (1d10)"
+  },
+  {
+    "index": "flail",
+    "name": "Fléau d'armes",
+    "weapon_range": "Corps-à-corps",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Contondant"
+    },
+    "weight": 1,
+    "properties": ""
+  },
+  {
+    "index": "whip",
+    "name": "Fouet",
+    "weapon_range": "Corps-à-corps",
+    "cost": "2 po",
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": "Tranchant"
+    },
+    "weight": 1.5,
+    "properties": "Finesse, allonge"
+  },
+  {
+    "index": "greataxe",
+    "name": "Hache à deux mains",
+    "weapon_range": "Corps-à-corps",
+    "cost": "30 po",
+    "damage": {
+      "damage_dice": "1d12",
+      "damage_type": "Tranchant"
+    },
+    "weight": 3.5,
+    "properties": "Lourde, à deux mains"
+  },
+  {
+    "index": "battleaxe",
+    "name": "Hache d'armes",
+    "weapon_range": "Corps-à-corps",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Tranchant"
+    },
+    "weight": 2,
+    "properties": "Polyvalente (1d10)"
+  },
+  {
+    "index": "halberd",
+    "name": "Hallebarde",
+    "weapon_range": "Corps-à-corps",
+    "cost": "20 po",
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": "Tranchant"
+    },
+    "weight": 3,
+    "properties": "Lourde, allonge, à deux mains"
+  },
+  {
+    "index": "lance",
+    "name": "Lance d'arçon",
+    "weapon_range": "Corps-à-corps",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "1d12",
+      "damage_type": "Perforant"
+    },
+    "weight": 3,
+    "properties": "Allonge, spécial"
+  },
+  {
+    "index": "maul",
+    "name": "Maillet",
+    "weapon_range": "Corps-à-corps",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "2d6",
+      "damage_type": "Contondant"
+    },
+    "weight": 5,
+    "properties": "Lourde, à deux mains"
+  },
+  {
+    "index": "warhammer",
+    "name": "Marteau de guerre",
+    "weapon_range": "Corps-à-corps",
+    "cost": "15 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Contondant"
+    },
+    "weight": 1,
+    "properties": "Polyvalente (1d10)"
+  },
+  {
+    "index": "morningstar",
+    "name": "Morgenstern",
+    "weapon_range": "Corps-à-corps",
+    "cost": "15 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Perforant"
+    },
+    "weight": 2,
+    "properties": ""
+  },
+  {
+    "index": "war pick",
+    "name": "Pic de guerre",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": ""
+  },
+  {
+    "index": "pike",
+    "name": "Pique",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 po",
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": "Perforant"
+    },
+    "weight": 9,
+    "properties": "Lourde, allonge, à deux mains"
+  },
+  {
+    "index": "rapier",
+    "name": "Rapière",
+    "weapon_range": "Corps-à-corps",
+    "cost": "25 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": "Finesse"
+  },
+  {
+    "index": "trident",
+    "name": "Trident",
+    "weapon_range": "Corps-à-corps",
+    "cost": "5 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 2,
+    "properties": "Lancer (portée 6 m/18 m), polyvalente (1d8)"
+  },
+  {
+    "index": "crossbow, hand",
+    "name": "Arbalète de poing",
+    "weapon_range": "À distance",
+    "cost": "75 po",
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": "Perforant"
+    },
+    "weight": 1.5,
+    "properties": "Munitions (portée 9 m/36 m), légère, chargement"
+  },
+  {
+    "index": "crossbow, heavy",
+    "name": "Arbalète lourde",
+    "weapon_range": "À distance",
+    "cost": "50 po",
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": "Perforant"
+    },
+    "weight": 9,
+    "properties": "Munitions (portée 30 m/120 m), lourde, chargement, à deux mains"
+  },
+  {
+    "index": "longbow",
+    "name": "Arc long",
+    "weapon_range": "À distance",
+    "cost": "50 po",
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": "Perforant"
+    },
+    "weight": 1,
+    "properties": "Munitions (portée 45 m/180 m), lourde, à deux mains"
+  },
+  {
+    "index": "net",
+    "name": "Filet",
+    "weapon_range": "À distance",
+    "cost": "1 po",
+    "damage": {
+      "damage_dice": "",
+      "damage_type": ""
+    },
+    "weight": 1.5,
+    "properties": "Spécial, lancer (portée 1,50 m/ 4,50 m)"
+  },
+  {
+    "index": "blowgun",
+    "name": "Sarbacane",
+    "weapon_range": "À distance",
+    "cost": "10 po",
+    "damage": {
+      "damage_dice": "1",
+      "damage_type": "Perforant"
+    },
+    "weight": 0.5,
+    "properties": "Munitions (portée 7,50 m/30 m), chargement"
+  }
+]

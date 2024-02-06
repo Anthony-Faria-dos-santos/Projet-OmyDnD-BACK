@@ -1,0 +1,139 @@
+[
+  {
+    "index": "strength",
+    "name": "FRC",
+    "full_name": "Force",
+    "description":"La force mesure la puissance corporelle, l’entraînement sportif et la mesure dans laquelle vous pouvez exercer une force physique brute. Un test de Force peut modéliser toute tentative de soulever, pousser, tirer ou casser quelque chose, de forcer votre corps à traverser un espace ou d'appliquer d'une autre manière la force brute à une situation. La compétence Athlétisme reflète l'aptitude à certains types de tests de Force.",
+    "skills": [
+      {
+        "index": "athletics",
+        "name": "Athlétisme",
+        "description:": "Un jet de Force (Athlétisme) couvre les situations difficiles que vous rencontrez en grimpant, en sautant ou nageant. Cela inclut les activités suivantes : Vous essayez de grimper une falaise abrupte ou glissante, d'éviter les pièges tout en escaladant un mur, ou de vous accrocher à une surface alors que quelque chose essaie de vous faire lâcher. Vous essayez de sauter une distance inhabituellement longue. Vous luttez pour nager ou rester à flot en présence de courants contraires, de vagues houleuses ou dans une zone avec d'épaisses algues. Ou bien une autre créature essaie de vous noyer ou de vous sortir de l'eau, ou toute autre chose qui peut interférer avec votre nage."
+      }
+    ]
+  },
+  {
+    "index": "dexterity",
+    "name": "DEX",
+    "full_name": "Dextérité",
+    "description": "La dextérité mesure l'agilité, les réflexes et l'équilibre. Un test de Dextérité peut modéliser toute tentative de se déplacer avec agilité, rapidité ou silence, ou d'éviter de tomber dans un piège. Les compétences Acrobatie, Tour de passe-passe et Discrétion reflètent l'aptitude à certains types de tests de Dextérité.",
+    "skills": [
+      {
+        "index": "acrobatics",
+        "name": "Acrobatie",
+        "description": "Un jet de Dextérité (Acrobaties) couvre votre tentative pour rester sur vos pieds dans une situation délicate, comme lorsque vous essayez de courir sur de la glace, de tenir en équilibre sur une corde raide, ou de rester debout sur le pont d'un navire chahuté. Le MD peut également demander un jet de Dextérité (Acrobaties) pour voir si vous pouvez effectuer des acrobaties, comme un plongeon, une roulade ou un saut périlleux."
+      },
+      {
+        "index": "sleight-of-hand",
+        "name": "Escamotage",
+        "description": "Chaque fois que vous tentez une manipulation ou une fourberie, comme prendre quelque chose à quelqu'un ou dissimuler un objet sur vous-même, faites un jet de Dextérité (Escamotage). Le MD peut également demander un jet de Dextérité (Escamotage) pour déterminer si vous pouvez dérober une bourse ou glisser quelque chose dans la poche de quelqu'un."
+      },
+      {
+        "index": "stealth",
+        "name": "Discrétion",
+        "description": "Faite un jet de Dextérité (Discrétion) lorsque vous essayez de vous cacher des ennemis, de vous glisser entre des gardes, filer sans vous faire remarquer, ou vous échapper sans être vu ou entendu."
+      }
+    ]
+  },
+  {
+    "index": "constitution",
+    "name": "CON",
+    "full_name": "Constitution",
+    "description": "La Constitution détermine la santé, l'endurance et la force vitale. Les tests de Constitution sont rares et aucune compétence ne s'applique aux tests de Constitution, car l'endurance que cette capacité représente est en grande partie passive plutôt que d'impliquer un effort spécifique de la part d'un personnage ou d'un monstre.",
+    "skills": []
+  },
+  {
+    "index": "intelligence",
+    "name": "INT",
+    "full_name": "Intelligence",
+    "desc": "L'intelligence détermine l'acuité mentale, la précision de la mémoire et la capacité à raisonner. Un test d'intelligence entre en jeu lorsque vous devez faire appel à la logique, à l'éducation, à la mémoire ou au raisonnement déductif. Les compétences Arcanes, Histoire, Enquête, Nature et Religion reflètent l'aptitude à certains types de tests d'Intelligence.",
+    "skills": [
+      {
+        "index": "arcana",
+        "name": "Arcanes",
+        "description": "Un jet d'Intelligence (Arcanes) évalue votre aptitude à vous rappeler des choses à propos de sorts, d'objets magiques, de symboles occultes, de traditions magiques, de plans d'existence ou des habitants de ces plans."
+      },
+      {
+        "index": "history",
+        "name": "Histoire",
+        "description": "Un jet d'Intelligence (Histoire) évalue votre aptitude à vous rappeler des choses à propos d'événements historiques, de personnages légendaires, d'anciens royaumes, de conflits passés, de guerres récentes et de civilisations perdues."
+      },
+      {
+        "index": "investigation",
+        "name": "Investigation",
+        "description": "Lorsque vous regardez autour de vous pour trouver des indices et faire des déductions sur la base de ces indices, vous faites un jet d'Intelligence (Investigation). Vous pouvez en déduire l'emplacement d'un objet caché, discerner en fonction de l'apparence d'une blessure le type d'arme utilisé, ou déterminer le point faible dans un tunnel pour causer son effondrement. Se pencher sur d'anciens manuscrits à la recherche d'informations cachées peut aussi demander un jet d'Intelligence (Investigation)."
+      },
+      {
+        "index": "nature",
+        "name": "Nature",
+        "description": "Un jet d'Intelligence (Nature) évalue votre aptitude à vous rappeler des informations sur un type de terrain, des plantes ou des animaux, la météo et les cycles naturels."
+      },
+      {
+        "index": "religion",
+        "name": "Religion",
+        "description": "Un jet d'Intelligence (Religion) évalue votre aptitude à vous rappeler des choses à propos des dieux, des rites et des prières, la hiérarchie religieuse, les symboles sacrés et les pratiques de cultes secrets."
+      }
+    ]
+  },
+  {
+    "index": "wisdom",
+    "name": "SAG",
+    "full_name": "Sagesse",
+    "desc": "La sagesse reflète à quel point vous êtes en phase avec le monde qui vous entoure et représente la perspicacité et l’intuition. Un test de sagesse peut refléter un effort pour lire le langage corporel, comprendre les sentiments de quelqu'un, remarquer des choses sur l'environnement ou prendre soin d'une personne blessée. Les compétences de manipulation des animaux, de perspicacité, de médecine, de perception et de survie reflètent l'aptitude à certains types de tests de sagesse.",
+    "skills": [
+      {
+        "index": "animal-handling",
+        "name": "Dressage",
+        "description": "Quand il est question de savoir si vous pouvez calmer un animal domestique, faire qu'une monture ne s'effraye pas, ou deviner les intentions d'un animal, le MD peut demander un jet de Sagesse (Dressage). Vous pouvez également faire un jet de Sagesse (Dressage) pour contrôler votre monture lorsque vous tentez une manœuvre risquée."
+      },
+      {
+        "index": "insight",
+        "name": "Intuition",
+        "description": "Un jet de Sagesse (Intuition) détermine si vous pouvez déceler les véritables intentions d'une créature, comme lorsque vous tentez de savoir si elle ment ou pour prévoir son prochain mouvement. Cela implique de lire le langage du corps, détecter ses habitudes de langage et les changements dans ses manières."
+      },
+      {
+        "index": "medicine",
+        "name": "Médecine",
+        "description": "Un jet de Sagesse (Médecine) permet d'essayer de stabiliser un compagnon mourant ou de diagnostiquer une maladie."
+      },
+      {
+        "index": "perception",
+        "name": "Perception",
+        "description": "Un jet de Sagesse (Perception) permet de repérer, entendre ou détecter la présence de quelque chose. Il mesure votre conscience de l'environnement et l'acuité de vos sens. Par exemple, vous pouvez essayer d'entendre une conversation à travers une porte fermée, espionner par une fenêtre ouverte, ou entendre des monstres se faufiler dans la forêt. Vous pouvez aussi essayer de repérer des choses qui sont cachées ou difficiles à déceler, que ce soient des orcs en embuscade sur une route, des voyous cachés dans l'ombre d'une ruelle ou la lueur d'une chandelle sous une porte secrète fermée."
+      },
+      {
+        "index": "survival",
+        "name": "Survie",
+        "description": "Le MD peut vous demander de faire un jet de Sagesse (Survie) pour suivre des traces, chasser du gibier sauvage, guider votre groupe sur un terrain gelé, identifier des traces indiquant qu'un ours-hibou vit à proximité, prévoir le temps ou éviter des sables mouvants et autres catastrophes naturelles."
+      }
+    ]
+  },
+  {
+    "index": "charisma",
+    "name": "CHA",
+    "full_name": "Charisme",
+    "description": "Le charisme mesure votre capacité à interagir efficacement avec les autres. Cela inclut des facteurs tels que la confiance et l’éloquence, et peut représenter une personnalité charmante ou autoritaire. Un test de Charisme peut survenir lorsque vous essayez d'influencer ou de divertir les autres, lorsque vous essayez de faire bonne impression ou de mentir de manière convaincante, ou lorsque vous vous trouvez dans une situation sociale délicate. Les compétences de Tromperie, d'Intimidation, de Représentation et de Persuasion reflètent l'aptitude à certains types de tests de Charisme.",
+    "skills": [
+      {
+        "index": "intimidation",
+        "name": "Intimidation",
+        "description": "Lorsque vous essayez d'influencer les gens par des menaces ouvertes, des actions hostiles, ou de la violence physique, le MD peut vous demander de faire un jet de Charisme (Intimidation). Cela peut appliquer pour essayer de soutirer des informations à un prisonnier, convaincre des voyous de renoncer à une confrontation, ou utiliser un tesson de bouteille pour convaincre un vizir sarcastique de réexaminer sa décision."
+      },
+      {
+        "index": "persuasion",
+        "name": "Persuasion",
+        "description": " Lorsque vous essayez d'influencer quelqu'un ou un groupe de personnes avec tact, grâce, ou de bonnes manières, le MD peut vous demander de faire un jet de Charisme (Persuasion). En règle générale, vous utilisez la persuasion lorsque vous agissez de bonne foi, afin de favoriser l'amitié, faire des demandes cordiales, ou utiliser l'étiquette appropriée. Vous pouvez utiliser la persuasion pour convaincre un chambellan de laisser votre groupe voir le roi, négocier la paix entre deux tribus en guerre, ou motiver une foule de citadins."
+      },
+      {
+        "index": "performance",
+        "name": "Représentation",
+        "description": " Un jet de Charisme (Représentation) détermine la façon dont vous pouvez enchanter un public par la musique, la danse, le théâtre, le conte ou toute autre forme de divertissement."
+      },
+      {
+        "index": "deception",
+        "name": "Tromperie",
+        "description": " Un jet de Charisme (Tromperie) détermine si vous pouvez cacher la vérité avec efficacité, soit verbalement, soit par vos actions. La tromperie peut englober beaucoup de choses, depuis l'ambiguïté de ses dires jusqu'au mensonge pur et simple. Des situations typiques sont d'essayer d'embobiner un garde, duper un commerçant, gagner de l'argent au jeu, vous faire passer pour quelqu'un d'autre à l'aide d'un déguisement, apaiser les soupçons de quelqu'un avec une fausse assurance, ou maintenir un visage impassible tout en racontant un mensonge flagrant."
+      }
+    ]
+  }
+]
