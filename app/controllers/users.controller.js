@@ -1,10 +1,11 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import "../helpers/env.load.js";
-import usersDatamapper from "../datamappers/users.datamapper.js";
+import * as usersDatamapper from "../datamappers/users.datamapper.js";
 
 const JWTSecret = process.env.JWT_SECRET;
 const JWTRefreshExpiration = process.env.JWT_REFRESH_EXPIRATION;
+const saltRounds = process.env.SALT_ROUNDS;
 
 export default {
 
@@ -34,6 +35,32 @@ export default {
       email: user.email,
       accessToken: token,
     });
+  },
+
+  signUp: async (request, response) => {
+    const {
+      pseudo,
+      slug,
+      email,
+      password,
+    } = request.body;
+
+    const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
+
+    if (userEntriesCheck) {
+      return response.status(401);
+    }
+
+    const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
+    const encryptedPassword = await bcrypt.hash(password, salt);
+
+    const user = await usersDatamapper.createUser(pseudo, slug, email, encryptedPassword);
+
+    if (!user) {
+      return response.status(500);
+    }
+
+    return response.status(200).send(user);
   },
 
 };
