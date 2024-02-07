@@ -28,7 +28,7 @@ export default {
     const token = jwt.sign({ id: user.id }, JWTSecret, {
       expiresIn: JWTRefreshExpiration,
     });
-
+    // retourne les information dans la réponse
     return response.status(200).send({
       slug: user.slug,
       pseudo: user.pseudo,
@@ -38,31 +38,31 @@ export default {
   },
 
   signUp: async (request, response) => {
-    delete request.body.passwordConfirm;
-
+    delete request.body.passwordConfirm; // on supprime le passwordConfirm
+    // on récupère les infos du body
     const {
       pseudo,
       email,
       password,
     } = request.body;
-
+    // on crée le slug
     const slug = pseudo.toLowerCase();
-
+    // on check que les entrées du user ne correspondent pas aux entrées unique de la table user
     const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
 
     if (userEntriesCheck) {
       return response.status(401);
     }
-
+    // on encrypte le mot de passe
     const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
     const encryptedPassword = await bcrypt.hash(password, salt);
-
+    // on crée le user dans la base de donnée
     const user = await usersDatamapper.createUser(pseudo, slug, email, encryptedPassword);
 
     if (!user) {
       return response.status(500);
     }
-
+    // on renvoie les informations non sensibles du user
     return response.status(200).send(user);
   },
 

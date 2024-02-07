@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 const pattern = /^[a-zA-Z0-9_]*$/;
-
+// on vérifie les entrées utilisateur du signup avant de les utiliser
 export default Joi.object({
   pseudo: Joi.string()
     .pattern(pattern)
