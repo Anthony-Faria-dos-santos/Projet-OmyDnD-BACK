@@ -6,6 +6,3 @@ const router = Router();
 
 router.route("/signIn")
   .post(controllerWrapper(usersController.signIn));
-
-router.route("/signOff")
-  .post(controllerWrapper(usersController.signOff));

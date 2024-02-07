@@ -36,13 +36,4 @@ export default {
     });
   },
 
-  //  fonctin de déconnexion
-  signOff: async (request, response) => {
-    const accessToken = request.body;
-
-    accessToken.destroy();
-
-    return response.status(200);
-  },
-
 };
