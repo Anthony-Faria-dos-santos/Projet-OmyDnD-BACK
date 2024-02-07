@@ -12,7 +12,7 @@ CREATE TABLE "races" (
   "inteligence_bonus" INT NOT NULL DEFAULT 0,
   "wisdom_bonus" INT NOT NULL DEFAULT 0,
   "charisma_bonus" INT NOT NULL DEFAULT 0,
-  "languages" TEXT NOT NULL DEFAULT 0,
+  "languages" TEXT NOT NULL DEFAULT 'Aucun',
   "traits" TEXT NOT NULL
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE "classes" (
 CREATE TABLE "backgrounds" (
   "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "name" TEXT NOT NULL,
-  "mastered_tools" TEXT NOT NULL DEFAULT 0,
+  "mastered_tools" TEXT NOT NULL DEFAULT 'Aucun',
   "starting_equipment" TEXT NOT NULL,
   "feature" TEXT NOT NULL
 );
