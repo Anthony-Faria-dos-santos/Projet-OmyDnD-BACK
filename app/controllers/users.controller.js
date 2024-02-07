@@ -38,12 +38,15 @@ export default {
   },
 
   signUp: async (request, response) => {
+    delete request.body.passwordConfirm;
+
     const {
       pseudo,
-      slug,
       email,
       password,
     } = request.body;
+
+    const slug = pseudo.toLowerCase();
 
     const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
 
