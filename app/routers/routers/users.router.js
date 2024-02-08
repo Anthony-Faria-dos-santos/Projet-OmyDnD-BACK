@@ -18,3 +18,5 @@ router.route("/signup")
     validateFactory("body", signupSchema),
     controllerWrapper(usersController.signUp),
   );
+
+export default router;
