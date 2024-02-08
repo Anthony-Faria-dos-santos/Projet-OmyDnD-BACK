@@ -6,7 +6,7 @@ const router = Router();
 
 router.route("/characterCreator")
   .get(
-    controllerWrapper(classesController.sendRaces),
+    controllerWrapper(classesController.sendClasses),
   );
 
 export default router;
