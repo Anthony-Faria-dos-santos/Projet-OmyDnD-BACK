@@ -1,12 +1,14 @@
 @endpoint=http://localhost:{{$dotenv PORT}}
 
-GET {{ endpoint }}/api/users/test
+POST {{ endpoint }}/api/users/signin
+content-type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "NidohgTest"
+}
+
 ###
-
-
-GET {{ endpoint }}/api/users/testget
-###
-
 POST {{ endpoint }}/api/users/signup
 content-type: application/json
 
@@ -15,4 +17,12 @@ content-type: application/json
   "email": "test@gmail.com",
   "password": "NidohgTest",
   "passwordConfirm": "NidohgTest"
+}
+
+###
+DELETE {{ endpoint }}/api/users/delete
+content-type: application/json
+
+{
+  "email": "test@gmail.com"
 }

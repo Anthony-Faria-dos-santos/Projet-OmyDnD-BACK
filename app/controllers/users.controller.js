@@ -8,18 +8,6 @@ const JWTRefreshExpiration = process.env.JWT_REFRESH_EXPIRATION;
 const saltRounds = process.env.SALT_ROUNDS;
 
 export default {
-
-  test: (_, response) => {
-    const test = {
-      test: "hello2",
-    };
-    response.status(200).json(test);
-  },
-
-  testGet: async (_, response) => {
-    const test = await usersDatamapper.getAllSkills();
-    response.status(200).json(test);
-  },
   //  fonction de connexion
   signIn: async (request, response) => {
     const { email, password } = request.body;
@@ -27,31 +15,33 @@ export default {
     const user = await usersDatamapper.findUserByEmail(email);
     //  vérifie que l'utilisateur existe
     if (!user) {
-      return response.status(401);
+      return response.status(401).json({ error: "L'utilisateur n'éxiste pas ou le mot de passe est incorrect" });
     }
     //  vérifie que le password encrypté est correct avec la base de donnée
     const validPassword = await bcrypt.compare(password, user.password);
 
     if (!validPassword) {
-      return response.status(401);
+      return response.status(401).json({ error: "L'utilisateur n'éxiste pas ou le mot de passe est incorrect" });
     }
     //  donne un token a l'utilisateur après les vérification
     const token = jwt.sign({ id: user.id }, JWTSecret, {
       expiresIn: JWTRefreshExpiration,
     });
     // retourne les information dans la réponse
-    return response.status(200).send({
+
+    const userAuth = {
       slug: user.slug,
       pseudo: user.pseudo,
       email: user.email,
       accessToken: token,
-    });
+    };
+
+    return response.status(200).send(userAuth);
   },
 
   signUp: async (request, response) => {
-    console.log("hello");
     delete request.body.passwordConfirm; // on supprime le passwordConfirm
-    console.log("delete");
+
     // on récupère les infos du body
     const {
       pseudo,
@@ -59,30 +49,42 @@ export default {
       password,
     } = request.body;
 
-    console.log(request.body);
     // on crée le slug
     const slug = pseudo.toLowerCase();
-    console.log(slug);
+
     // on check que les entrées du user ne correspondent pas aux entrées unique de la table user
     const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
-    console.log(userEntriesCheck);
-    if (userEntriesCheck) {
-      return response.status(401);
+
+    if (userEntriesCheck[0]) {
+      return response.status(401).json({ error: "L'utilisateur ou l'email existe déjà" });
     }
     // on encrypte le mot de passe
     const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
-    console.log("salt");
+
     const encryptedPassword = await bcrypt.hash(password, salt);
-    console.log("encryptedPassword");
+
     // on crée le user dans la base de donnée
     const user = await usersDatamapper.createUser(pseudo, slug, email, encryptedPassword);
-    console.log(user);
 
     if (!user) {
-      return response.status(500);
+      return response.status(500).json({ error: "Une erreur est survenue à l'enregistrement" });
     }
     // on renvoie les informations non sensibles du user
     return response.status(200).send(user);
+  },
+
+  deleteUserAccount: async (request, response) => {
+    const { email } = request.body;
+
+    const deletedUser = await usersDatamapper.deleteUser(email);
+
+    const user = await usersDatamapper.findUserByEmail(email);
+
+    if (user) {
+      return response.status(500).json({ error: "Une erreur est survenue lors de la suppression de votre profil" });
+    }
+
+    return response.status(200).send(deletedUser);
   },
 
 };
