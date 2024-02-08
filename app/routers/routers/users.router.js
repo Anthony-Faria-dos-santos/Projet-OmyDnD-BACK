@@ -7,6 +7,12 @@ import signupSchema from "../../schemas/signup.schema.js";
 
 const router = Router();
 
+router.route("/test")
+  .get(controllerWrapper(usersController.test));
+
+router.route("/testget")
+  .get(controllerWrapper(usersController.testGet));
+
 router.route("/signin")
   .post(
     validateFactory("body", signinSchema),
@@ -15,7 +21,6 @@ router.route("/signin")
 
 router.route("/signup")
   .post(
-    validateFactory("body", signupSchema),
     controllerWrapper(usersController.signUp),
   );
 

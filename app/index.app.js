@@ -12,8 +12,13 @@ const app = express();
 //   next();
 // });
 
+app.use(cors({
+  origin: "*",
+}));
+//! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
+
 app.use(express.json());
-app.use(cors({ origin: "*" })); //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
+app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
 app.use(errorMiddleware);

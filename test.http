@@ -1,4 +1,13 @@
-POST http://localhost/8080/api/users/signup
+@endpoint=http://localhost:{{$dotenv PORT}}
+
+GET {{ endpoint }}/api/users/test
+###
+
+
+GET {{ endpoint }}/api/users/testget
+###
+
+POST {{ endpoint }}/api/users/signup
 content-type: application/json
 
 {
