@@ -27,3 +27,11 @@ export async function createUser(pseudo, slug, email, encryptedPassword) {
   const result = await client.query(query);
   return result.rows;
 }
+
+export async function getAllSkills() {
+  const query = {
+    text: "SELECT * FROM skills",
+  };
+  const result = await client.query(query);
+  return result.rows;
+}

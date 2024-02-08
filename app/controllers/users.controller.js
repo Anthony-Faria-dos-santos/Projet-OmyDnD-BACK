@@ -9,6 +9,17 @@ const saltRounds = process.env.SALT_ROUNDS;
 
 export default {
 
+  test: (_, response) => {
+    const test = {
+      test: "hello2",
+    };
+    response.status(200).json(test);
+  },
+
+  testGet: async (_, response) => {
+    const test = await usersDatamapper.getAllSkills();
+    response.status(200).json(test);
+  },
   //  fonction de connexion
   signIn: async (request, response) => {
     const { email, password } = request.body;
@@ -38,26 +49,34 @@ export default {
   },
 
   signUp: async (request, response) => {
+    console.log("hello");
     delete request.body.passwordConfirm; // on supprime le passwordConfirm
+    console.log("delete");
     // on récupère les infos du body
     const {
       pseudo,
       email,
       password,
     } = request.body;
+
+    console.log(request.body);
     // on crée le slug
     const slug = pseudo.toLowerCase();
+    console.log(slug);
     // on check que les entrées du user ne correspondent pas aux entrées unique de la table user
     const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
-
+    console.log(userEntriesCheck);
     if (userEntriesCheck) {
       return response.status(401);
     }
     // on encrypte le mot de passe
     const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
+    console.log("salt");
     const encryptedPassword = await bcrypt.hash(password, salt);
+    console.log("encryptedPassword");
     // on crée le user dans la base de donnée
     const user = await usersDatamapper.createUser(pseudo, slug, email, encryptedPassword);
+    console.log(user);
 
     if (!user) {
       return response.status(500);
