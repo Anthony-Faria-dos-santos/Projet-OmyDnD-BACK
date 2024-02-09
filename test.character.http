@@ -1,0 +1,7 @@
+@endpoint=http://localhost:{{$dotenv PORT}}
+
+POST {{endpoint}}/api/charactercreator
+{
+    "user_id": 1,
+    ""
+}
