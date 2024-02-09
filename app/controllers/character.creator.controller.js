@@ -1,5 +1,5 @@
 import "../helpers/env.load.js";
-import characterDatamapper from "../datamappers/characterCreator.datamapper.js";
+import characterDatamapper from "../datamappers/character.creator.datamapper.js";
 
 export default {
   generateCharacterSheet: async (request, response) => {

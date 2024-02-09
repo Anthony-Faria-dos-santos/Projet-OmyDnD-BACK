@@ -1,5 +1,5 @@
 import { Router } from "express";
-import characterCreatorController from "../../controllers/characterCreator.controller.js";
+import characterCreatorController from "../../controllers/character.creator.controller.js";
 import controllerWrapper from "../../helpers/controller.wrapper.js";
 
 const router = Router();
