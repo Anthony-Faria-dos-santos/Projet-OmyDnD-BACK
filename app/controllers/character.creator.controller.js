@@ -20,8 +20,7 @@ export default {
   },
 
   sendRaces: async (_, response) => {
-    const param = "races";
-    const races = await characterDatamapper.getAll(param);
+    const races = await characterDatamapper.getAll("races");
     response.status(200).send(races);
   },
 

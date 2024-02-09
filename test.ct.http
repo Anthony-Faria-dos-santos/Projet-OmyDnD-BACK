@@ -4,7 +4,7 @@ POST {{ endpoint }}/api/charactercreator/creator
 Content-Type: application/json
 
 {
-    "user_id": 3,
+    "user_id": 1,
     "classe_id": 1,
     "background_id": 1,
     "race_id": 1,
@@ -28,3 +28,6 @@ GET  {{ endpoint }}/api/charactercreator/classes
 
 ###
 GET  {{ endpoint }}/api/charactercreator/races
+
+###
+GET  {{ endpoint }}/api/charactercreator/backgrounds
