@@ -10,6 +10,7 @@
     },
     "rules": {
         "import/extensions": ["error", "always"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "eol-last": ["error", "never"]
     }
 }
