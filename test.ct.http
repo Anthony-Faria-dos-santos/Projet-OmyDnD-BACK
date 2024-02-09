@@ -4,8 +4,8 @@ POST {{ endpoint }}/api/charactercreator/creator
 Content-Type: application/json
 
 {
-    "user_id": 1,
-    "class_id": 1,
+    "user_id": 3,
+    "classe_id": 1,
     "background_id": 1,
     "race_id": 1,
     "name": "Michel le guerrier de l'espace",
@@ -21,3 +21,10 @@ Content-Type: application/json
     "armor_class": 8,
     "alignment": "bon"
 }
+
+###
+GET  {{ endpoint }}/api/charactercreator/classes
+
+
+###
+GET  {{ endpoint }}/api/charactercreator/races
