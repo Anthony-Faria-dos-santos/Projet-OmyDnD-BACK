@@ -16,7 +16,7 @@ export async function findOneByUserId(userId, characterId) {
   return result.rows[0];
 }
 
-export async function updateOneupdateOne(fields, values, placeholders, characterIdPlaceholder) {
+export async function updateOne(fields, values, placeholders, characterIdPlaceholder) {
   const query = {
     text: `UPDATE "characters" SET (${fields}) = (${placeholders}) WHERE id=${characterIdPlaceholder} RETURNING *`,
     values,
