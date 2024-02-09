@@ -41,5 +41,8 @@ router.route("/:userId/characters/:characterId")
   .patch(
     controllerWrapper(charactersController.updateOne)
   )
+  .delete(
+    controllerWrapper(charactersController.deleteOneByPk)
+  )
 
 export default router;
