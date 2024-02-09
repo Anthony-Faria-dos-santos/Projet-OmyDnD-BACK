@@ -1,7 +1,23 @@
 @endpoint=http://localhost:{{$dotenv PORT}}
 
-POST {{endpoint}}/api/charactercreator
+POST {{ endpoint }}/api/charactercreator/creator
+Content-Type: application/json
+
 {
     "user_id": 1,
-    ""
+    "class_id": 1,
+    "background_id": 1,
+    "race_id": 1,
+    "name": "Michel le guerrier de l'espace",
+    "level": 1,
+    "strength": 20,
+    "dexterity": 20,
+    "constitution": 20,
+    "inteligence": 20,
+    "wisdom": 20,
+    "charisma": 20,
+    "inspiration": 20,
+    "mastery_bonus": 2,
+    "armor_class": 8,
+    "alignment": "bon"
 }
