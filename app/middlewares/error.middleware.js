@@ -2,13 +2,13 @@
 import logger from "../logger/index.logger.js";
 
 /**
- * @params {Error} err
- * @params {Express.Request} req
- * @params {Express.Response} res
- * @params {Express.NextFunction} next
- * @returns {Express.Response}
- *
- */
+
+@params {Error} err
+@params {Express.Request} req
+@params {Express.Response} res
+@params {Express.NextFunction} next
+@returns {Express.Response}
+* */
 export default (err, _, res, __) => {
   if (err.httpStatus === 500) logger.error(null, err);
   if (err.format === "html") {
