@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon",
+    "start": "node .",
+    "db:create": "psql -d cadex -f data/create_db.sql",
+    "db:seed": "psql -d cadex -f data/seed_db.sql",
+    "db:wipe": "psql -d cadex -f data/wipe_db.sql",
+    "db:reset": "npm run db:wipe && npm run db:create && npm run db:seed"
   },
   "type": "module",
   "keywords": [],
