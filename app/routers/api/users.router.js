@@ -38,6 +38,8 @@ router.route("/:userId/characters/:characterId")
   .get(
     controllerWrapper(charactersController.getByPk)
   )
-
+  .patch(
+    controllerWrapper(charactersController.updateOne)
+  )
 
 export default router;
