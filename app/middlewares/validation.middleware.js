@@ -1,8 +1,8 @@
 import ApiError from "../errors/api.error.js";
 
-export default (sourceProperty, schema) => async (req, _, next) => {
+export default (dataProp, schema) => async (request, response, next) => {
   try {
-    await schema.validateAsync(req[sourceProperty]);
+    await schema.validateAsync(request[dataProp]);
     next();
   } catch (err) {
     next(new ApiError(err.details[0].message, { httpStatus: 400 }));
