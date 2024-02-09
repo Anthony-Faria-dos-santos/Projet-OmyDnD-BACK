@@ -1,7 +1,12 @@
 import { Router } from "express";
-import usersController from "../../controllers/users.controller.js";
+
 import controllerWrapper from "../../helpers/controller.wrapper.js";
+
+import usersController from "../../controllers/users.controller.js";
+import charactersController from "../../controllers/characters.controller.js";
+
 import validateFactory from "../../middlewares/validation.middleware.js";
+
 import signinSchema from "../../schemas/signin.schema.js";
 import signupSchema from "../../schemas/signup.schema.js";
 
@@ -23,5 +28,16 @@ router.route("/delete")
   .delete(
     controllerWrapper(usersController.deleteUserAccount),
   );
+
+router.route("/:id/characters")
+  .get(
+    controllerWrapper(charactersController.getAll)
+  );
+
+router.route("/:userId/characters/:characterId")
+  .get(
+    controllerWrapper(charactersController.getByPk)
+  )
+
 
 export default router;

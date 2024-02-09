@@ -30,6 +30,7 @@ export default {
     // retourne les information dans la réponse
 
     const userAuth = {
+      id: user.id,
       slug: user.slug,
       pseudo: user.pseudo,
       email: user.email,
