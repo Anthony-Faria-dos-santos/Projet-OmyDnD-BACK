@@ -16,4 +16,12 @@ export async function findOneByUserId(userSlug, characterId) {
   return result.rows[0];
 }
 
+export async function updateOneupdateOne(fields, values, placeholders, characterIdPlaceholder) {
+  const query = {
+    text: `UPDATE "characters" SET (${fields}) = (${placeholders}) WHERE id=${characterIdPlaceholder} RETURNING *`,
+    values,
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
 
