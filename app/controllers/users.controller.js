@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import "../helpers/env.load.js";
 import * as usersDatamapper from "../datamappers/users.datamapper.js";
+import * as charactersDatamapper from "../datamappers/characters.datamapper.js"
 
 const JWTSecret = process.env.JWT_SECRET;
 const JWTRefreshExpiration = process.env.JWT_REFRESH_EXPIRATION;
@@ -77,13 +78,15 @@ export default {
   deleteUserAccount: async (request, response) => {
     const { email } = request.body;
 
-    const deletedUser = await usersDatamapper.deleteUser(email);
-
     const user = await usersDatamapper.findUserByEmail(email);
 
-    if (user) {
-      return response.status(500).json({ error: "Une erreur est survenue lors de la suppression de votre profil" });
+    if (!user) {
+      return response.status(500).json({ error: "Le compte lié à cet email est introuvable" });
     }
+
+    await charactersDatamapper.deleteOneUserCharacters(user.id);
+
+    const deletedUser = await usersDatamapper.deleteUser(email);
 
     return response.status(200).send(deletedUser);
   },
