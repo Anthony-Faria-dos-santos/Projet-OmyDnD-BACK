@@ -4,7 +4,7 @@ import controllerWrapper from "../../helpers/controller.wrapper.js";
 
 const router = Router();
 
-router.route("/characterCreator/backgrounds")
+router.route("/backgrounds")
   .get(
     controllerWrapper(backgroundsController.sendBackgrounds),
   );
