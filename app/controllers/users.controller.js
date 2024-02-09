@@ -24,7 +24,7 @@ export default {
       return response.status(401).json({ error: "L'utilisateur n'éxiste pas ou le mot de passe est incorrect" });
     }
     //  donne un token a l'utilisateur après les vérification
-    const token = jwt.sign({ id: user.id }, JWTSecret, {
+    const accessToken = jwt.sign({ id: user.id }, JWTSecret, {
       expiresIn: JWTRefreshExpiration,
     });
     // retourne les information dans la réponse
@@ -33,7 +33,7 @@ export default {
       slug: user.slug,
       pseudo: user.pseudo,
       email: user.email,
-      accessToken: token,
+      token: accessToken,
     };
 
     return response.status(200).send(userAuth);
