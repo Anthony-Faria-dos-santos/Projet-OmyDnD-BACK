@@ -163,4 +163,37 @@ export default {
     return response.status(200).send(post);
   },
 
+  postNote: async (request, response) => {
+    const { userId } = request.params;
+    const { characterId } = request.params;
+    const note = request.body;
+
+    const user = await usersDatamapper.findUserById(userId);
+
+    if (!user) {
+      return response.status(404).json({ error: "Utilisateur introuvable" });
+    }
+
+    const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
+
+    if (!userCharacter) {
+      return response.status(404).json({ error: "Le personnage demandé est introuvable" });
+    }
+
+    const fields = Object.keys(note);
+    const values = Object.values(note);
+
+    fields.push("character_id");
+    values.push(parseInt(characterId, 10));
+
+    const placeholders = values.map((_, index) => `$${index + 1}`);
+
+    const postNote = await charactersDatamapper.postNote(fields, values, placeholders);
+
+    if (!postNote) {
+      return response.status(500).json({ error: "Une erreur s'est produite lors de la création de la note" });
+    }
+
+    return response.status(200).send(postNote);
+  },
 };

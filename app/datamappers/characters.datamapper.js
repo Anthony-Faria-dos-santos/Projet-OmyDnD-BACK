@@ -77,3 +77,12 @@ export async function deleteSkill(characterId, skillId) {
   const result = await client.query(query);
   return result.rows[0];
 }
+
+export async function postNote(fields, values, placeholders) {
+  const query = {
+    text: `INSERT INTO "notes" (${fields}) VALUES (${placeholders}) RETURNING id`,
+    values,
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
