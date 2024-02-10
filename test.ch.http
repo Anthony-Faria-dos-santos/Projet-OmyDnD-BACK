@@ -4,7 +4,7 @@
 GET  {{ endpoint }}/api/users/3/characters
 
 ###
-GET  {{ endpoint }}/api/users/3/characters/13
+GET  {{ endpoint }}/api/users/3/characters/8
 
 ###
 PATCH {{ endpoint }}/api/users/3/characters/8
@@ -26,3 +26,20 @@ POST {{ endpoint }}/api/users/3/characters/8/skills/7
 
 ###
 DELETE {{ endpoint }}/api/users/3/characters/8/skills/7
+
+###
+POST {{ endpoint }}/api/users/3/characters/8/notes
+Content-Type: application/json
+
+{
+    "content": "content post test"
+}
+
+###
+POST {{ endpoint }}/api/users/3/characters/8/notes
+Content-Type: application/json
+
+{   
+    "title": "title post test 3",
+    "content": "content post test 4"
+}
