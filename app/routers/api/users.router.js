@@ -53,4 +53,9 @@ router.route("/:userId(\\d+)/characters/:characterId(\\d+)/skills/:skillId(\\d+)
     controllerWrapper(charactersController.deleteSkill),
   );
 
+router.route("/:userId(\\d+)/characters/:characterId(\\d+)/notes/")
+  .post(
+    controllerWrapper(charactersController.postNote),
+  );
+
 export default router;
