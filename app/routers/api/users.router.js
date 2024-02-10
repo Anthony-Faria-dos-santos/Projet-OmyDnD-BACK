@@ -24,25 +24,27 @@ router.route("/signup")
     controllerWrapper(usersController.signUp),
   );
 
-router.route("/delete")
+router.route("/:id/delete")
   .delete(
     controllerWrapper(usersController.deleteUserAccount),
   );
 
 router.route("/:id/characters")
   .get(
-    controllerWrapper(charactersController.getAll)
+    controllerWrapper(charactersController.getAll),
   );
 
 router.route("/:userId/characters/:characterId")
   .get(
-    controllerWrapper(charactersController.getByPk)
+    controllerWrapper(charactersController.getByPk),
   )
   .patch(
-    controllerWrapper(charactersController.updateOne)
+    controllerWrapper(charactersController.updateOne),
   )
   .delete(
-    controllerWrapper(charactersController.deleteOneByPk)
-  )
+    controllerWrapper(charactersController.deleteOneByPk),
+  );
+
+router.route("/:userId/characters/:characterId/skills");
 
 export default router;
