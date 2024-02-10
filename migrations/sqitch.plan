@@ -2,3 +2,6 @@
 %project=omydnd
 
 v1 2024-02-06T14:11:47Z Thomas.T <thomastrehou.pro@gmail.com> # database init
+v1.1 2024-02-10T17:09:20Z Thomas.T <thomastrehou.pro@gmail.com> # little rework of characters table
+v1.2 2024-02-10T20:17:23Z Thomas.T <thomastrehou.pro@gmail.com> # add status column on characters table
+v1.3 2024-02-10T20:55:21Z Thomas.T <thomastrehou.pro@gmail.com> # add auto update for updated_at columns
