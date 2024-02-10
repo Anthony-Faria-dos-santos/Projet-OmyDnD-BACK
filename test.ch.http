@@ -1,0 +1,28 @@
+@endpoint=http://localhost:{{$dotenv PORT}}
+
+###
+GET  {{ endpoint }}/api/users/3/characters
+
+###
+GET  {{ endpoint }}/api/users/3/characters/13
+
+###
+PATCH {{ endpoint }}/api/users/3/characters/8
+Content-Type: application/json
+
+{
+    "name": "Florian le guerrier de l'espace",
+    "armor_class": 18
+}
+
+###
+DELETE {{ endpoint }}/api/users/3/characters/13
+
+###
+GET {{ endpoint }}/api/options/skills
+
+###
+POST {{ endpoint }}/api/users/3/characters/8/skills/7
+
+###
+DELETE {{ endpoint }}/api/users/3/characters/8/skills/7
