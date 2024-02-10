@@ -14,7 +14,7 @@ export default Joi.object({
     .integer()
     .required(),
   name: Joi.string()
-    .alphanum()
+    .max(30)
     .required(),
   level: Joi.number()
     .integer()
@@ -49,7 +49,6 @@ export default Joi.object({
     .integer()
     .required(),
   alignment: Joi.string()
-    .alphanum()
     .max(20)
     .required(),
 });
