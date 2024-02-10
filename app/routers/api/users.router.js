@@ -24,17 +24,17 @@ router.route("/signup")
     controllerWrapper(usersController.signUp),
   );
 
-router.route("/:id/delete")
+router.route("/:id(\\d+)/delete")
   .delete(
     controllerWrapper(usersController.deleteUserAccount),
   );
 
-router.route("/:id/characters")
+router.route("/:id(\\d+)/characters")
   .get(
     controllerWrapper(charactersController.getAll),
   );
 
-router.route("/:userId/characters/:characterId")
+router.route("/:userId(\\d+)/characters/:characterId(\\d+)")
   .get(
     controllerWrapper(charactersController.getByPk),
   )
@@ -45,6 +45,12 @@ router.route("/:userId/characters/:characterId")
     controllerWrapper(charactersController.deleteOneByPk),
   );
 
-router.route("/:userId/characters/:characterId/skills");
+router.route("/:userId(\\d+)/characters/:characterId(\\d+)/skills/:skillId(\\d+)")
+  .post(
+    controllerWrapper(charactersController.postSkill),
+  )
+  .delete(
+    controllerWrapper(charactersController.deleteSkill),
+  );
 
 export default router;
