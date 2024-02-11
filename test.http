@@ -20,9 +20,9 @@ content-type: application/json
 }
 
 ###
-DELETE {{ endpoint }}/api/users/delete
+DELETE {{ endpoint }}/api/users/4/delete
 content-type: application/json
 
 {
-  "email": "test@gmail.com"
+  "email": "test@testgmail.com"
 }
