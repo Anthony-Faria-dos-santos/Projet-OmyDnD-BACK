@@ -1,6 +1,6 @@
 import * as charactersDatamapper from "../datamappers/characters.datamapper.js";
 import * as usersDatamapper from "../datamappers/users.datamapper.js";
-
+// tableau des id des skills pour éviter de faire un appel à la db pour chaque ajout de skill
 const skillsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
 export default {
@@ -53,13 +53,14 @@ export default {
     if (!userCharacter) {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
-
+    // On récupère les champs et les valeurs de l'objet dans deux tableaux différents
     const fields = Object.keys(character);
     const values = Object.values(character);
-
+    // On crée nos $1, $2, etc..
     const placeholders = values.map((_, index) => `$${index + 1}`);
+    // On calcule la valeur du $ de characterId
     const characterIdPlaceholder = (values.length) + 1;
-
+    // On ajoute characterId aux valeurs
     values.push(characterId);
 
     const updatedCharacter = await charactersDatamapper.updateOne(
@@ -115,7 +116,7 @@ export default {
     if (!userCharacter) {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
-
+    // On vérifie que le skillId est présent dans le tableau des id des skills
     const compare = skillsArray.includes(parseInt(skillId, 10));
 
     if (compare !== true) {
@@ -147,7 +148,7 @@ export default {
     if (!userCharacter) {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
-
+    // On vérifie que le skillId est présent dans le tableau des id des skills
     const compare = skillsArray.includes(parseInt(skillId, 10));
 
     if (compare !== true) {
@@ -179,13 +180,13 @@ export default {
     if (!userCharacter) {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
-
+    // On récupère les champs et les valeurs de l'objet dans deux tableaux différents
     const fields = Object.keys(note);
     const values = Object.values(note);
-
+    // On ajoute characterId aux valeurs et "character_id" aux champs
     fields.push("character_id");
     values.push(parseInt(characterId, 10));
-
+    // On crée nos $1, $2, etc..
     const placeholders = values.map((_, index) => `$${index + 1}`);
 
     const postNote = await charactersDatamapper.postNote(fields, values, placeholders);
