@@ -16,13 +16,11 @@ export default {
     // Recherche de l'utilisateur dans la base de données par son ID
     const user = await profileDatamapper.findByPk(userId);
     if (!user) {
-    // Si l'utilisateur n'est pas trouvé, renvoyer une erreur 404
       return response.status(404).json({ error: "Utilisateur introuvable" });
     }
 
     // Vérification si le nouveau pseudo est identique à l'ancien
     if (pseudo === newPseudo) {
-      // Si les pseudos sont identiques, renvoyer une erreur 401
       return response.status(401).json({ error: "Le pseudo est le même, veuillez recommencer" });
     }
 
@@ -69,6 +67,33 @@ export default {
 
     // Renvoi d'une réponse avec un message de succès
     return response.status(200).json({ message: "Mot de passe mis à jour avec succès" });
+  },
+
+  // Méthode pour la modification de l'email d'un utilisateur
+  emailModification: async (request, response) => {
+  // Récupération de l'email actuel de l'utilisateur depuis les paramètres de la requête
+    const { email } = request.params;
+
+    // Récupération du nouvel email à partir du corps de la requête
+    const newEmail = request.body;
+
+    // Recherche de l'utilisateur dans la base de données par son email actuel
+    const userMail = await profileDatamapper.findByMail(email);
+    if (!userMail) {
+      return response.status(404).json({ error: "Email introuvable" });
+    }
+
+    // Vérification si le nouvel email existe déjà dans la base de données
+    const databaseCompareMail = await profileDatamapper.findByMail(newEmail);
+    if (databaseCompareMail) {
+      return response.status(401).json({ error: "Cet email existe déjà" });
+    }
+
+    // Mise à jour de l'email dans la base de données avec le nouvel email
+    const emailUpdated = await profileDatamapper.updateEmail(newEmail, email);
+
+    // Renvoi d'une réponse avec le nouvel email mis à jour
+    return response.status(200).send(emailUpdated);
   },
 
 };
