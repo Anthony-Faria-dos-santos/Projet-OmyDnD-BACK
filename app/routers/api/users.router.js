@@ -58,4 +58,12 @@ router.route("/:userId(\\d+)/characters/:characterId(\\d+)/notes/")
     controllerWrapper(charactersController.postNote),
   );
 
+router.route("/:userId(\\d+)/characters/:characterId(\\d+)/notes/:noteId(\\d+)")
+  .patch(
+    controllerWrapper(charactersController.updateNote),
+  )
+  .delete(
+    controllerWrapper(charactersController.deleteNote),
+  );
+
 export default router;

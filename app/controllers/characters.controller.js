@@ -197,4 +197,59 @@ export default {
 
     return response.status(200).send(postNote);
   },
+
+  updateNote: async (request, response) => {
+    const { userId } = request.params;
+    const { characterId } = request.params;
+    const { noteId } = request.params;
+    const note = request.body;
+
+    const user = await usersDatamapper.findUserById(userId);
+
+    if (!user) {
+      return response.status(404).json({ error: "Utilisateur introuvable" });
+    }
+
+    const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
+
+    if (!userCharacter) {
+      return response.status(404).json({ error: "Le personnage demandé est introuvable" });
+    }
+
+    const updatedContent = note.content;
+
+    const updatedNote = await charactersDatamapper.updateNote(updatedContent, noteId, characterId);
+
+    if (!updatedNote) {
+      return response.status(500).json({ error: "Une erreur s'est produite lors de la création de la note" });
+    }
+
+    return response.status(200).send(updatedNote);
+  },
+
+  deleteNote: async (request, response) => {
+    const { userId } = request.params;
+    const { characterId } = request.params;
+    const { noteId } = request.params;
+
+    const user = await usersDatamapper.findUserById(userId);
+
+    if (!user) {
+      return response.status(404).json({ error: "Utilisateur introuvable" });
+    }
+
+    const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
+
+    if (!userCharacter) {
+      return response.status(404).json({ error: "Le personnage demandé est introuvable" });
+    }
+
+    const deletedNote = await charactersDatamapper.deleteNote(noteId, characterId);
+
+    if (!deletedNote) {
+      return response.status(500).json({ error: "Une erreur s'est produite lors de la création de la note" });
+    }
+
+    return response.status(200).send(deletedNote);
+  },
 };

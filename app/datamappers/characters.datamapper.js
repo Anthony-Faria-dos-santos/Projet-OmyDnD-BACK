@@ -88,6 +88,22 @@ export async function postNote(fields, values, placeholders) {
   return result.rows[0];
 }
 
+export async function updateNote(updatedContent, noteId, characterId) {
+  const query = {
+    text: `UPDATE "notes" SET "content" = $1 WHERE "id"=${noteId} AND "character_id"=${characterId} RETURNING id`,
+    values: [updatedContent],
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
+
+export async function deleteNote(noteId, characterId) {
+  const query = {
+    text: `DELETE FROM "notes" WHERE "id"=${noteId} AND "character_id"=${characterId} RETURNING id`,
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
 /*
 SELECT
   "characters".*,                                                           -> On sélectionne tout les champs de la fiche de personnage
