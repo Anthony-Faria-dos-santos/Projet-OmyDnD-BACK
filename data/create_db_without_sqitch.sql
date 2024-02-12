@@ -80,7 +80,6 @@ CREATE TABLE "characters_has_skills" (
 
 CREATE TABLE "notes" (
   "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "title" TEXT,
   "content" TEXT NOT NULL,
   "character_id" INT NOT NULL REFERENCES "characters"("id") ON DELETE CASCADE,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
