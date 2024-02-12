@@ -19,9 +19,10 @@ export default {
       return response.status(404).json({ error: "Utilisateur introuvable" });
     }
 
-    // Vérification si le nouveau pseudo est identique à l'ancien
-    if (pseudo === newPseudo) {
-      return response.status(401).json({ error: "Le pseudo est le même, veuillez recommencer" });
+    // vérifie si le nouveau pseudo existe déjà
+    const databaseComparePseudo = await profileDatamapper(newPseudo);
+    if (databaseComparePseudo) {
+      return response.status(401).json({ error: "Ce pseudonyme existe déjà" });
     }
 
     // Génération du slug pour le nouveau pseudo (converti en minuscules)
