@@ -14,7 +14,7 @@ export async function findOneByUserId(userId, characterId) {
     text: `SELECT
             "characters".*,
             array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",
-            array_agg(DISTINCT "notes"."title") as "notes_titles",
+            array_agg(DISTINCT "notes"."id") as "notes_ids",
             array_agg(DISTINCT "notes"."content") as "notes_contents"
           FROM "characters"
           LEFT JOIN "characters_has_skills"
@@ -92,7 +92,7 @@ export async function postNote(fields, values, placeholders) {
 SELECT
   "characters".*,                                                           -> On sélectionne tout les champs de la fiche de personnage
   array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",       -> On sélectionne les id des skills que possède le personnage rassemblés dans un tableau et on utilise DISTINCT pour éviter les doublons
-  array_agg(DISTINCT "notes"."title") as "notes_titles",                    -> On sélectionne les titres des notes que possède le personnage rassemblés dans un tableau et on utilise DISTINCT pour éviter les doublons
+  array_agg(DISTINCT "notes"."id") as "notes_ids",                          -> On sélectionne les titres des notes que possède le personnage rassemblés dans un tableau et on utilise DISTINCT pour éviter les doublons
   array_agg(DISTINCT "notes"."content") as "notes_contents"                 -> On sélectionne les contenus des notes que possède le personnage rassemblés dans un tableau et on utilise DISTINCT pour éviter les doublons
 FROM "characters"
 LEFT JOIN "characters_has_skills"                                           -> On joint la table characters_has_skills en left join pour récupèrer toutes les informations de personnages et pas seulement les communes
