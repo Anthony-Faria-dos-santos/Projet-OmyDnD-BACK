@@ -1,6 +1,16 @@
 /* eslint-disable quotes */
 import client from "../helpers/pg.client.js";
 
+export async function findByPk(id) {
+  const query = {
+    text: `SELECT * FROM "users"
+           WHERE id = $1`,
+    values: [id],
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
+
 export async function updateUsername(newPseudo, slug, pseudo) {
   const query = {
     text: `UPDATE "users"
