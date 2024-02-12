@@ -21,13 +21,13 @@ export async function findByMail(email) {
   return result.rows[0];
 }
 
-export async function updateUsername(newPseudo, slug, pseudo) {
+export async function updateUsername(newPseudo, slug, userId) {
   const query = {
     text: `UPDATE "users"
             SET "pseudo" = $1, 
             "slug" = $2
-            WHERE "pseudo" = $3`,
-    values: [newPseudo, slug, pseudo],
+            WHERE "id" = $3 RETURNING pseudo`,
+    values: [newPseudo, slug, userId],
   };
   const result = await client.query(query);
   return result.rows[0];
@@ -37,19 +37,19 @@ export async function updatePassword(encryptedNewPassword, userId) {
   const query = {
     text: `UPDATE "users"
                SET "password" = $1
-               WHERE "id" = $2`,
+               WHERE "id" = $2 RETURNING id`,
     values: [encryptedNewPassword, userId],
   };
   const result = await client.query(query);
   return result.rows[0];
 }
 
-export async function updateEmail(newEmail, email) {
+export async function updateEmail(newEmail, userId) {
   const query = {
     text: `UPDATE "users"
             SET "email" = $1
-            WHERE "email" = $2`,
-    values: [newEmail, email],
+            WHERE "id" = $2 RETURNING email`,
+    values: [newEmail, userId],
   };
   const result = await client.query(query);
   return result.rows[0];

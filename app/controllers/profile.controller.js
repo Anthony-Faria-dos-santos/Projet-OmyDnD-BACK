@@ -6,9 +6,23 @@ const saltRounds = process.env.SALT_ROUNDS;
 
 // Méthode pour la modification du pseudo d'un utilisateur
 export default {
+
+  getUser: async (request, response) => {
+    const { userId } = request.params;
+
+    const user = await profileDatamapper.findByPk(userId);
+    if (!user) {
+      return response.status(404).json({ error: "Utilisateur introuvable" });
+    }
+
+    user.password.destroy();
+
+    return response.status(200).send(user);
+  },
+
   usernameModification: async (request, response) => {
     // Récupération du pseudo actuel depuis les paramètres de la requête
-    const { pseudo, userId } = request.params;
+    const { userId } = request.params;
 
     // Récupération du nouveau pseudo depuis le corps de la requête
     const newPseudo = request.body;
@@ -29,8 +43,10 @@ export default {
     const slug = newPseudo.toLowerCase();
 
     // Appel du datamapper pour mettre à jour le pseudo dans la base de données
-    const pseudoUpdated = await profileDatamapper.updateUsername(newPseudo, pseudo, slug);
-
+    const pseudoUpdated = await profileDatamapper.updateUsername(newPseudo, userId, slug);
+    if (!pseudoUpdated) {
+      return response.status(500).json({ error: "Une erreur est survenue lors de la mise à jour de votre pseudo" });
+    }
     // Renvoi d'une réponse avec le pseudo mis à jour
     return response.status(200).send(pseudoUpdated);
   },
@@ -55,33 +71,35 @@ export default {
       return response.status(401).json({ error: "L'ancien mot de passe est incorrect" });
     }
 
-    // Vérification si l'ancien et le nouveau mot de passe sont identiques
-    if (oldPassword === newPassword) {
-      return response.status(400).json({ error: "L'ancien et le nouveau mot de passe sont identiques. Veuillez saisir un nouveau mot de passe" });
-    }
-
+    const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
     // Hachage du nouveau mot de passe avec Bcrypt
-    const encryptedNewPassword = await bcrypt.hash(newPassword, saltRounds);
+    const encryptedNewPassword = await bcrypt.hash(newPassword, salt);
+
+    // Vérification si l'ancien et le nouveau mot de passe sont identiques
+    const comparedPassword = await bcrypt.compare(encryptedNewPassword, oldPassword);
+    if (comparedPassword) {
+      return response.status(401).json({ error: "Le nouveau mot de passe ne peut pas être identique à votre ancien mot de passe" });
+    }
 
     // Mise à jour du mot de passe dans la base de données avec le nouveau mot de passe haché
     await profileDatamapper.updatePassword(encryptedNewPassword, userId);
 
     // Renvoi d'une réponse avec un message de succès
-    return response.status(200).json({ message: "Mot de passe mis à jour avec succès" });
+    return response.status(200).send();
   },
 
   // Méthode pour la modification de l'email d'un utilisateur
   emailModification: async (request, response) => {
   // Récupération de l'email actuel de l'utilisateur depuis les paramètres de la requête
-    const { email } = request.params;
+    const { userId } = request.params;
 
     // Récupération du nouvel email à partir du corps de la requête
     const newEmail = request.body;
 
     // Recherche de l'utilisateur dans la base de données par son email actuel
-    const userMail = await profileDatamapper.findByMail(email);
-    if (!userMail) {
-      return response.status(404).json({ error: "Email introuvable" });
+    const user = await profileDatamapper.findByPk(userId);
+    if (!user) {
+      return response.status(404).json({ error: "utilisateur introuvable" });
     }
 
     // Vérification si le nouvel email existe déjà dans la base de données
@@ -91,7 +109,7 @@ export default {
     }
 
     // Mise à jour de l'email dans la base de données avec le nouvel email
-    const emailUpdated = await profileDatamapper.updateEmail(newEmail, email);
+    const emailUpdated = await profileDatamapper.updateEmail(newEmail, userId);
 
     // Renvoi d'une réponse avec le nouvel email mis à jour
     return response.status(200).send(emailUpdated);
