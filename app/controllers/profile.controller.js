@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import "../helpers/env.load.js";
+
 import * as profileDatamapper from "../datamappers/profile.datamapper.js";
 import * as userDamapper from "../datamappers/users.datamapper.js";
 
