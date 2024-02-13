@@ -1,6 +1,6 @@
 import { Router } from "express";
-import controllerWrapper from "../../helpers/controller.wrapper.js";
 import * as profileController from "../../controllers/profile.controller.js";
+import controllerWrapper from "../../helpers/controller.wrapper.js";
 import validationMiddleware from "../../middlewares/validation.middleware.js";
 import * as profileSchema from "../../schemas/profile.schema.js";
 

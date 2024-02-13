@@ -3,7 +3,7 @@ import client from "../helpers/pg.client.js";
 
 export async function findByPk(id) {
   const query = {
-    text: `SELECT "id" FROM "users"
+    text: `SELECT * FROM "users"
            WHERE id = $1`,
     values: [id],
   };
@@ -13,7 +13,7 @@ export async function findByPk(id) {
 
 export async function findByMail(email) {
   const query = {
-    text: `SELECT "email" FROM "users"
+    text: `SELECT * FROM "users"
            WHERE "email" = $1`,
     values: [email],
   };
