@@ -9,6 +9,15 @@ export async function findUserByEmail(email) {
   const result = await client.query(query);
   return result.rows[0];
 }
+
+export async function findUserById(id) {
+  const query = {
+    text: 'SELECT * FROM "users" WHERE id=$1',
+    values: [id],
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
 // fonction pour selectionner tout les users qui qui correspondent au pseudo,slug ou email
 export async function checkUsersInformations(pseudo, slug, email) {
   const query = {
