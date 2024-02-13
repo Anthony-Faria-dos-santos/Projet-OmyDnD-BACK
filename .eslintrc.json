@@ -9,7 +9,9 @@
         "sourceType": "module"
     },
     "rules": {
+        "import/no-extraneous-dependencies": "off",
         "import/extensions": ["error", "always"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "eol-last": ["error", "never"]
     }
 }

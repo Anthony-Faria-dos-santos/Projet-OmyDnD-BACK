@@ -1,12 +1,12 @@
 import { Router } from "express";
-import controllerWrapper from "../../helpers/controller.wrapper.js";
-import ApiError from "../../errors/api.error.js";
-import CoreController from "../../controllers/core.controller.js";
+import usersRouter from "./users.router.js";
+import characterCRouter from "./character.creator.router.js";
+import optionsRouter from "./options.characters.router.js";
 
-// * Ligne suivante a décommenter si utilisation de Joi validate('sourceProperty', schema)
-// import validateMiddleware from "../middlewares/validation.middleware.js";
-// Mw a ajouter dans les routes avec la validations des données entrantes
+const router = Router();
 
-const apiRouter = Router();
+router.use("/users", usersRouter);
+router.use("/charactercreator", characterCRouter);
+router.use("/options", optionsRouter);
 
-export default apiRouter;
+export default router;

@@ -1,8 +1,0 @@
-[core]
-	engine = dbengine
-	top_dir = migrationfolder
-	# plan_file = migrations/sqitch.plan
- [engine "pg"]
-	 target = db:dbengine:dbname
-	# registry = sqitch
-	# client = psql
