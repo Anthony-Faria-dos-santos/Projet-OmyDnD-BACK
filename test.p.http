@@ -16,7 +16,9 @@ PATCH {{endpoint}}/api/profile/1/profile/password
 Content-Type: application/json
 
 {
-    "password": "Ledevc'estlavie"
+    "password": "Ledevc'estlavie",
+    "passwordConfirm": "Ledevc'estlavie",
+    "oldPassword": "NidohgTest"
 }
 
 ###
