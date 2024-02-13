@@ -11,6 +11,16 @@ export async function findByPk(id) {
   return result.rows[0];
 }
 
+export async function findByPseudo(newPseudo) {
+  const query = {
+    text: `SELECT * FROM "users"
+           WHERE "pseudo" = $1`,
+    values: [newPseudo],
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
+
 export async function findByMail(email) {
   const query = {
     text: `SELECT * FROM "users"
@@ -24,8 +34,7 @@ export async function findByMail(email) {
 export async function updateUsername(newPseudo, slug, userId) {
   const query = {
     text: `UPDATE "users"
-            SET "pseudo" = $1, 
-            "slug" = $2
+            SET ("pseudo", "slug") = ($1, $2)
             WHERE "id" = $3 RETURNING pseudo`,
     values: [newPseudo, slug, userId],
   };
