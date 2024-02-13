@@ -1,13 +1,13 @@
-@endpoint=http://localhost:{{$dotenv PORT}}
+@endpoint=https://ohmydnd-2fd0c114d2b0.herokuapp.com
 
 ###
-GET  {{ endpoint }}/api/users/3/characters
+GET  {{ endpoint }}/api/users/1/characters
 
 ###
-GET  {{ endpoint }}/api/users/4/characters/16
+GET  {{ endpoint }}/api/users/1/characters/2
 
 ###
-PATCH {{ endpoint }}/api/users/3/characters/8
+PATCH {{ endpoint }}/api/users/1/characters/2
 Content-Type: application/json
 
 {
@@ -16,30 +16,23 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{ endpoint }}/api/users/3/characters/13
+DELETE {{ endpoint }}/api/users/1/characters/2
 
 ###
 GET {{ endpoint }}/api/options/skills
 
 ###
-POST {{ endpoint }}/api/users/3/characters/8/skills/7
+POST {{ endpoint }}/api/users/1/characters/2/skills/9
 
 ###
 DELETE {{ endpoint }}/api/users/3/characters/8/skills/7
 
 ###
-POST {{ endpoint }}/api/users/3/characters/8/notes
+POST {{ endpoint }}/api/users/1/characters/2/notes
 Content-Type: application/json
 
 {
-    "content": "content post test"
+    "content": "Blablabla"
 }
-
 ###
-POST {{ endpoint }}/api/users/4/characters/15/notes
-Content-Type: application/json
-
-{   
-    "title": "title post test 4",
-    "content": "content post test 5"
-}
+DELETE {{ endpoint }}/api/users/1/characters/2/notes/1

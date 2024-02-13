@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "90.24.2.43",
+    origin: "*",
   }),
 );
 //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment

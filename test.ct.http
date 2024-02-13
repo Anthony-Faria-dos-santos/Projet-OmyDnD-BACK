@@ -1,10 +1,10 @@
-@endpoint=http://localhost:{{$dotenv PORT}}
+@endpoint=https://ohmydnd-2fd0c114d2b0.herokuapp.com
 
 POST {{ endpoint }}/api/charactercreator/creator
 Content-Type: application/json
 
 {
-    "user_id": 4,
+    "user_id": 1,
     "classe_id": 1,
     "background_id": 1,
     "race_id": 1,
