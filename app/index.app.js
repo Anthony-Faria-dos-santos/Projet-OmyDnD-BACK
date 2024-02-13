@@ -12,9 +12,11 @@ const app = express();
 //   next();
 // });
 
-app.use(cors({
-  origin: "*",
-}));
+app.use(
+  cors({
+    origin: "90.24.2.43",
+  }),
+);
 //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
 
 app.use(express.json());
