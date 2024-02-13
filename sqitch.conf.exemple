@@ -5,4 +5,4 @@
 [engine "pg"]
       target = db:pg:
 	# registry = sqitch
-	# client = psql
+	  client = /usr/bin/psql
