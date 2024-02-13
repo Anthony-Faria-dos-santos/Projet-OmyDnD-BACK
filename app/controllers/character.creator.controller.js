@@ -1,4 +1,4 @@
-import "../helpers/env.load.js";
+
 import * as characterDatamapper from "../datamappers/character.creator.datamapper.js";
 
 export default {
