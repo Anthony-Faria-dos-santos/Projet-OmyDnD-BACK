@@ -1,7 +1,7 @@
 import * as charactersDatamapper from "../datamappers/characters.datamapper.js";
 import * as usersDatamapper from "../datamappers/users.datamapper.js";
+import * as optionsDatamapper from "../datamappers/options.datamapper.js";
 // tableau des id des skills pour éviter de faire un appel à la db pour chaque ajout de skill
-const skillsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
 export default {
   getAll: async (request, response) => {
@@ -117,9 +117,9 @@ export default {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
     // On vérifie que le skillId est présent dans le tableau des id des skills
-    const compare = skillsArray.includes(parseInt(skillId, 10));
+    const skill = await optionsDatamapper.finOneSkillByPk(skillId);
 
-    if (compare !== true) {
+    if (!skill) {
       return response.status(404).json({ error: "La compétence est introuvable" });
     }
 
@@ -149,9 +149,10 @@ export default {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
     // On vérifie que le skillId est présent dans le tableau des id des skills
-    const compare = skillsArray.includes(parseInt(skillId, 10));
+    // On vérifie que le skillId est présent dans le tableau des id des skills
+    const skill = await optionsDatamapper.finOneSkillByPk(skillId);
 
-    if (compare !== true) {
+    if (!skill) {
       return response.status(404).json({ error: "La compétence est introuvable" });
     }
 

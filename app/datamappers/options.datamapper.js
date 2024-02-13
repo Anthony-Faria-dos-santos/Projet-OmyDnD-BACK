@@ -9,3 +9,11 @@ export async function getAllSkills() {
   const result = await client.query(query);
   return result.rows;
 }
+
+export async function finOneSkillByPk(skillId) {
+  const query = {
+    text: `SELECT * FROM "skills" WHERE id=${skillId}`,
+  };
+  const result = await client.query(query);
+  return result.rows[0];
+}
