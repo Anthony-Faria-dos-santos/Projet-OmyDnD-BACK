@@ -1,4 +1,4 @@
-@endpoint=http://localhost:{{$dotenv PORT}}
+@endpoint=https://ohmydnd-2fd0c114d2b0.herokuapp.com/:41301
 
 ###
 GET {{endpoint}}/api/users/1/profile
