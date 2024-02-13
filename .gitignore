@@ -37,3 +37,6 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+//save workspace settings "Anto"
+projet-06-omydnd-back.code-workspace

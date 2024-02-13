@@ -18,9 +18,8 @@ export default class ApiError extends Error {
     this.name = "Api error";
     this.format = "json";
     this.httpStatus = infos.httpStatus || 500;
-    // * A décommenter pour ajouter plus de paramètres
-    // Object.entries(infos).forEach(([key, value]) => {
-    //   this[key] = value;
-    // });
+    Object.entries(infos).forEach(([key, value]) => {
+      this[key] = value;
+    });
   }
 }
