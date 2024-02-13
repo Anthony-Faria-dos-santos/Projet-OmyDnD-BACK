@@ -9,6 +9,7 @@
     "Heroku_connect": "heroku login",
     "config_dev": "npm run update-env && npm run updateSqitch-conf",
     "On_Production_push": "git push heroku main",
+    "Heroku_Log":"heroku logs --tail",
     "": "------------------------------------------------------------",
     "db:create": "psql -d dnd -f data/create_db.sql",
     "db:seed": "psql -d dnd -f data/seed_db.sql",
