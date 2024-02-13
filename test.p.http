@@ -1,0 +1,30 @@
+@endpoint=http://localhost:{{$dotenv PORT}}
+
+###
+GET {{endpoint}}/api/users/1/profile
+
+###
+PATCH {{endpoint}}/api/users/1/profile/pseudo
+Content-Type: application/json
+
+{
+    "pseudo": "Thomaslehero"
+}
+
+###
+PATCH {{endpoint}}/api/users/1/profile/password
+Content-Type: application/json
+
+{
+    "password": "Ledevc'estlavie",
+    "passwordConfirm": "Ledevc'estlavie",
+    "oldPassword": "NidohgTest"
+}
+
+###
+PATCH {{endpoint}}/api/users/1/profile/email
+Content-Type: application/json
+
+{
+    "email": "tomtom@labase.fr"
+}
