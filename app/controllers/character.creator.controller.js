@@ -5,9 +5,10 @@ export default {
   createCharacter: async (request, response) => {
     const content = request.body;
 
+    // On récupère les champs et les valeurs de l'objet dans deux tableaux différents
     const fields = Object.keys(content);
     const values = Object.values(content);
-
+    // On crée nos $1, $2, etc..
     const placeholders = values.map((_, index) => `$${index + 1}`);
 
     const result = await characterDatamapper.createCharacter(fields, values, placeholders);

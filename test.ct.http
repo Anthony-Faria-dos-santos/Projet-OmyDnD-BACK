@@ -4,11 +4,11 @@ POST {{ endpoint }}/api/charactercreator/creator
 Content-Type: application/json
 
 {
-    "user_id": 1,
+    "user_id": 4,
     "classe_id": 1,
     "background_id": 1,
     "race_id": 1,
-    "name": "Michel le guerrier de l'espace",
+    "name": "Michel le guerrier le retour",
     "level": 1,
     "strength": 20,
     "dexterity": 20,
@@ -17,7 +17,6 @@ Content-Type: application/json
     "wisdom": 20,
     "charisma": 20,
     "inspiration": 20,
-    "mastery_bonus": 2,
     "armor_class": 8,
     "alignment": "bon"
 }
