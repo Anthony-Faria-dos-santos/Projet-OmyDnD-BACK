@@ -11,6 +11,7 @@
     "On_Production_push": "git push heroku main",
     "Heroku_Log": "heroku logs --tail -a ohmydnd",
     "": "------------------------------------------------------------",
+    "Heroku_RepoBack_Config":"heroku git:remote -a ohmydnd",
     "Install_HEROKU_CLI": "curl https://cli-assets.heroku.com/install.sh | sh",
     "Install_Sqitch":"sudo apt-get install sqitch libdbd-pg-perl postgresql-client libdbd-sqlite3-perl sqlite3",
     "db:create": "psql -d dnd -f data/create_db.sql",

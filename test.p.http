@@ -1,7 +1,7 @@
 @endpoint=https://ohmydnd-2fd0c114d2b0.herokuapp.com
 
 ###
-GET {{endpoint}}/api/users/1/profile
+GET {{endpoint}}/api/users/4/profile
 
 ###
 PATCH {{endpoint}}/api/users/1/profile/pseudo
