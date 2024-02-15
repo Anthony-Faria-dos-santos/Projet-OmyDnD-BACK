@@ -11,11 +11,22 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 else
     echo "Python 3 est détecté. Mise à jour de sqitch.conf en cours..."
-    # Exécuter le script Python pour mettre à jour sqitch.conf
+
+    # Obtenir DATABASE_URL depuis Heroku
+    database_url=$(heroku config:get DATABASE_URL -a ohmydnd)
+
+    # Sortir si DATABASE_URL n'est pas trouvé
+    if [ -z "$database_url" ]; then
+        echo "DATABASE_URL non trouvé sur Heroku"
+        exit 1
+    fi
+
+    # Exécuter le script Python pour mettre à jour sqitch.conf avec la DATABASE_URL obtenue
+    export DATABASE_URL="$database_url" # Passer DATABASE_URL au script Python
     python3 - <<EOF
 import os
 import re
-import shutil  # Importer le module shutil
+import shutil  # Ajout de l'importation manquante
 
 # Chemin du fichier sqitch.conf et sqitch.conf.exemple
 sqitch_conf_path = 'sqitch.conf'
@@ -30,21 +41,10 @@ if not os.path.exists(sqitch_conf_path):
         print(f"Le fichier {sqitch_conf_example_path} est introuvable. Impossible de continuer.")
         exit(1)
 
-# Charger DATABASE_URL depuis le fichier .env
-database_url = None
-with open('.env', 'r') as file:
-    for line in file:
-        if line.startswith('DATABASE_URL'):
-            database_url = line.strip().split('=')[1]
-            break
+database_url = os.environ['DATABASE_URL']  # Utiliser DATABASE_URL de l'environnement
 
-# Retirer le préfixe 'postgres:' si présent
-database_url = database_url.replace('postgres:', '')
-
-# Sortir si DATABASE_URL n'est pas trouvé
-if not database_url:
-    print("DATABASE_URL non trouvé dans .env")
-    exit(1)
+# Retirer le préfixe 'postgres://' si présent
+database_url = re.sub(r'^postgres://', '', database_url)
 
 # Préparer la nouvelle ligne target avec la valeur DATABASE_URL
 new_target_line = '      target = db:pg:' + database_url
