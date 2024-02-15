@@ -8,7 +8,7 @@ const router = Router();
 
 router.route("/skills")
 /**
- * GET /options/skills
+ * GET /api/options/skills
  * @summary Get all skills
  * @tags Character Creator
  * @return {object} 200 - success response - application/json
