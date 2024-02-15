@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import router from "./routers/index.router.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
+import createDoc from "./helpers/swagger.doc.js";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(cors({
   origin: "*",
 }));
 //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
+
+createDoc(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
