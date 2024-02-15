@@ -21,6 +21,17 @@ const router = Router();
 
 router
   .route("/signin")
+  /**
+   * POST /api/users/signin
+   * @summary add a token to authenticate user
+   * @tags Authentification
+   * @param {object} request.body.required  email, password
+   * @param {object} request.body {email: myemail@test.com, password: MyBestPassword}
+   * @return {User} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .post(
     validateFactory("body", signinSchema),
     controllerWrapper(usersController.signIn),
@@ -28,6 +39,16 @@ router
 
 router
   .route("/signup")
+  /**
+   * POST /api/users/signup
+   * @summary register user informations in database
+   * @tags Authentification
+   * @param {object} request.body.required  pseudo, email, password, passwordConfirm
+   * @return {User} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .post(
     validateFactory("body", signupSchema),
     controllerWrapper(usersController.signUp),
@@ -35,44 +56,188 @@ router
 
 router
   .route("/:id(\\d+)/delete")
+  /**
+   * POST /api/users/{id}/delete
+   * @summary delete user information from database
+   * @tags Users
+   * @param {number} id.path.required  user id
+   * @param {object} request.body.required  email
+   * @param {string} request.body.email User email entry
+   * @return {object} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 401 - Unauthorized - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .delete(controllerWrapper(usersController.deleteUserAccount));
 
 router
   .route("/:id(\\d+)/characters")
+  /**
+   * GET /api/users/{id}/characters
+   * @summary get all characters of one user
+   * @tags Users characters
+   * @param {number} id.path.required  user id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 404 - Unauthorized - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .get(controllerWrapper(charactersController.getAll));
 
 router
   .route("/:userId(\\d+)/characters/:characterId(\\d+)")
+  /**
+   * GET /api/users/{userId}/characters/{characterId}
+   * @summary get one character of one user
+   * @tags Users Character
+   * @param {number} id.path.required  user id and character id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .get(controllerWrapper(charactersController.getByPk))
+  /**
+   * PATCH /api/users/{userId}/characters/{characterId}
+   * @summary update one character of one user
+   * @tags Users Character
+   * @param {number} id.path.required  user id and character id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .patch(controllerWrapper(charactersController.updateOne))
+  /**
+   * PATCH /api/users/{userId}/characters/{characterId}
+   * @summary update one character of one user
+   * @tags Users Character
+   * @param {number} id.path.required  user id and character id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .delete(controllerWrapper(charactersController.deleteOneByPk));
 
 router
   .route("/:userId(\\d+)/characters/:characterId(\\d+)/skills/:skillId(\\d+)")
+  /**
+   * POST /api/users/{userId}/characters/{characterId}/skills/{skillId}
+   * @summary associates one skill to one character of a user
+   * @tags Users Character Skill
+   * @param {number} id.path.required  user id, character id and skill id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .post(controllerWrapper(charactersController.postSkill))
+  /**
+   * DELETE /api/users/{userId}/characters/{characterId}/skills/{skillId}
+   * @summary disassociates one skill to one character of a user
+   * @tags Users Character Skill
+   * @param {number} id.path.required  user id, character id and skill id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .delete(controllerWrapper(charactersController.deleteSkill));
 
 router
-  .route("/:userId(\\d+)/characters/:characterId(\\d+)/notes/")
+  .route("/:userId(\\d+)/characters/:characterId(\\d+)/notes")
+  /**
+   * POST /api/users/{userId}/characters/{characterId}/notes
+   * @summary create one note associated to one character of a user
+   * @tags Users Character Note
+   * @param {number} id.path.required - user id and character id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .post(controllerWrapper(charactersController.postNote));
 
 router
   .route("/:userId(\\d+)/characters/:characterId(\\d+)/notes/:noteId(\\d+)")
+  /**
+   * PATCH /api/users/{userId}/characters/{characterId}/notes
+   * @summary update one note associated to one character of a user
+   * @tags Users Character Note
+   * @param {number} id.path.required - user id, character id and note id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .patch(controllerWrapper(charactersController.updateNote))
+  /**
+   * DELETE /api/users/{userId}/characters/{characterId}/notes
+   * @summary delete one note associated to one character of a user
+   * @tags Users Character Note
+   * @param {number} id.path.required  user id, character id and note id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 400 - Bad Request response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+  */
   .delete(controllerWrapper(charactersController.deleteNote));
 
-router.route("/:userId(\\d+)/profile").get(controllerWrapper(getUser));
+router.route("/:userId(\\d+)/profile")
+  /**
+   * GET /api/users/{id}/profile/
+   * @summary get user informations
+   * @tags Users profile
+   * @param {number} id.path.required -user id
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+   */
+  .get(controllerWrapper(getUser));
 
-router.route("/:userId(\\d+)/profile/pseudo").patch(
+router.route("/:userId(\\d+)/profile/pseudo")
+  /**
+   * PATCH /api/users/{id}/profile/pseudo
+   * @summary Modify user pseudo
+   * @tags Users profile
+   * @param {number} id.path.required -user id
+   * @param {} requete.body - pseudo
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+   */
+  .patch(
   // vérifie la conformité du pseudo avec JOI
-  validateFactory("body", profileSchema.pseudoValidation),
-  // gére le try and catch dans le controller
-  controllerWrapper(usernameModification),
-);
+    validateFactory("body", profileSchema.pseudoValidation),
+    // gére le try and catch dans le controller
+    controllerWrapper(usernameModification),
+  );
 
 // route pour modifier le password
 router
   .route("/:userId(\\d+)/profile/password")
+/**
+   * PATCH /api/users/{id}/profile/password
+   * @summary Modify user password
+   * @tags Users profile
+   * @param {number} id.path.required -user id
+   * @param {} requete.body - password, oldPassword
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+   */
   .patch(
     validateFactory("body", profileSchema.passwordValidation),
     controllerWrapper(passwordModification),
@@ -81,6 +246,17 @@ router
 // route pour modifier l'email
 router
   .route("/:userId(\\d+)/profile/email")
+  /**
+   * PATCH /api/users/{id}/profile/email
+   * @summary Modify user email
+   * @tags Users profile
+   * @param {number} id.path.required user id
+   * @param {} requete.body  email
+   * @return {} 200 - success response - application/json
+   * @return {ApiJsonError} 403 - Forbidden - application/json
+   * @return {ApiJsonError} 404 - Not Found - application/json
+   * @return {ApiJsonError} 500 - Internal Server Error - application/json
+   */
   .patch(
     validateFactory("body", profileSchema.emailValidation),
     controllerWrapper(emailModification),
