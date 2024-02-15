@@ -27,7 +27,7 @@ router
    * @tags Authentification
    * @param {object} request.body.required  email, password
    * @param {object} request.body {email: myemail@test.com, password: MyBestPassword}
-   * @return {User} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -44,7 +44,9 @@ router
    * @summary register user informations in database
    * @tags Authentification
    * @param {object} request.body.required  pseudo, email, password, passwordConfirm
-   * @return {User} 200 - success response - application/json
+   * @param {object} request.body {pseudo: itsMe, email: myemail@test.com,
+   *  password: MyBestPassword, passwordConfirm: MyBestPassword}
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -57,12 +59,12 @@ router
 router
   .route("/:id(\\d+)/delete")
   /**
-   * POST /api/users/{id}/delete
+   * DELETE /api/users/{id}/delete
    * @summary delete user information from database
    * @tags Users
    * @param {number} id.path.required  user id
    * @param {object} request.body.required  email
-   * @param {string} request.body.email User email entry
+   * @param {object} request.body {email: myEmail@test.fr}
    * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 401 - Unauthorized - application/json
@@ -77,7 +79,7 @@ router
    * @summary get all characters of one user
    * @tags Users characters
    * @param {number} id.path.required  user id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 404 - Unauthorized - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -91,7 +93,7 @@ router
    * @summary get one character of one user
    * @tags Users Character
    * @param {number} id.path.required  user id and character id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -103,7 +105,8 @@ router
    * @summary update one character of one user
    * @tags Users Character
    * @param {number} id.path.required  user id and character id
-   * @return {} 200 - success response - application/json
+   * @param {object} request.body character modifications
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -111,11 +114,11 @@ router
   */
   .patch(controllerWrapper(charactersController.updateOne))
   /**
-   * PATCH /api/users/{userId}/characters/{characterId}
+   * DELETE /api/users/{userId}/characters/{characterId}
    * @summary update one character of one user
    * @tags Users Character
    * @param {number} id.path.required  user id and character id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -130,7 +133,7 @@ router
    * @summary associates one skill to one character of a user
    * @tags Users Character Skill
    * @param {number} id.path.required  user id, character id and skill id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -142,7 +145,7 @@ router
    * @summary disassociates one skill to one character of a user
    * @tags Users Character Skill
    * @param {number} id.path.required  user id, character id and skill id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -156,8 +159,9 @@ router
    * POST /api/users/{userId}/characters/{characterId}/notes
    * @summary create one note associated to one character of a user
    * @tags Users Character Note
-   * @param {number} id.path.required - user id and character id
-   * @return {} 200 - success response - application/json
+   * @param {number} id.path.required  user id and character id
+   * @param {object} request.body add title and content for notes
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -171,8 +175,8 @@ router
    * PATCH /api/users/{userId}/characters/{characterId}/notes
    * @summary update one note associated to one character of a user
    * @tags Users Character Note
-   * @param {number} id.path.required - user id, character id and note id
-   * @return {} 200 - success response - application/json
+   * @param {number} id.path.required user id, character id and note id
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -184,7 +188,7 @@ router
    * @summary delete one note associated to one character of a user
    * @tags Users Character Note
    * @param {number} id.path.required  user id, character id and note id
-   * @return {} 200 - success response - application/json
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
@@ -197,8 +201,8 @@ router.route("/:userId(\\d+)/profile")
    * GET /api/users/{id}/profile/
    * @summary get user informations
    * @tags Users profile
-   * @param {number} id.path.required -user id
-   * @return {} 200 - success response - application/json
+   * @param {number} id.path.required user id
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -210,9 +214,9 @@ router.route("/:userId(\\d+)/profile/pseudo")
    * PATCH /api/users/{id}/profile/pseudo
    * @summary Modify user pseudo
    * @tags Users profile
-   * @param {number} id.path.required -user id
-   * @param {} requete.body - pseudo
-   * @return {} 200 - success response - application/json
+   * @param {number} id.path.required user id
+   * @param {object} request.body  {pseudo: myNewPseudo}
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -231,9 +235,9 @@ router
    * PATCH /api/users/{id}/profile/password
    * @summary Modify user password
    * @tags Users profile
-   * @param {number} id.path.required -user id
-   * @param {} requete.body - password, oldPassword
-   * @return {} 200 - success response - application/json
+   * @param {number} id.path.required user id
+   * @param {object} request.body {password: MyNewPassword, oldPassword: MyOldPassword}
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
@@ -251,8 +255,8 @@ router
    * @summary Modify user email
    * @tags Users profile
    * @param {number} id.path.required user id
-   * @param {} requete.body  email
-   * @return {} 200 - success response - application/json
+   * @param {object} request.body  {email: myNewEmail@test.fr}
+   * @return {object} 200 - success response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
