@@ -8,7 +8,7 @@
     "dev": "npx nodemon",
     "": "-----------------------------Scripts Heroku-------------------------------",
     "Heroku_connect": "heroku login",
-    "config_dev": "npm run update-env && npm run updateSqitch-conf",
+    "config_dev": "npm run Heroku_RepoBack_Config && npm run updateSqitch-conf && npm run update-env",
     "Heroku_Log": "heroku logs --tail -a ohmydnd",
     "Heroku_psql_connect": "source .env && psql $DATABASE_URL",
     "On_Production_push": "git push heroku main",
