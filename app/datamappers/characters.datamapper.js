@@ -12,25 +12,29 @@ export async function findAllCharactersByUserId(userId) {
 export async function findOneByUserId(userId, characterId) {
   const query = {
     text: `SELECT
-            "characters".*,
-            array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",
-            array_agg(DISTINCT "notes"."id") as "notes_ids",
-            array_agg(DISTINCT "notes"."content") as "notes_contents"
-          FROM "characters"
-          LEFT JOIN "characters_has_skills"
-            ON "characters"."id" = "characters_has_skills"."character_id"
-          LEFT JOIN "notes"
-            ON "characters"."id" = "notes"."character_id"
-          WHERE "characters"."id" = ${characterId}
-            AND "characters"."user_id"= ${userId}
-          GROUP BY
-          "characters"."id";`,
+    "characters".*,
+    array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",
+    array_agg(DISTINCT '{' ||"notes"."id" || ',' ||"notes"."content" || '}' ) as "notes"
+  FROM "characters"
+  LEFT JOIN "characters_has_skills"
+    ON "characters"."id" = "characters_has_skills"."character_id"
+  LEFT JOIN "notes"
+    ON "characters"."id" = "notes"."character_id"
+  WHERE "characters"."id" = ${characterId}
+    AND "characters"."user_id"= ${userId}
+  GROUP BY
+  "characters"."id";`,
   };
   const result = await client.query(query);
   return result.rows[0];
 }
 
-export async function updateOne(fields, values, placeholders, characterIdPlaceholder) {
+export async function updateOne(
+  fields,
+  values,
+  placeholders,
+  characterIdPlaceholder,
+) {
   const query = {
     text: `UPDATE "characters" SET (${fields}) = (${placeholders}) WHERE id=$${characterIdPlaceholder} RETURNING *`,
     values,
