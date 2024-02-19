@@ -8,7 +8,7 @@
     "dev": "npx nodemon",
     "": "---------------------Connection et configuration Heroku--------------------",
     "Heroku_connect": "heroku login",
-    "config_dev": "npm run Heroku_remote_Config && npm run updateSqitch-conf && npm run update-env",
+    "config_dev": "npm run Heroku_Remote_Config && npm run updateSqitch-conf && npm run update-env",
     "": "------------------------------Utilitaires Heroku-------------------------------",
     "Heroku_Log": "heroku logs --tail -a ohmydnd",
     "Heroku_psql_connect": "node ./app/helpers/connectToHerokuDb.js",
