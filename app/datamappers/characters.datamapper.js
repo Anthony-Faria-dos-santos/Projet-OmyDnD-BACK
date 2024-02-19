@@ -13,61 +13,60 @@ export async function findOneByUserId(userId, characterId) {
   const query = {
     text:
 `SELECT
-  "characters".*,
-  "races"."name" as "race_name",
-  "races"."speed" as "race_speed",
-  "races"."strength_bonus" as "race_strength_bonus",
-  "races"."dexterity_bonus" as "race_dexterity_bonus",
-  "races"."constitution_bonus" as "race_constitution_bonus",
-  "races"."inteligence_bonus" as "race_inteligence_bonus",
-  "races"."wisdom_bonus" as "race_wisdom_bonus",
-  "races"."charisma_bonus" as "race_charisma_bonus",
-  "races"."languages" as "race_languages",
-  "races"."traits" as "race_traits",
-  "classes"."name" as "classe_name",
-  "classes"."health_dice" as "classe_health_dice",
-  "classes"."starting_health" as "classe_starting_health",
-  "classes"."starting_equipment_options" as "classe_starting_equipment_options",
-  "backgrounds"."name" as "background_name",
-  "backgrounds"."mastered_tools" as "background_mastered_tools",
-  "backgrounds"."starting_equipment" as "background_starting_equipment",
-  "backgrounds"."feature" as "background_feature",
-  array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",
-  array_agg(DISTINCT "notes"."id") as "notes_ids",
-  array_agg(DISTINCT "notes"."content") as "notes_contents"
+"characters".*,
+"races"."name" as "race_name",
+"races"."speed" as "race_speed",
+"races"."strength_bonus" as "race_strength_bonus",
+"races"."dexterity_bonus" as "race_dexterity_bonus",
+"races"."constitution_bonus" as "race_constitution_bonus",
+"races"."inteligence_bonus" as "race_inteligence_bonus",
+"races"."wisdom_bonus" as "race_wisdom_bonus",
+"races"."charisma_bonus" as "race_charisma_bonus",
+"races"."languages" as "race_languages",
+"races"."traits" as "race_traits",
+"classes"."name" as "classe_name",
+"classes"."health_dice" as "classe_health_dice",
+"classes"."starting_health" as "classe_starting_health",
+"classes"."starting_equipment_options" as "classe_starting_equipment_options",
+"backgrounds"."name" as "background_name",
+"backgrounds"."mastered_tools" as "background_mastered_tools",
+"backgrounds"."starting_equipment" as "background_starting_equipment",
+"backgrounds"."feature" as "background_feature",
+array_agg(DISTINCT "characters_has_skills"."skill_id") as "skills",
+array_agg(DISTINCT '{' ||"notes"."id" || ',' ||"notes"."content" || '}' ) as "notes"
 FROM "characters"
 LEFT JOIN "races"
-  ON "characters"."race_id" = "races"."id"
+ON "characters"."race_id" = "races"."id"
 LEFT JOIN "classes"
-  ON "characters"."classe_id" = "classes"."id"
+ON "characters"."classe_id" = "classes"."id"
 LEFT JOIN "backgrounds"
-  ON "characters"."background_id" = "backgrounds"."id"
+ON "characters"."background_id" = "backgrounds"."id"
 LEFT JOIN "characters_has_skills"
-  ON "characters"."id" = "characters_has_skills"."character_id"
+ON "characters"."id" = "characters_has_skills"."character_id"
 LEFT JOIN "notes"
-  ON "characters"."id" = "notes"."character_id"
+ON "characters"."id" = "notes"."character_id"
 WHERE "characters"."id" = ${characterId}
-  AND "characters"."user_id"= ${userId}
+AND "characters"."user_id"= ${userId}
 GROUP BY
-  "characters"."id",
-  "races"."name",
-  "races"."speed",
-  "races"."strength_bonus",
-  "races"."dexterity_bonus",
-  "races"."constitution_bonus",
-  "races"."inteligence_bonus",
-  "races"."wisdom_bonus",
-  "races"."charisma_bonus",
-  "races"."languages",
-  "races"."traits",
-  "classes"."name",
-  "classes"."health_dice",
-  "classes"."starting_health",
-  "classes"."starting_equipment_options",
-  "backgrounds"."name",
-  "backgrounds"."mastered_tools",
-  "backgrounds"."starting_equipment",
-  "backgrounds"."feature";`,
+"characters"."id",
+"races"."name",
+"races"."speed",
+"races"."strength_bonus",
+"races"."dexterity_bonus",
+"races"."constitution_bonus",
+"races"."inteligence_bonus",
+"races"."wisdom_bonus",
+"races"."charisma_bonus",
+"races"."languages",
+"races"."traits",
+"classes"."name",
+"classes"."health_dice",
+"classes"."starting_health",
+"classes"."starting_equipment_options",
+"backgrounds"."name",
+"backgrounds"."mastered_tools",
+"backgrounds"."starting_equipment",
+"backgrounds"."feature";`,
   };
   const result = await client.query(query);
   return result.rows[0];
