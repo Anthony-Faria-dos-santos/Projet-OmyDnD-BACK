@@ -17,3 +17,11 @@ export async function finOneSkillByPk(skillId) {
   const result = await client.query(query);
   return result.rows[0];
 }
+
+export async function searchSpells(searchKey, searchTerm) {
+  const query = {
+    text: `SELECT * FROM "spells" WHERE ${searchKey} LIKE '%${searchTerm}%' ORDER BY "level" ASC, "name" ASC;`,
+  };
+  const result = await client.query(query);
+  return result.rows;
+}
