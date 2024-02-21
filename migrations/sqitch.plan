@@ -7,3 +7,4 @@ v1.2 2024-02-10T20:17:23Z Thomas.T <thomastrehou.pro@gmail.com> # add status col
 v1.3 2024-02-10T20:55:21Z Thomas.T <thomastrehou.pro@gmail.com> # add auto update for updated_at columns
 v1.4 2024-02-11T00:10:19Z Thomas.T <thomastrehou.pro@gmail.com> # add ON DELETE CASCADE constraint on "notes"."character_id"
 v1.5 2024-02-12T10:12:23Z Thomas.T <thomastrehou.pro@gmail.com> # remove notes titles
+v1.6 2024-02-21T07:46:49Z Thomas.T <thomastrehou.pro@gmail.com> # Add spells table to the database
