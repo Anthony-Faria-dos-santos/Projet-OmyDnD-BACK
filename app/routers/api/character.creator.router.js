@@ -10,10 +10,10 @@ import characterCreatorSchema from "../../schemas/character.creator.schema.js";
 const router = Router();
 
 router.route("/creator")
-  .post(
+  .post([
     validateFactory("body", characterCreatorSchema),
     controllerWrapper(characterCreatorController.createCharacter),
-  );
+  ]);
 
 router.route("/races")
   .get(
