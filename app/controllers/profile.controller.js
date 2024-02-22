@@ -12,7 +12,7 @@ export async function getUser(request, response) {
 
   const user = await userDamapper.findUserById(userId);
   if (!user) {
-    return response.status(404).json({ error: "Utilisateur introuvable" });
+    return response.status(403).json({ error: "Utilisateur introuvable" });
   }
   delete user.password;
 
@@ -29,13 +29,13 @@ export async function usernameModification(request, response) {
   // Recherche de l'utilisateur dans la base de données par son ID
   const user = await userDamapper.findUserById(userId);
   if (!user) {
-    return response.status(404).json({ error: "Utilisateur introuvable" });
+    return response.status(403).json({ error: "Utilisateur introuvable" });
   }
 
   // vérifie si le nouveau pseudo existe déjà
   const databaseComparePseudo = await profileDatamapper.findByPseudo(newPseudo);
   if (databaseComparePseudo) {
-    return response.status(401).json({ error: "Ce pseudonyme existe déjà" });
+    return response.status(403).json({ error: "Ce pseudonyme existe déjà" });
   }
 
   // Génération du slug pour le nouveau pseudo (converti en minuscules)
@@ -60,14 +60,14 @@ export async function passwordModification(request, response) {
   // Recherche de l'utilisateur dans la base de données par son ID
   const user = await userDamapper.findUserById(userId);
   if (!user) {
-    return response.status(404).json({ error: "Utilisateur introuvable" });
+    return response.status(403).json({ error: "Utilisateur introuvable" });
   }
 
   // Vérification si l'ancien mot de passe fourni correspond
   // à celui stocké dans la base de données
   const isPasswordValid = await bcrypt.compare(oldPassword, user.password);
   if (!isPasswordValid) {
-    return response.status(401).json({ error: "L'ancien mot de passe est incorrect" });
+    return response.status(403).json({ error: "L'ancien mot de passe est incorrect" });
   }
 
   const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));
@@ -78,7 +78,7 @@ export async function passwordModification(request, response) {
   // Vérification si l'ancien et le nouveau mot de passe sont identiques
   const comparedPassword = await bcrypt.compare(encryptedNewPassword, oldPassword);
   if (comparedPassword) {
-    return response.status(401).json({ error: "Le nouveau mot de passe ne peut pas être identique à votre ancien mot de passe" });
+    return response.status(403).json({ error: "Le nouveau mot de passe ne peut pas être identique à votre ancien mot de passe" });
   }
 
   // Mise à jour du mot de passe dans la base de données avec le nouveau mot de passe haché
@@ -99,17 +99,20 @@ export async function emailModification(request, response) {
   // Recherche de l'utilisateur dans la base de données par son email actuel
   const user = await userDamapper.findUserById(userId);
   if (!user) {
-    return response.status(404).json({ error: "utilisateur introuvable" });
+    return response.status(403).json({ error: "utilisateur introuvable" });
   }
 
   // Vérification si le nouvel email existe déjà dans la base de données
   const databaseCompareMail = await userDamapper.findUserByEmail(newEmail);
   if (databaseCompareMail) {
-    return response.status(401).json({ error: "Cet email existe déjà" });
+    return response.status(403).json({ error: "Cet email existe déjà" });
   }
 
   // Mise à jour de l'email dans la base de données avec le nouvel email
   const emailUpdated = await profileDatamapper.updateEmail(newEmail, userId);
+  if (!emailUpdated) {
+    return response.status(500).json({ error: "Une erreur est survenue lors de la mise à jour de votre pseudo" });
+  }
 
   // Renvoi d'une réponse avec le nouvel email mis à jour
   return response.status(200).send(emailUpdated);

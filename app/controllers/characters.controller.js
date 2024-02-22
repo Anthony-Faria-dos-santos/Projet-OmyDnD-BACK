@@ -5,12 +5,12 @@ import * as optionsDatamapper from "../datamappers/options.datamapper.js";
 
 export default {
   getAll: async (request, response) => {
-    const userId = request.params.id;
+    const { userId } = request.params;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacters = await charactersDatamapper.findAllCharactersByUserId(userId);
@@ -25,27 +25,22 @@ export default {
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
-
-    if (!userCharacter) {
-      return response.status(404).json({ error: "Le personnage demandé est introuvable" });
-    }
 
     return response.status(200).send(userCharacter);
   },
 
   updateOne: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const character = request.body;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
@@ -78,13 +73,12 @@ export default {
   },
 
   deleteOneByPk: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     await charactersDatamapper.deleteAllCharacterNotes(characterId);
@@ -101,14 +95,13 @@ export default {
   },
 
   postSkill: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const { skillId } = request.params;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
@@ -133,14 +126,13 @@ export default {
   },
 
   deleteSkill: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const { skillId } = request.params;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
@@ -148,7 +140,6 @@ export default {
     if (!userCharacter) {
       return response.status(404).json({ error: "Le personnage demandé est introuvable" });
     }
-    // On vérifie que le skillId est présent dans le tableau des id des skills
     // On vérifie que le skillId est présent dans le tableau des id des skills
     const skill = await optionsDatamapper.finOneSkillByPk(skillId);
 
@@ -166,14 +157,13 @@ export default {
   },
 
   postNote: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const note = request.body;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
@@ -200,7 +190,6 @@ export default {
   },
 
   updateNote: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const { noteId } = request.params;
     const note = request.body;
@@ -208,7 +197,7 @@ export default {
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
@@ -229,14 +218,13 @@ export default {
   },
 
   deleteNote: async (request, response) => {
-    const { userId } = request.params;
     const { characterId } = request.params;
     const { noteId } = request.params;
 
     const user = await usersDatamapper.findUserById(userId);
 
     if (!user) {
-      return response.status(404).json({ error: "Utilisateur introuvable" });
+      return response.status(403).json({ error: "Utilisateur introuvable" });
     }
 
     const userCharacter = await charactersDatamapper.findOneByUserId(userId, characterId);
