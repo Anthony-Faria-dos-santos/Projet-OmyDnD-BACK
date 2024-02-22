@@ -16,13 +16,13 @@ export default {
     const user = await usersDatamapper.findUserByEmail(email);
     //  vérifie que l'utilisateur existe
     if (!user) {
-      return response.status(401).json({ error: "L'utilisateur n'éxiste pas ou le mot de passe est incorrect" });
+      return response.status(403).json({ error: "L'utilisateur n'existe pas ou le mot de passe est incorrect" });
     }
     //  vérifie que le password encrypté est correct avec la base de donnée
     const validPassword = await bcrypt.compare(password, user.password);
 
     if (!validPassword) {
-      return response.status(401).json({ error: "L'utilisateur n'éxiste pas ou le mot de passe est incorrect" });
+      return response.status(400).json({ error: "L'utilisateur n'existe pas ou le mot de passe est incorrect" });
     }
     //  donne un token a l'utilisateur après les vérification
     const accessToken = jwt.sign({ id: user.id }, JWTSecret, {
@@ -58,7 +58,7 @@ export default {
     const userEntriesCheck = await usersDatamapper.checkUsersInformations(pseudo, slug, email);
 
     if (userEntriesCheck[0]) {
-      return response.status(401).json({ error: "L'utilisateur ou l'email existe déjà" });
+      return response.status(403).json({ error: "L'utilisateur ou l'email existe déjà" });
     }
     // on encrypte le mot de passe
     const salt = await bcrypt.genSalt(parseInt(saltRounds, 10));

@@ -16,7 +16,6 @@ const passwordValidation = Joi.object({
   password: Joi.string()
     .min(8)
     .required(),
-  passwordConfirm: Joi.ref("password"),
   oldPassword: Joi.string()
     .min(8)
     .required(),
