@@ -43,11 +43,10 @@ if not os.path.exists(sqitch_conf_path):
 
 database_url = os.environ['DATABASE_URL']  # Utiliser DATABASE_URL de l'environnement
 
-# Retirer le préfixe 'postgres://' si présent
-database_url = re.sub(r'^postgres://', '', database_url)
+
 
 # Préparer la nouvelle ligne target avec la valeur DATABASE_URL
-new_target_line = '      target = db:pg:' + database_url
+new_target_line = '      target = ' + database_url
 
 # Flag pour indiquer si la section [engine "pg"] a été trouvée
 in_pg_section = False
