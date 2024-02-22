@@ -21,7 +21,7 @@ router.route("/creator")
   .post(
     validateFactory("body", characterCreatorSchema),
     controllerWrapper(characterCreatorController.createCharacter),
-  ]);
+  );
 
 router.route("/races")
 /**
