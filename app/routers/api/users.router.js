@@ -238,8 +238,10 @@ router.route("/:userId(\\d+)/profile")
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
    */
-  
-  .get([controllerWrapper(dbCheck), controllerWrapper(getUser)]);
+  .get([
+    controllerWrapper(dbCheck),
+    controllerWrapper(getUser),
+  ]);
 
 router.route("/:userId(\\d+)/profile/pseudo")
   /**
@@ -253,12 +255,11 @@ router.route("/:userId(\\d+)/profile/pseudo")
    * @return {ApiJsonError} 404 - Not Found - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
    */
-  
   .patch([
-      validateFactory("body", profileSchema.pseudoValidation),
-      controllerWrapper(dbCheck),
-      controllerWrapper(usernameModification),
-    ]);
+    validateFactory("body", profileSchema.pseudoValidation),
+    controllerWrapper(dbCheck),
+    controllerWrapper(usernameModification),
+  ]);
 
 // route pour modifier le password
 router
