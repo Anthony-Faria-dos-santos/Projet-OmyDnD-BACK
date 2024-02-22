@@ -1,3 +1,4 @@
+-- SQLBook: Code
 BEGIN;
 
 CREATE TABLE "races" (
