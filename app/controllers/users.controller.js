@@ -93,7 +93,7 @@ export default {
   },
 
   deleteUserAccount: async (request, response) => {
-    const userId = request.params.id;
+    const { userId } = request.params.userId;
     const { email } = request.body;
 
     const user = await usersDatamapper.findUserById(userId);
