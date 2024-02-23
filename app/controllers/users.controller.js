@@ -33,7 +33,11 @@ export default {
         });
     }
     //  donne un token a l'utilisateur après les vérification
-    const accessToken = jwt.sign({ id: user.id }, JWTSecret, {
+    const accessToken = jwt.sign({
+      id: user.id,
+      pseudo: user.pseudo,
+      email: user.email,
+    }, JWTSecret, {
       expiresIn: JWTRefreshExpiration,
     });
     // retourne les information dans la réponse
