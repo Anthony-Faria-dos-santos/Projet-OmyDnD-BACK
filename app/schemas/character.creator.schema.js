@@ -16,9 +16,6 @@ export default Joi.object({
   name: Joi.string()
     .max(30)
     .required(),
-  level: Joi.number()
-    .integer()
-    .required(),
   strength: Joi.number()
     .integer()
     .max(20)
@@ -42,11 +39,6 @@ export default Joi.object({
   charisma: Joi.number()
     .integer()
     .max(20)
-    .required(),
-  inspiration: Joi.number()
-    .integer(),
-  armor_class: Joi.number()
-    .integer()
     .required(),
   alignment: Joi.string()
     .max(20)
