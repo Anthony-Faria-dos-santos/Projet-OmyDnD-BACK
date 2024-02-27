@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import "../helpers/env.load.js";
+
 import * as profileDatamapper from "../datamappers/profile.datamapper.js";
 import * as userDamapper from "../datamappers/users.datamapper.js";
 
@@ -94,7 +94,7 @@ export async function emailModification(request, response) {
   const { userId } = request.params;
 
   // Récupération du nouvel email à partir du corps de la requête
-  const newEmail = request.body;
+  const newEmail = request.body.email;
 
   // Recherche de l'utilisateur dans la base de données par son email actuel
   const user = await userDamapper.findUserById(userId);

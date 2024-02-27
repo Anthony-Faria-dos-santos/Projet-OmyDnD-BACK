@@ -13,9 +13,11 @@ const app = express();
 //   next();
 // });
 
-app.use(cors({
-  origin: "*",
-}));
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
 
 createDoc(app);
