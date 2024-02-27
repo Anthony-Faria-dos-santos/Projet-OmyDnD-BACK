@@ -136,6 +136,15 @@ export default router;
 */
 
 /**
+ * @typedef {object} LoginResponse
+ * @property {string} id - user's id
+ * @property {string} pseudo - user's pseudo
+ * @property {string} slug - user's slug
+ * @property {string} email - user's email
+ * @property {string} token - user's JWT
+*/
+
+/**
  * @typedef {object} Signup
  * @property {number} pseudo - user's pseudo
  * @property {string} email - user's email
