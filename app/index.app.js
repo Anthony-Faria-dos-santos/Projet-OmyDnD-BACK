@@ -15,9 +15,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://ohmydnd-front-6ff68215d15c.herokuapp.com/",
   }),
 );
+
+app.options('*', cors());
 //! a gerer plus tard pour le parametrer que pour le front * l'ouvre a tous le monde pour le moment
 
 createDoc(app);
