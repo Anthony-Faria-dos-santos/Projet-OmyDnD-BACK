@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Router } from "express";
 import characterCreatorController from "../../controllers/character.creator.controller.js";
 
@@ -13,8 +14,8 @@ router.route("/creator")
 /**
  * POST /api/charactercreator/creator
  * @summary Create a new character
- * @tags Character Creator
- * @param {object} request.body.required necessary for the character
+ * @tags Tool Character Creator
+ * @param {CreatorCharacter} request.body.required
  * @return {object} 200 - success response - application/json
  * @return {ApiJsonError} 500 - Internal Server Error - application/json
  */
@@ -27,8 +28,8 @@ router.route("/races")
 /**
  * GET /api/charactercreator/races
  * @summary Get all races
- * @tags Character Creator
- * @return {object} 200 - success response - application/json
+ * @tags Tool Character Creator
+ * @return {Races[]} 200 - success response - application/json
  * @return {ApiJsonError} 500 - Internal Server Error - application/json
  */
   .get(
@@ -39,8 +40,8 @@ router.route("/backgrounds")
 /**
  * GET /api/charactercreator/backgrounds
  * @summary Get all backgrounds
- * @tags Character Creator
- * @return {object} 200 - success response - application/json
+ * @tags Tool Character Creator
+ * @return {Backgrounds[]} 200 - success response - application/json
  * @return {ApiJsonError} 500 - Internal Server Error - application/json
  */
   .get(
@@ -51,8 +52,8 @@ router.route("/classes")
 /**
  * GET /api/charactercreator/classes
  * @summary Get all classes
- * @tags Character Creator
- * @return {object} 200 - success response - application/json
+ * @tags Tool Character Creator
+ * @return {Classes[]} 200 - success response - application/json
  * @return {ApiJsonError} 500 - Internal Server Error - application/json
  */
   .get(
