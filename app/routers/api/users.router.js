@@ -27,7 +27,7 @@ router
    * @summary add a token to authenticate user
    * @tags Authentification
    * @param {Login} request.body.required
-   * @return {object} 200 - success response - application/json
+   * @return {LoginResponse} 200 - success response - application/json
    * @return {ApiJsonError} 400 - Bad Request response - application/json
    * @return {ApiJsonError} 403 - Forbidden - application/json
    * @return {ApiJsonError} 500 - Internal Server Error - application/json
