@@ -2,7 +2,7 @@ import client from "../helpers/pg.client.js";
 
 export async function createCharacter(fields, values, placeholders) {
   const query = {
-    text: `INSERT INTO "characters" (${fields}) VALUES (${placeholders}) RETURNING id`,
+    text: `INSERT INTO "characters" (${fields}) VALUES (${placeholders}) RETURNING *`,
     values,
   };
   const result = await client.query(query);
