@@ -3,7 +3,8 @@ import client from "../helpers/pg.client.js";
 // fonction pour rechercher un user par son email
 export async function findAllCharactersByUserId(userId) {
   const query = {
-    text: `SELECT "id", "name", "level", "status" FROM "characters" WHERE user_id=${userId}`,
+    text: `SELECT "id", "name", "level", "status" FROM "characters" WHERE user_id=$1`,
+    values: [userId],
   };
   const result = await client.query(query);
   return result.rows;
